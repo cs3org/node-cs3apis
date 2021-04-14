@@ -23,6 +23,7 @@ steps:
   image: appleboy/drone-git-push
   settings:
     remote_name: upstream
+    branch: main
     remote: git@github.com:cs3org/node-cs3apis.git
     followtags: true
     ssh_key:
