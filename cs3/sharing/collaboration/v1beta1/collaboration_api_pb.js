@@ -1464,7 +1464,8 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.prototype.toObject =
 proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     status: (f = msg.getStatus()) && cs3_rpc_v1beta1_status_pb.Status.toObject(includeInstance, f),
-    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f)
+    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
+    share: (f = msg.getShare()) && cs3_sharing_collaboration_v1beta1_resources_pb.Share.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1511,6 +1512,11 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.deserializeBinaryFro
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Opaque.deserializeBinaryFromReader);
       msg.setOpaque(value);
       break;
+    case 3:
+      var value = new cs3_sharing_collaboration_v1beta1_resources_pb.Share;
+      reader.readMessage(value,cs3_sharing_collaboration_v1beta1_resources_pb.Share.deserializeBinaryFromReader);
+      msg.setShare(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1554,6 +1560,14 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.serializeBinaryToWri
       2,
       f,
       cs3_types_v1beta1_types_pb.Opaque.serializeBinaryToWriter
+    );
+  }
+  f = message.getShare();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      cs3_sharing_collaboration_v1beta1_resources_pb.Share.serializeBinaryToWriter
     );
   }
 };
@@ -1630,6 +1644,43 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.prototype.clearOpaqu
  */
 proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.prototype.hasOpaque = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Share share = 3;
+ * @return {?proto.cs3.sharing.collaboration.v1beta1.Share}
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.prototype.getShare = function() {
+  return /** @type{?proto.cs3.sharing.collaboration.v1beta1.Share} */ (
+    jspb.Message.getWrapperField(this, cs3_sharing_collaboration_v1beta1_resources_pb.Share, 3));
+};
+
+
+/**
+ * @param {?proto.cs3.sharing.collaboration.v1beta1.Share|undefined} value
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse} returns this
+*/
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.prototype.setShare = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse} returns this
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.prototype.clearShare = function() {
+  return this.setShare(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareResponse.prototype.hasShare = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -4207,7 +4258,8 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.prototype.to
 proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     status: (f = msg.getStatus()) && cs3_rpc_v1beta1_status_pb.Status.toObject(includeInstance, f),
-    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f)
+    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
+    share: (f = msg.getShare()) && cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4254,6 +4306,11 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.deserializeB
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Opaque.deserializeBinaryFromReader);
       msg.setOpaque(value);
       break;
+    case 3:
+      var value = new cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare;
+      reader.readMessage(value,cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare.deserializeBinaryFromReader);
+      msg.setShare(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4297,6 +4354,14 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.serializeBin
       2,
       f,
       cs3_types_v1beta1_types_pb.Opaque.serializeBinaryToWriter
+    );
+  }
+  f = message.getShare();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare.serializeBinaryToWriter
     );
   }
 };
@@ -4373,6 +4438,43 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.prototype.cl
  */
 proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.prototype.hasOpaque = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ReceivedShare share = 3;
+ * @return {?proto.cs3.sharing.collaboration.v1beta1.ReceivedShare}
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.prototype.getShare = function() {
+  return /** @type{?proto.cs3.sharing.collaboration.v1beta1.ReceivedShare} */ (
+    jspb.Message.getWrapperField(this, cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare, 3));
+};
+
+
+/**
+ * @param {?proto.cs3.sharing.collaboration.v1beta1.ReceivedShare|undefined} value
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse} returns this
+*/
+proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.prototype.setShare = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse} returns this
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.prototype.clearShare = function() {
+  return this.setShare(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse.prototype.hasShare = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
