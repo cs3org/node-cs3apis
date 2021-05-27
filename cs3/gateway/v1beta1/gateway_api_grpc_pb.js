@@ -54,6 +54,17 @@ function deserialize_cs3_app_provider_v1beta1_OpenFileInAppProviderResponse(buff
   return cs3_app_provider_v1beta1_provider_api_pb.OpenFileInAppProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_app_provider_v1beta1_OpenInAppResponse(arg) {
+  if (!(arg instanceof cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse)) {
+    throw new Error('Expected argument of type cs3.app.provider.v1beta1.OpenInAppResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_provider_v1beta1_OpenInAppResponse(buffer_arg) {
+  return cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_app_registry_v1beta1_GetAppProvidersRequest(arg) {
   if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.GetAppProvidersRequest)) {
     throw new Error('Expected argument of type cs3.app.registry.v1beta1.GetAppProvidersRequest');
@@ -294,6 +305,17 @@ function serialize_cs3_gateway_v1beta1_OpenFileInAppProviderRequest(arg) {
 
 function deserialize_cs3_gateway_v1beta1_OpenFileInAppProviderRequest(buffer_arg) {
   return cs3_gateway_v1beta1_gateway_api_pb.OpenFileInAppProviderRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_gateway_v1beta1_OpenInAppRequest(arg) {
+  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest)) {
+    throw new Error('Expected argument of type cs3.gateway.v1beta1.OpenInAppRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_gateway_v1beta1_OpenInAppRequest(buffer_arg) {
+  return cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_gateway_v1beta1_PurgeRecycleRequest(arg) {
@@ -2227,7 +2249,19 @@ deleteStorageSpace: {
   // *****************************************************************/
 // ************************ APP PROVIDER ********************/
 // *****************************************************************/
-// Returns the App provider URL, which lets the user open a file in the correct online document editor.
+// Returns the App provider URL, which allows the user to open a resource in an online editor.
+openInApp: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/OpenInApp',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest,
+    responseType: cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse,
+    requestSerialize: serialize_cs3_gateway_v1beta1_OpenInAppRequest,
+    requestDeserialize: deserialize_cs3_gateway_v1beta1_OpenInAppRequest,
+    responseSerialize: serialize_cs3_app_provider_v1beta1_OpenInAppResponse,
+    responseDeserialize: deserialize_cs3_app_provider_v1beta1_OpenInAppResponse,
+  },
+  // Deprecated.
 openFileInAppProvider: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/OpenFileInAppProvider',
     requestStream: false,
