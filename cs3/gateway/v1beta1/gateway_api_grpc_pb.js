@@ -24,6 +24,7 @@ var grpc = require('grpc');
 var cs3_gateway_v1beta1_gateway_api_pb = require('../../../cs3/gateway/v1beta1/gateway_api_pb.js');
 var cs3_app_provider_v1beta1_provider_api_pb = require('../../../cs3/app/provider/v1beta1/provider_api_pb.js');
 var cs3_app_registry_v1beta1_registry_api_pb = require('../../../cs3/app/registry/v1beta1/registry_api_pb.js');
+var cs3_auth_applications_v1beta1_applications_api_pb = require('../../../cs3/auth/applications/v1beta1/applications_api_pb.js');
 var cs3_auth_registry_v1beta1_registry_api_pb = require('../../../cs3/auth/registry/v1beta1/registry_api_pb.js');
 var cs3_gateway_v1beta1_resources_pb = require('../../../cs3/gateway/v1beta1/resources_pb.js');
 var cs3_identity_group_v1beta1_group_api_pb = require('../../../cs3/identity/group/v1beta1/group_api_pb.js');
@@ -95,6 +96,94 @@ function serialize_cs3_app_registry_v1beta1_ListAppProvidersResponse(arg) {
 
 function deserialize_cs3_app_registry_v1beta1_ListAppProvidersResponse(buffer_arg) {
   return cs3_app_registry_v1beta1_registry_api_pb.ListAppProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_auth_applications_v1beta1_GenerateAppPasswordRequest(arg) {
+  if (!(arg instanceof cs3_auth_applications_v1beta1_applications_api_pb.GenerateAppPasswordRequest)) {
+    throw new Error('Expected argument of type cs3.auth.applications.v1beta1.GenerateAppPasswordRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_auth_applications_v1beta1_GenerateAppPasswordRequest(buffer_arg) {
+  return cs3_auth_applications_v1beta1_applications_api_pb.GenerateAppPasswordRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_auth_applications_v1beta1_GenerateAppPasswordResponse(arg) {
+  if (!(arg instanceof cs3_auth_applications_v1beta1_applications_api_pb.GenerateAppPasswordResponse)) {
+    throw new Error('Expected argument of type cs3.auth.applications.v1beta1.GenerateAppPasswordResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_auth_applications_v1beta1_GenerateAppPasswordResponse(buffer_arg) {
+  return cs3_auth_applications_v1beta1_applications_api_pb.GenerateAppPasswordResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_auth_applications_v1beta1_GetAppPasswordRequest(arg) {
+  if (!(arg instanceof cs3_auth_applications_v1beta1_applications_api_pb.GetAppPasswordRequest)) {
+    throw new Error('Expected argument of type cs3.auth.applications.v1beta1.GetAppPasswordRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_auth_applications_v1beta1_GetAppPasswordRequest(buffer_arg) {
+  return cs3_auth_applications_v1beta1_applications_api_pb.GetAppPasswordRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_auth_applications_v1beta1_GetAppPasswordResponse(arg) {
+  if (!(arg instanceof cs3_auth_applications_v1beta1_applications_api_pb.GetAppPasswordResponse)) {
+    throw new Error('Expected argument of type cs3.auth.applications.v1beta1.GetAppPasswordResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_auth_applications_v1beta1_GetAppPasswordResponse(buffer_arg) {
+  return cs3_auth_applications_v1beta1_applications_api_pb.GetAppPasswordResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_auth_applications_v1beta1_InvalidateAppPasswordRequest(arg) {
+  if (!(arg instanceof cs3_auth_applications_v1beta1_applications_api_pb.InvalidateAppPasswordRequest)) {
+    throw new Error('Expected argument of type cs3.auth.applications.v1beta1.InvalidateAppPasswordRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_auth_applications_v1beta1_InvalidateAppPasswordRequest(buffer_arg) {
+  return cs3_auth_applications_v1beta1_applications_api_pb.InvalidateAppPasswordRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_auth_applications_v1beta1_InvalidateAppPasswordResponse(arg) {
+  if (!(arg instanceof cs3_auth_applications_v1beta1_applications_api_pb.InvalidateAppPasswordResponse)) {
+    throw new Error('Expected argument of type cs3.auth.applications.v1beta1.InvalidateAppPasswordResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_auth_applications_v1beta1_InvalidateAppPasswordResponse(buffer_arg) {
+  return cs3_auth_applications_v1beta1_applications_api_pb.InvalidateAppPasswordResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_auth_applications_v1beta1_ListAppPasswordsRequest(arg) {
+  if (!(arg instanceof cs3_auth_applications_v1beta1_applications_api_pb.ListAppPasswordsRequest)) {
+    throw new Error('Expected argument of type cs3.auth.applications.v1beta1.ListAppPasswordsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_auth_applications_v1beta1_ListAppPasswordsRequest(buffer_arg) {
+  return cs3_auth_applications_v1beta1_applications_api_pb.ListAppPasswordsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_auth_applications_v1beta1_ListAppPasswordsResponse(arg) {
+  if (!(arg instanceof cs3_auth_applications_v1beta1_applications_api_pb.ListAppPasswordsResponse)) {
+    throw new Error('Expected argument of type cs3.auth.applications.v1beta1.ListAppPasswordsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_auth_applications_v1beta1_ListAppPasswordsResponse(buffer_arg) {
+  return cs3_auth_applications_v1beta1_applications_api_pb.ListAppPasswordsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_auth_registry_v1beta1_ListAuthProvidersRequest(arg) {
@@ -1756,6 +1845,58 @@ whoAmI: {
     requestDeserialize: deserialize_cs3_gateway_v1beta1_WhoAmIRequest,
     responseSerialize: serialize_cs3_gateway_v1beta1_WhoAmIResponse,
     responseDeserialize: deserialize_cs3_gateway_v1beta1_WhoAmIResponse,
+  },
+  // *****************************************************************/
+// ********************** APPLICATIONS AUTH ************************/
+// *****************************************************************/
+// GenerateAppPassword creates a password with specified scope to be used by
+// third-party applications.
+generateAppPassword: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/GenerateAppPassword',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_auth_applications_v1beta1_applications_api_pb.GenerateAppPasswordRequest,
+    responseType: cs3_auth_applications_v1beta1_applications_api_pb.GenerateAppPasswordResponse,
+    requestSerialize: serialize_cs3_auth_applications_v1beta1_GenerateAppPasswordRequest,
+    requestDeserialize: deserialize_cs3_auth_applications_v1beta1_GenerateAppPasswordRequest,
+    responseSerialize: serialize_cs3_auth_applications_v1beta1_GenerateAppPasswordResponse,
+    responseDeserialize: deserialize_cs3_auth_applications_v1beta1_GenerateAppPasswordResponse,
+  },
+  // ListAppPasswords lists the application passwords created by a user.
+listAppPasswords: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/ListAppPasswords',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_auth_applications_v1beta1_applications_api_pb.ListAppPasswordsRequest,
+    responseType: cs3_auth_applications_v1beta1_applications_api_pb.ListAppPasswordsResponse,
+    requestSerialize: serialize_cs3_auth_applications_v1beta1_ListAppPasswordsRequest,
+    requestDeserialize: deserialize_cs3_auth_applications_v1beta1_ListAppPasswordsRequest,
+    responseSerialize: serialize_cs3_auth_applications_v1beta1_ListAppPasswordsResponse,
+    responseDeserialize: deserialize_cs3_auth_applications_v1beta1_ListAppPasswordsResponse,
+  },
+  // InvalidateAppPassword invalidates a generated password.
+invalidateAppPassword: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/InvalidateAppPassword',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_auth_applications_v1beta1_applications_api_pb.InvalidateAppPasswordRequest,
+    responseType: cs3_auth_applications_v1beta1_applications_api_pb.InvalidateAppPasswordResponse,
+    requestSerialize: serialize_cs3_auth_applications_v1beta1_InvalidateAppPasswordRequest,
+    requestDeserialize: deserialize_cs3_auth_applications_v1beta1_InvalidateAppPasswordRequest,
+    responseSerialize: serialize_cs3_auth_applications_v1beta1_InvalidateAppPasswordResponse,
+    responseDeserialize: deserialize_cs3_auth_applications_v1beta1_InvalidateAppPasswordResponse,
+  },
+  // GetAppPassword retrieves the password information by the combination of username and password.
+getAppPassword: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/GetAppPassword',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_auth_applications_v1beta1_applications_api_pb.GetAppPasswordRequest,
+    responseType: cs3_auth_applications_v1beta1_applications_api_pb.GetAppPasswordResponse,
+    requestSerialize: serialize_cs3_auth_applications_v1beta1_GetAppPasswordRequest,
+    requestDeserialize: deserialize_cs3_auth_applications_v1beta1_GetAppPasswordRequest,
+    responseSerialize: serialize_cs3_auth_applications_v1beta1_GetAppPasswordResponse,
+    responseDeserialize: deserialize_cs3_auth_applications_v1beta1_GetAppPasswordResponse,
   },
   // *****************************************************************/
 // ************************ STORAGE PROVIDER ***********************/
