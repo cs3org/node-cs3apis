@@ -9219,7 +9219,7 @@ proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.toObject = function
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f),
     key: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    restorePath: jspb.Message.getFieldWithDefault(msg, 4, "")
+    restoreRef: (f = msg.getRestoreRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9271,8 +9271,9 @@ proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.deserializeBinaryFr
       msg.setKey(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRestorePath(value);
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Reference;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
+      msg.setRestoreRef(value);
       break;
     default:
       reader.skipField();
@@ -9326,11 +9327,12 @@ proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.serializeBinaryToWr
       f
     );
   }
-  f = message.getRestorePath();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getRestoreRef();
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
     );
   }
 };
@@ -9429,20 +9431,39 @@ proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.prototype.setKey = 
 
 
 /**
- * optional string restore_path = 4;
- * @return {string}
+ * optional Reference restore_ref = 4;
+ * @return {?proto.cs3.storage.provider.v1beta1.Reference}
  */
-proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.prototype.getRestorePath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.prototype.getRestoreRef = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Reference} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Reference, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.cs3.storage.provider.v1beta1.Reference|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest} returns this
+*/
+proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.prototype.setRestoreRef = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest} returns this
  */
-proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.prototype.setRestorePath = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.prototype.clearRestoreRef = function() {
+  return this.setRestoreRef(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest.prototype.hasRestoreRef = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -11102,7 +11123,7 @@ proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.prototype.toObject = fun
 proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
-    path: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f),
     target: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -11146,8 +11167,9 @@ proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.deserializeBinaryFromRea
       msg.setOpaque(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Reference;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
+      msg.setRef(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -11190,11 +11212,12 @@ proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.serializeBinaryToWriter 
       cs3_types_v1beta1_types_pb.Opaque.serializeBinaryToWriter
     );
   }
-  f = message.getPath();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getRef();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
     );
   }
   f = message.getTarget();
@@ -11245,20 +11268,39 @@ proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.prototype.hasOpaque = fu
 
 
 /**
- * optional string path = 2;
- * @return {string}
+ * optional Reference ref = 2;
+ * @return {?proto.cs3.storage.provider.v1beta1.Reference}
  */
-proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.prototype.getRef = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Reference} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Reference, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.cs3.storage.provider.v1beta1.Reference|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest} returns this
+*/
+proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.prototype.setRef = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest} returns this
  */
-proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.prototype.setPath = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.prototype.clearRef = function() {
+  return this.setRef(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.CreateSymlinkRequest.prototype.hasRef = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -11515,7 +11557,7 @@ proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.prototype.toObject = f
 proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
-    path: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f),
     targetUri: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -11559,8 +11601,9 @@ proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.deserializeBinaryFromR
       msg.setOpaque(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPath(value);
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Reference;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
+      msg.setRef(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -11603,11 +11646,12 @@ proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.serializeBinaryToWrite
       cs3_types_v1beta1_types_pb.Opaque.serializeBinaryToWriter
     );
   }
-  f = message.getPath();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getRef();
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
     );
   }
   f = message.getTargetUri();
@@ -11658,20 +11702,39 @@ proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.prototype.hasOpaque = 
 
 
 /**
- * optional string path = 2;
- * @return {string}
+ * optional Reference ref = 2;
+ * @return {?proto.cs3.storage.provider.v1beta1.Reference}
  */
-proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.prototype.getPath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.prototype.getRef = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Reference} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Reference, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.cs3.storage.provider.v1beta1.Reference|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.CreateReferenceRequest} returns this
+*/
+proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.prototype.setRef = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.cs3.storage.provider.v1beta1.CreateReferenceRequest} returns this
  */
-proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.prototype.setPath = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.prototype.clearRef = function() {
+  return this.setRef(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.CreateReferenceRequest.prototype.hasRef = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
