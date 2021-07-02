@@ -6904,7 +6904,8 @@ proto.cs3.storage.provider.v1beta1.ListRecycleRequest.toObject = function(includ
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     fromTs: (f = msg.getFromTs()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
-    toTs: (f = msg.getToTs()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
+    toTs: (f = msg.getToTs()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
+    ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6955,6 +6956,11 @@ proto.cs3.storage.provider.v1beta1.ListRecycleRequest.deserializeBinaryFromReade
       var value = new cs3_types_v1beta1_types_pb.Timestamp;
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
       msg.setToTs(value);
+      break;
+    case 4:
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Reference;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
+      msg.setRef(value);
       break;
     default:
       reader.skipField();
@@ -7007,6 +7013,14 @@ proto.cs3.storage.provider.v1beta1.ListRecycleRequest.serializeBinaryToWriter = 
       3,
       f,
       cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getRef();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
     );
   }
 };
@@ -7120,6 +7134,43 @@ proto.cs3.storage.provider.v1beta1.ListRecycleRequest.prototype.clearToTs = func
  */
 proto.cs3.storage.provider.v1beta1.ListRecycleRequest.prototype.hasToTs = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional Reference ref = 4;
+ * @return {?proto.cs3.storage.provider.v1beta1.Reference}
+ */
+proto.cs3.storage.provider.v1beta1.ListRecycleRequest.prototype.getRef = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Reference} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Reference, 4));
+};
+
+
+/**
+ * @param {?proto.cs3.storage.provider.v1beta1.Reference|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.ListRecycleRequest} returns this
+*/
+proto.cs3.storage.provider.v1beta1.ListRecycleRequest.prototype.setRef = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.ListRecycleRequest} returns this
+ */
+proto.cs3.storage.provider.v1beta1.ListRecycleRequest.prototype.clearRef = function() {
+  return this.setRef(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.ListRecycleRequest.prototype.hasRef = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -7419,7 +7470,8 @@ proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.toObject = function(
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     fromTs: (f = msg.getFromTs()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
-    toTs: (f = msg.getToTs()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
+    toTs: (f = msg.getToTs()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
+    ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7470,6 +7522,11 @@ proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.deserializeBinaryFro
       var value = new cs3_types_v1beta1_types_pb.Timestamp;
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
       msg.setToTs(value);
+      break;
+    case 4:
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Reference;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
+      msg.setRef(value);
       break;
     default:
       reader.skipField();
@@ -7522,6 +7579,14 @@ proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.serializeBinaryToWri
       3,
       f,
       cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getRef();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
     );
   }
 };
@@ -7635,6 +7700,43 @@ proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.prototype.clearToTs 
  */
 proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.prototype.hasToTs = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional Reference ref = 4;
+ * @return {?proto.cs3.storage.provider.v1beta1.Reference}
+ */
+proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.prototype.getRef = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Reference} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Reference, 4));
+};
+
+
+/**
+ * @param {?proto.cs3.storage.provider.v1beta1.Reference|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest} returns this
+*/
+proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.prototype.setRef = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest} returns this
+ */
+proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.prototype.clearRef = function() {
+  return this.setRef(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.ListRecycleStreamRequest.prototype.hasRef = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
