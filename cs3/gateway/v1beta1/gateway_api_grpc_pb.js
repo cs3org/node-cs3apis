@@ -65,6 +65,28 @@ function deserialize_cs3_app_provider_v1beta1_OpenInAppResponse(buffer_arg) {
   return cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_app_registry_v1beta1_AddAppProviderRequest(arg) {
+  if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.AddAppProviderRequest)) {
+    throw new Error('Expected argument of type cs3.app.registry.v1beta1.AddAppProviderRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_registry_v1beta1_AddAppProviderRequest(buffer_arg) {
+  return cs3_app_registry_v1beta1_registry_api_pb.AddAppProviderRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_app_registry_v1beta1_AddAppProviderResponse(arg) {
+  if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.AddAppProviderResponse)) {
+    throw new Error('Expected argument of type cs3.app.registry.v1beta1.AddAppProviderResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_registry_v1beta1_AddAppProviderResponse(buffer_arg) {
+  return cs3_app_registry_v1beta1_registry_api_pb.AddAppProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_app_registry_v1beta1_GetAppProvidersRequest(arg) {
   if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.GetAppProvidersRequest)) {
     throw new Error('Expected argument of type cs3.app.registry.v1beta1.GetAppProvidersRequest');
@@ -87,6 +109,28 @@ function deserialize_cs3_app_registry_v1beta1_GetAppProvidersResponse(buffer_arg
   return cs3_app_registry_v1beta1_registry_api_pb.GetAppProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_app_registry_v1beta1_GetDefaultAppProviderForMimeTypeRequest(arg) {
+  if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.GetDefaultAppProviderForMimeTypeRequest)) {
+    throw new Error('Expected argument of type cs3.app.registry.v1beta1.GetDefaultAppProviderForMimeTypeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_registry_v1beta1_GetDefaultAppProviderForMimeTypeRequest(buffer_arg) {
+  return cs3_app_registry_v1beta1_registry_api_pb.GetDefaultAppProviderForMimeTypeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_app_registry_v1beta1_GetDefaultAppProviderForMimeTypeResponse(arg) {
+  if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.GetDefaultAppProviderForMimeTypeResponse)) {
+    throw new Error('Expected argument of type cs3.app.registry.v1beta1.GetDefaultAppProviderForMimeTypeResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_registry_v1beta1_GetDefaultAppProviderForMimeTypeResponse(buffer_arg) {
+  return cs3_app_registry_v1beta1_registry_api_pb.GetDefaultAppProviderForMimeTypeResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_app_registry_v1beta1_ListAppProvidersRequest(arg) {
   if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.ListAppProvidersRequest)) {
     throw new Error('Expected argument of type cs3.app.registry.v1beta1.ListAppProvidersRequest');
@@ -107,6 +151,28 @@ function serialize_cs3_app_registry_v1beta1_ListAppProvidersResponse(arg) {
 
 function deserialize_cs3_app_registry_v1beta1_ListAppProvidersResponse(buffer_arg) {
   return cs3_app_registry_v1beta1_registry_api_pb.ListAppProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeRequest(arg) {
+  if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.SetDefaultAppProviderForMimeTypeRequest)) {
+    throw new Error('Expected argument of type cs3.app.registry.v1beta1.SetDefaultAppProviderForMimeTypeRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeRequest(buffer_arg) {
+  return cs3_app_registry_v1beta1_registry_api_pb.SetDefaultAppProviderForMimeTypeRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeResponse(arg) {
+  if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.SetDefaultAppProviderForMimeTypeResponse)) {
+    throw new Error('Expected argument of type cs3.app.registry.v1beta1.SetDefaultAppProviderForMimeTypeResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeResponse(buffer_arg) {
+  return cs3_app_registry_v1beta1_registry_api_pb.SetDefaultAppProviderForMimeTypeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_auth_applications_v1beta1_GenerateAppPasswordRequest(arg) {
@@ -2622,6 +2688,18 @@ getAppProviders: {
     responseSerialize: serialize_cs3_app_registry_v1beta1_GetAppProvidersResponse,
     responseDeserialize: deserialize_cs3_app_registry_v1beta1_GetAppProvidersResponse,
   },
+  // Registers a new app provider to the registry.
+addAppProvider: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/AddAppProvider',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_app_registry_v1beta1_registry_api_pb.AddAppProviderRequest,
+    responseType: cs3_app_registry_v1beta1_registry_api_pb.AddAppProviderResponse,
+    requestSerialize: serialize_cs3_app_registry_v1beta1_AddAppProviderRequest,
+    requestDeserialize: deserialize_cs3_app_registry_v1beta1_AddAppProviderRequest,
+    responseSerialize: serialize_cs3_app_registry_v1beta1_AddAppProviderResponse,
+    responseDeserialize: deserialize_cs3_app_registry_v1beta1_AddAppProviderResponse,
+  },
   // Returns a list of the available app providers known by this registry.
 listAppProviders: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/ListAppProviders',
@@ -2633,6 +2711,30 @@ listAppProviders: {
     requestDeserialize: deserialize_cs3_app_registry_v1beta1_ListAppProvidersRequest,
     responseSerialize: serialize_cs3_app_registry_v1beta1_ListAppProvidersResponse,
     responseDeserialize: deserialize_cs3_app_registry_v1beta1_ListAppProvidersResponse,
+  },
+  // Returns the default app provider which serves a specified mime type.
+getDefaultAppProviderForMimeType: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/GetDefaultAppProviderForMimeType',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_app_registry_v1beta1_registry_api_pb.GetDefaultAppProviderForMimeTypeRequest,
+    responseType: cs3_app_registry_v1beta1_registry_api_pb.GetDefaultAppProviderForMimeTypeResponse,
+    requestSerialize: serialize_cs3_app_registry_v1beta1_GetDefaultAppProviderForMimeTypeRequest,
+    requestDeserialize: deserialize_cs3_app_registry_v1beta1_GetDefaultAppProviderForMimeTypeRequest,
+    responseSerialize: serialize_cs3_app_registry_v1beta1_GetDefaultAppProviderForMimeTypeResponse,
+    responseDeserialize: deserialize_cs3_app_registry_v1beta1_GetDefaultAppProviderForMimeTypeResponse,
+  },
+  // Sets the default app provider for a specified mime type.
+setDefaultAppProviderForMimeType: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/SetDefaultAppProviderForMimeType',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_app_registry_v1beta1_registry_api_pb.SetDefaultAppProviderForMimeTypeRequest,
+    responseType: cs3_app_registry_v1beta1_registry_api_pb.SetDefaultAppProviderForMimeTypeResponse,
+    requestSerialize: serialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeRequest,
+    requestDeserialize: deserialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeRequest,
+    responseSerialize: serialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeResponse,
+    responseDeserialize: deserialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeResponse,
   },
   // *****************************************************************/
 // ************************ USER PROVIDER **************************/

@@ -81,7 +81,8 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.toObject = function(includeInstance,
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     mimeTypesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     address: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, "")
+    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -132,6 +133,10 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.deserializeBinaryFromReader = functi
       msg.setAddress(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
@@ -186,10 +191,17 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getDescription();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -289,10 +301,10 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.setAddress = function(valu
 
 
 /**
- * optional string description = 4;
+ * optional string name = 4;
  * @return {string}
  */
-proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.getDescription = function() {
+proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -301,8 +313,26 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.getDescription = function(
  * @param {string} value
  * @return {!proto.cs3.app.registry.v1beta1.ProviderInfo} returns this
  */
-proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.setDescription = function(value) {
+proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string description = 5;
+ * @return {string}
+ */
+proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.app.registry.v1beta1.ProviderInfo} returns this
+ */
+proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

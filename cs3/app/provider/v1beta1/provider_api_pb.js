@@ -146,8 +146,7 @@ proto.cs3.app.provider.v1beta1.OpenInAppRequest.toObject = function(includeInsta
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     resourceInfo: (f = msg.getResourceInfo()) && cs3_storage_provider_v1beta1_resources_pb.ResourceInfo.toObject(includeInstance, f),
     viewMode: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    accessToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    app: jspb.Message.getFieldWithDefault(msg, 5, "")
+    accessToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -201,10 +200,6 @@ proto.cs3.app.provider.v1beta1.OpenInAppRequest.deserializeBinaryFromReader = fu
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setAccessToken(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setApp(value);
       break;
     default:
       reader.skipField();
@@ -262,13 +257,6 @@ proto.cs3.app.provider.v1beta1.OpenInAppRequest.serializeBinaryToWriter = functi
   if (f.length > 0) {
     writer.writeString(
       4,
-      f
-    );
-  }
-  f = message.getApp();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
       f
     );
   }
@@ -392,24 +380,6 @@ proto.cs3.app.provider.v1beta1.OpenInAppRequest.prototype.getAccessToken = funct
  */
 proto.cs3.app.provider.v1beta1.OpenInAppRequest.prototype.setAccessToken = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string app = 5;
- * @return {string}
- */
-proto.cs3.app.provider.v1beta1.OpenInAppRequest.prototype.getApp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.cs3.app.provider.v1beta1.OpenInAppRequest} returns this
- */
-proto.cs3.app.provider.v1beta1.OpenInAppRequest.prototype.setApp = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
