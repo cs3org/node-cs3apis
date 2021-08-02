@@ -115,6 +115,28 @@ function deserialize_cs3_app_registry_v1beta1_ListAppProvidersResponse(buffer_ar
   return cs3_app_registry_v1beta1_registry_api_pb.ListAppProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_app_registry_v1beta1_ListSupportedMimeTypesRequest(arg) {
+  if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.ListSupportedMimeTypesRequest)) {
+    throw new Error('Expected argument of type cs3.app.registry.v1beta1.ListSupportedMimeTypesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_registry_v1beta1_ListSupportedMimeTypesRequest(buffer_arg) {
+  return cs3_app_registry_v1beta1_registry_api_pb.ListSupportedMimeTypesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_app_registry_v1beta1_ListSupportedMimeTypesResponse(arg) {
+  if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.ListSupportedMimeTypesResponse)) {
+    throw new Error('Expected argument of type cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_app_registry_v1beta1_ListSupportedMimeTypesResponse(buffer_arg) {
+  return cs3_app_registry_v1beta1_registry_api_pb.ListSupportedMimeTypesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_app_registry_v1beta1_SetDefaultAppProviderForMimeTypeRequest(arg) {
   if (!(arg instanceof cs3_app_registry_v1beta1_registry_api_pb.SetDefaultAppProviderForMimeTypeRequest)) {
     throw new Error('Expected argument of type cs3.app.registry.v1beta1.SetDefaultAppProviderForMimeTypeRequest');
@@ -191,6 +213,18 @@ listAppProviders: {
     requestDeserialize: deserialize_cs3_app_registry_v1beta1_ListAppProvidersRequest,
     responseSerialize: serialize_cs3_app_registry_v1beta1_ListAppProvidersResponse,
     responseDeserialize: deserialize_cs3_app_registry_v1beta1_ListAppProvidersResponse,
+  },
+  // Returns a list of the supported mime types along with the apps which they can opened with.
+listSupportedMimeTypes: {
+    path: '/cs3.app.registry.v1beta1.RegistryAPI/ListSupportedMimeTypes',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_app_registry_v1beta1_registry_api_pb.ListSupportedMimeTypesRequest,
+    responseType: cs3_app_registry_v1beta1_registry_api_pb.ListSupportedMimeTypesResponse,
+    requestSerialize: serialize_cs3_app_registry_v1beta1_ListSupportedMimeTypesRequest,
+    requestDeserialize: deserialize_cs3_app_registry_v1beta1_ListSupportedMimeTypesRequest,
+    responseSerialize: serialize_cs3_app_registry_v1beta1_ListSupportedMimeTypesResponse,
+    responseDeserialize: deserialize_cs3_app_registry_v1beta1_ListSupportedMimeTypesResponse,
   },
   // Returns the default app provider which serves a specified mime type.
 getDefaultAppProviderForMimeType: {

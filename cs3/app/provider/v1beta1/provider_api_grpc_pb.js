@@ -26,28 +26,6 @@ var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.j
 var cs3_storage_provider_v1beta1_resources_pb = require('../../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../../cs3/types/v1beta1/types_pb.js');
 
-function serialize_cs3_app_provider_v1beta1_OpenFileInAppProviderRequest(arg) {
-  if (!(arg instanceof cs3_app_provider_v1beta1_provider_api_pb.OpenFileInAppProviderRequest)) {
-    throw new Error('Expected argument of type cs3.app.provider.v1beta1.OpenFileInAppProviderRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_app_provider_v1beta1_OpenFileInAppProviderRequest(buffer_arg) {
-  return cs3_app_provider_v1beta1_provider_api_pb.OpenFileInAppProviderRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_cs3_app_provider_v1beta1_OpenFileInAppProviderResponse(arg) {
-  if (!(arg instanceof cs3_app_provider_v1beta1_provider_api_pb.OpenFileInAppProviderResponse)) {
-    throw new Error('Expected argument of type cs3.app.provider.v1beta1.OpenFileInAppProviderResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_app_provider_v1beta1_OpenFileInAppProviderResponse(buffer_arg) {
-  return cs3_app_provider_v1beta1_provider_api_pb.OpenFileInAppProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_cs3_app_provider_v1beta1_OpenInAppRequest(arg) {
   if (!(arg instanceof cs3_app_provider_v1beta1_provider_api_pb.OpenInAppRequest)) {
     throw new Error('Expected argument of type cs3.app.provider.v1beta1.OpenInAppRequest');
@@ -91,19 +69,6 @@ function deserialize_cs3_app_provider_v1beta1_OpenInAppResponse(buffer_arg) {
 // Any method MAY return UNKNOWN.
 // Any method MAY return UNAUTHENTICATED.
 var ProviderAPIService = exports.ProviderAPIService = {
-  // Returns the App provider URL (deprecated)
-// MUST return CODE_NOT_FOUND if the resource does not exist.
-openFileInAppProvider: {
-    path: '/cs3.app.provider.v1beta1.ProviderAPI/OpenFileInAppProvider',
-    requestStream: false,
-    responseStream: false,
-    requestType: cs3_app_provider_v1beta1_provider_api_pb.OpenFileInAppProviderRequest,
-    responseType: cs3_app_provider_v1beta1_provider_api_pb.OpenFileInAppProviderResponse,
-    requestSerialize: serialize_cs3_app_provider_v1beta1_OpenFileInAppProviderRequest,
-    requestDeserialize: deserialize_cs3_app_provider_v1beta1_OpenFileInAppProviderRequest,
-    responseSerialize: serialize_cs3_app_provider_v1beta1_OpenFileInAppProviderResponse,
-    responseDeserialize: deserialize_cs3_app_provider_v1beta1_OpenFileInAppProviderResponse,
-  },
   // Returns the App provider URL
 // MUST return CODE_NOT_FOUND if the resource does not exist.
 openInApp: {
