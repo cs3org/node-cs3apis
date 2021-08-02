@@ -203,6 +203,28 @@ function deserialize_cs3_storage_provider_v1beta1_DeleteStorageSpaceResponse(buf
   return cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_storage_provider_v1beta1_DenyGrantRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.DenyGrantRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.DenyGrantRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_DenyGrantRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.DenyGrantRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_DenyGrantResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.DenyGrantResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.DenyGrantResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_DenyGrantResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.DenyGrantResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_storage_provider_v1beta1_GetHomeRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.GetHomeRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.GetHomeRequest');
@@ -747,6 +769,19 @@ delete: {
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_DeleteRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_DeleteResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_DeleteResponse,
+  },
+  // Denies access to the provided reference.
+// MUST return CODE_NOT_FOUND if the reference does not exist
+denyGrant: {
+    path: '/cs3.storage.provider.v1beta1.ProviderAPI/DenyGrant',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.DenyGrantRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.DenyGrantResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_DenyGrantRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_DenyGrantRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_DenyGrantResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_DenyGrantResponse,
   },
   // Returns the path reference for
 // the provided resource id reference.
