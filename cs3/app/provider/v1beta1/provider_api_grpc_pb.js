@@ -22,6 +22,7 @@
 'use strict';
 var grpc = require('grpc');
 var cs3_app_provider_v1beta1_provider_api_pb = require('../../../../cs3/app/provider/v1beta1/provider_api_pb.js');
+var cs3_app_provider_v1beta1_resources_pb = require('../../../../cs3/app/provider/v1beta1/resources_pb.js');
 var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.js');
 var cs3_storage_provider_v1beta1_resources_pb = require('../../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../../cs3/types/v1beta1/types_pb.js');
