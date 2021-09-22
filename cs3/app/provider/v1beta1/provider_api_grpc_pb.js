@@ -70,7 +70,7 @@ function deserialize_cs3_app_provider_v1beta1_OpenInAppResponse(buffer_arg) {
 // Any method MAY return UNKNOWN.
 // Any method MAY return UNAUTHENTICATED.
 var ProviderAPIService = exports.ProviderAPIService = {
-  // Returns the App provider URL
+  // Returns the App URL and all necessary info to open a resource in an online editor.
 // MUST return CODE_NOT_FOUND if the resource does not exist.
 openInApp: {
     path: '/cs3.app.provider.v1beta1.ProviderAPI/OpenInApp',

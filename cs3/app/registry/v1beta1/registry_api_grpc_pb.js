@@ -214,7 +214,7 @@ listAppProviders: {
     responseSerialize: serialize_cs3_app_registry_v1beta1_ListAppProvidersResponse,
     responseDeserialize: deserialize_cs3_app_registry_v1beta1_ListAppProvidersResponse,
   },
-  // Returns a list of the supported mime types along with the apps which they can opened with.
+  // Returns a list of the supported mime types along with the apps which they can be opened with.
 listSupportedMimeTypes: {
     path: '/cs3.app.registry.v1beta1.RegistryAPI/ListSupportedMimeTypes',
     requestStream: false,

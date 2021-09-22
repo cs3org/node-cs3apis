@@ -2315,7 +2315,8 @@ deleteStorageSpace: {
   // *****************************************************************/
 // ************************ APP PROVIDER ********************/
 // *****************************************************************/
-// Returns the App provider URL, which allows the user to open a resource in an online editor.
+// Returns the App URL and all necessary info to open a resource in an online editor.
+// MUST return CODE_NOT_FOUND if the resource does not exist.
 openInApp: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/OpenInApp',
     requestStream: false,
