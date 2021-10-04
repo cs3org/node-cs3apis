@@ -26,6 +26,7 @@ var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.j
 var cs3_sharing_collaboration_v1beta1_resources_pb = require('../../../../cs3/sharing/collaboration/v1beta1/resources_pb.js');
 var cs3_storage_provider_v1beta1_resources_pb = require('../../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../../cs3/types/v1beta1/types_pb.js');
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 
 function serialize_cs3_sharing_collaboration_v1beta1_CreateShareRequest(arg) {
   if (!(arg instanceof cs3_sharing_collaboration_v1beta1_collaboration_api_pb.CreateShareRequest)) {
