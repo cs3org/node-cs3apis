@@ -20,7 +20,7 @@
 // or submit itself to any jurisdiction.
 //
 'use strict';
-var grpc = require('grpc');
+var grpc = require('@grpc/grpc-js');
 var cs3_auth_applications_v1beta1_applications_api_pb = require('../../../../cs3/auth/applications/v1beta1/applications_api_pb.js');
 var cs3_auth_applications_v1beta1_resources_pb = require('../../../../cs3/auth/applications/v1beta1/resources_pb.js');
 var cs3_auth_provider_v1beta1_resources_pb = require('../../../../cs3/auth/provider/v1beta1/resources_pb.js');
