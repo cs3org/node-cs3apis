@@ -20,7 +20,7 @@
 // or submit itself to any jurisdiction.
 //
 'use strict';
-var grpc = require('grpc');
+var grpc = require('@grpc/grpc-js');
 var cs3_sharing_ocm_v1beta1_ocm_api_pb = require('../../../../cs3/sharing/ocm/v1beta1/ocm_api_pb.js');
 var cs3_identity_user_v1beta1_resources_pb = require('../../../../cs3/identity/user/v1beta1/resources_pb.js');
 var cs3_ocm_provider_v1beta1_resources_pb = require('../../../../cs3/ocm/provider/v1beta1/resources_pb.js');
@@ -28,6 +28,7 @@ var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.j
 var cs3_sharing_ocm_v1beta1_resources_pb = require('../../../../cs3/sharing/ocm/v1beta1/resources_pb.js');
 var cs3_storage_provider_v1beta1_resources_pb = require('../../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../../cs3/types/v1beta1/types_pb.js');
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 
 function serialize_cs3_sharing_ocm_v1beta1_CreateOCMShareRequest(arg) {
   if (!(arg instanceof cs3_sharing_ocm_v1beta1_ocm_api_pb.CreateOCMShareRequest)) {

@@ -20,7 +20,7 @@
 // or submit itself to any jurisdiction.
 //
 'use strict';
-var grpc = require('grpc');
+var grpc = require('@grpc/grpc-js');
 var cs3_gateway_v1beta1_gateway_api_pb = require('../../../cs3/gateway/v1beta1/gateway_api_pb.js');
 var cs3_app_provider_v1beta1_provider_api_pb = require('../../../cs3/app/provider/v1beta1/provider_api_pb.js');
 var cs3_app_registry_v1beta1_registry_api_pb = require('../../../cs3/app/registry/v1beta1/registry_api_pb.js');
@@ -2315,7 +2315,8 @@ deleteStorageSpace: {
   // *****************************************************************/
 // ************************ APP PROVIDER ********************/
 // *****************************************************************/
-// Returns the App provider URL, which allows the user to open a resource in an online editor.
+// Returns the App URL and all necessary info to open a resource in an online editor.
+// MUST return CODE_NOT_FOUND if the resource does not exist.
 openInApp: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/OpenInApp',
     requestStream: false,

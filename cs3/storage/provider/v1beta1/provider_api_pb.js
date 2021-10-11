@@ -3979,7 +3979,8 @@ proto.cs3.storage.provider.v1beta1.GetQuotaRequest.prototype.toObject = function
  */
 proto.cs3.storage.provider.v1beta1.GetQuotaRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f)
+    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
+    ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4021,6 +4022,11 @@ proto.cs3.storage.provider.v1beta1.GetQuotaRequest.deserializeBinaryFromReader =
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Opaque.deserializeBinaryFromReader);
       msg.setOpaque(value);
       break;
+    case 2:
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Reference;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
+      msg.setRef(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4056,6 +4062,14 @@ proto.cs3.storage.provider.v1beta1.GetQuotaRequest.serializeBinaryToWriter = fun
       1,
       f,
       cs3_types_v1beta1_types_pb.Opaque.serializeBinaryToWriter
+    );
+  }
+  f = message.getRef();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
     );
   }
 };
@@ -4095,6 +4109,43 @@ proto.cs3.storage.provider.v1beta1.GetQuotaRequest.prototype.clearOpaque = funct
  */
 proto.cs3.storage.provider.v1beta1.GetQuotaRequest.prototype.hasOpaque = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Reference ref = 2;
+ * @return {?proto.cs3.storage.provider.v1beta1.Reference}
+ */
+proto.cs3.storage.provider.v1beta1.GetQuotaRequest.prototype.getRef = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Reference} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Reference, 2));
+};
+
+
+/**
+ * @param {?proto.cs3.storage.provider.v1beta1.Reference|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.GetQuotaRequest} returns this
+*/
+proto.cs3.storage.provider.v1beta1.GetQuotaRequest.prototype.setRef = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.GetQuotaRequest} returns this
+ */
+proto.cs3.storage.provider.v1beta1.GetQuotaRequest.prototype.clearRef = function() {
+  return this.setRef(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.GetQuotaRequest.prototype.hasRef = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

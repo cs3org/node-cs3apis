@@ -20,7 +20,7 @@
 // or submit itself to any jurisdiction.
 //
 'use strict';
-var grpc = require('grpc');
+var grpc = require('@grpc/grpc-js');
 var cs3_app_registry_v1beta1_registry_api_pb = require('../../../../cs3/app/registry/v1beta1/registry_api_pb.js');
 var cs3_app_registry_v1beta1_resources_pb = require('../../../../cs3/app/registry/v1beta1/resources_pb.js');
 var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.js');
@@ -214,7 +214,7 @@ listAppProviders: {
     responseSerialize: serialize_cs3_app_registry_v1beta1_ListAppProvidersResponse,
     responseDeserialize: deserialize_cs3_app_registry_v1beta1_ListAppProvidersResponse,
   },
-  // Returns a list of the supported mime types along with the apps which they can opened with.
+  // Returns a list of the supported mime types along with the apps which they can be opened with.
 listSupportedMimeTypes: {
     path: '/cs3.app.registry.v1beta1.RegistryAPI/ListSupportedMimeTypes',
     requestStream: false,
