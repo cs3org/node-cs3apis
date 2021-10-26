@@ -230,7 +230,8 @@ proto.cs3.identity.user.v1beta1.GetUserRequest.prototype.toObject = function(opt
 proto.cs3.identity.user.v1beta1.GetUserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
-    userId: (f = msg.getUserId()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f)
+    userId: (f = msg.getUserId()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f),
+    skipFetchingUserGroups: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -277,6 +278,10 @@ proto.cs3.identity.user.v1beta1.GetUserRequest.deserializeBinaryFromReader = fun
       reader.readMessage(value,cs3_identity_user_v1beta1_resources_pb.UserId.deserializeBinaryFromReader);
       msg.setUserId(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSkipFetchingUserGroups(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -320,6 +325,13 @@ proto.cs3.identity.user.v1beta1.GetUserRequest.serializeBinaryToWriter = functio
       2,
       f,
       cs3_identity_user_v1beta1_resources_pb.UserId.serializeBinaryToWriter
+    );
+  }
+  f = message.getSkipFetchingUserGroups();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
     );
   }
 };
@@ -396,6 +408,24 @@ proto.cs3.identity.user.v1beta1.GetUserRequest.prototype.clearUserId = function(
  */
 proto.cs3.identity.user.v1beta1.GetUserRequest.prototype.hasUserId = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool skip_fetching_user_groups = 3;
+ * @return {boolean}
+ */
+proto.cs3.identity.user.v1beta1.GetUserRequest.prototype.getSkipFetchingUserGroups = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.cs3.identity.user.v1beta1.GetUserRequest} returns this
+ */
+proto.cs3.identity.user.v1beta1.GetUserRequest.prototype.setSkipFetchingUserGroups = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -686,7 +716,8 @@ proto.cs3.identity.user.v1beta1.GetUserByClaimRequest.toObject = function(includ
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     claim: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 3, "")
+    value: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    skipFetchingUserGroups: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -736,6 +767,10 @@ proto.cs3.identity.user.v1beta1.GetUserByClaimRequest.deserializeBinaryFromReade
       var value = /** @type {string} */ (reader.readString());
       msg.setValue(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSkipFetchingUserGroups(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -784,6 +819,13 @@ proto.cs3.identity.user.v1beta1.GetUserByClaimRequest.serializeBinaryToWriter = 
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getSkipFetchingUserGroups();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -860,6 +902,24 @@ proto.cs3.identity.user.v1beta1.GetUserByClaimRequest.prototype.getValue = funct
  */
 proto.cs3.identity.user.v1beta1.GetUserByClaimRequest.prototype.setValue = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional bool skip_fetching_user_groups = 4;
+ * @return {boolean}
+ */
+proto.cs3.identity.user.v1beta1.GetUserByClaimRequest.prototype.getSkipFetchingUserGroups = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.cs3.identity.user.v1beta1.GetUserByClaimRequest} returns this
+ */
+proto.cs3.identity.user.v1beta1.GetUserByClaimRequest.prototype.setSkipFetchingUserGroups = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -1609,7 +1669,8 @@ proto.cs3.identity.user.v1beta1.FindUsersRequest.prototype.toObject = function(o
 proto.cs3.identity.user.v1beta1.FindUsersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
-    filter: jspb.Message.getFieldWithDefault(msg, 2, "")
+    filter: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    skipFetchingUserGroups: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -1655,6 +1716,10 @@ proto.cs3.identity.user.v1beta1.FindUsersRequest.deserializeBinaryFromReader = f
       var value = /** @type {string} */ (reader.readString());
       msg.setFilter(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSkipFetchingUserGroups(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1696,6 +1761,13 @@ proto.cs3.identity.user.v1beta1.FindUsersRequest.serializeBinaryToWriter = funct
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getSkipFetchingUserGroups();
+  if (f) {
+    writer.writeBool(
+      3,
       f
     );
   }
@@ -1754,6 +1826,24 @@ proto.cs3.identity.user.v1beta1.FindUsersRequest.prototype.getFilter = function(
  */
 proto.cs3.identity.user.v1beta1.FindUsersRequest.prototype.setFilter = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool skip_fetching_user_groups = 3;
+ * @return {boolean}
+ */
+proto.cs3.identity.user.v1beta1.FindUsersRequest.prototype.getSkipFetchingUserGroups = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.cs3.identity.user.v1beta1.FindUsersRequest} returns this
+ */
+proto.cs3.identity.user.v1beta1.FindUsersRequest.prototype.setSkipFetchingUserGroups = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
