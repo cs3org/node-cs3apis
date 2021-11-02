@@ -845,6 +845,9 @@ export class ListRecycleRequest extends jspb.Message {
   getRef(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setRef(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getKey(): string;
+  setKey(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecycleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListRecycleRequest): ListRecycleRequest.AsObject;
@@ -861,6 +864,7 @@ export namespace ListRecycleRequest {
     fromTs?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     toTs?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    key: string,
   }
 }
 
@@ -919,6 +923,9 @@ export class ListRecycleStreamRequest extends jspb.Message {
   getRef(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setRef(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getKey(): string;
+  setKey(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecycleStreamRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListRecycleStreamRequest): ListRecycleStreamRequest.AsObject;
@@ -935,6 +942,7 @@ export namespace ListRecycleStreamRequest {
     fromTs?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     toTs?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    key: string,
   }
 }
 
@@ -1045,6 +1053,9 @@ export class PurgeRecycleRequest extends jspb.Message {
   getRef(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setRef(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getKey(): string;
+  setKey(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PurgeRecycleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: PurgeRecycleRequest): PurgeRecycleRequest.AsObject;
@@ -1059,6 +1070,7 @@ export namespace PurgeRecycleRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    key: string,
   }
 }
 

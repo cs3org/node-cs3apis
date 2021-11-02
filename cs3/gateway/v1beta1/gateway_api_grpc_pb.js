@@ -351,28 +351,6 @@ function deserialize_cs3_gateway_v1beta1_ListAuthProvidersResponse(buffer_arg) {
   return cs3_gateway_v1beta1_gateway_api_pb.ListAuthProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_cs3_gateway_v1beta1_ListRecycleRequest(arg) {
-  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest)) {
-    throw new Error('Expected argument of type cs3.gateway.v1beta1.ListRecycleRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_gateway_v1beta1_ListRecycleRequest(buffer_arg) {
-  return cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_cs3_gateway_v1beta1_ListRecycleStreamRequest(arg) {
-  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest)) {
-    throw new Error('Expected argument of type cs3.gateway.v1beta1.ListRecycleStreamRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_gateway_v1beta1_ListRecycleStreamRequest(buffer_arg) {
-  return cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_cs3_gateway_v1beta1_OpenInAppRequest(arg) {
   if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest)) {
     throw new Error('Expected argument of type cs3.gateway.v1beta1.OpenInAppRequest');
@@ -382,17 +360,6 @@ function serialize_cs3_gateway_v1beta1_OpenInAppRequest(arg) {
 
 function deserialize_cs3_gateway_v1beta1_OpenInAppRequest(buffer_arg) {
   return cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_cs3_gateway_v1beta1_PurgeRecycleRequest(arg) {
-  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest)) {
-    throw new Error('Expected argument of type cs3.gateway.v1beta1.PurgeRecycleRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_gateway_v1beta1_PurgeRecycleRequest(buffer_arg) {
-  return cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_gateway_v1beta1_WhoAmIRequest(arg) {
@@ -1616,6 +1583,17 @@ function deserialize_cs3_storage_provider_v1beta1_ListFileVersionsResponse(buffe
   return cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_storage_provider_v1beta1_ListRecycleRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.ListRecycleRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_ListRecycleRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_storage_provider_v1beta1_ListRecycleResponse(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.ListRecycleResponse');
@@ -1625,6 +1603,17 @@ function serialize_cs3_storage_provider_v1beta1_ListRecycleResponse(arg) {
 
 function deserialize_cs3_storage_provider_v1beta1_ListRecycleResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_ListRecycleStreamRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.ListRecycleStreamRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_ListRecycleStreamRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_ListRecycleStreamResponse(arg) {
@@ -1680,6 +1669,17 @@ function serialize_cs3_storage_provider_v1beta1_MoveResponse(arg) {
 
 function deserialize_cs3_storage_provider_v1beta1_MoveResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_PurgeRecycleRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.PurgeRecycleRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_PurgeRecycleRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_PurgeRecycleResponse(arg) {
@@ -2123,10 +2123,10 @@ listRecycleStream: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/ListRecycleStream',
     requestStream: false,
     responseStream: true,
-    requestType: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest,
     responseType: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse,
-    requestSerialize: serialize_cs3_gateway_v1beta1_ListRecycleStreamRequest,
-    requestDeserialize: deserialize_cs3_gateway_v1beta1_ListRecycleStreamRequest,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_ListRecycleStreamRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_ListRecycleStreamRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_ListRecycleStreamResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_ListRecycleStreamResponse,
   },
@@ -2136,10 +2136,10 @@ listRecycle: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/ListRecycle',
     requestStream: false,
     responseStream: false,
-    requestType: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest,
     responseType: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse,
-    requestSerialize: serialize_cs3_gateway_v1beta1_ListRecycleRequest,
-    requestDeserialize: deserialize_cs3_gateway_v1beta1_ListRecycleRequest,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_ListRecycleRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_ListRecycleRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_ListRecycleResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_ListRecycleResponse,
   },
@@ -2165,10 +2165,10 @@ purgeRecycle: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/PurgeRecycle',
     requestStream: false,
     responseStream: false,
-    requestType: cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest,
     responseType: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse,
-    requestSerialize: serialize_cs3_gateway_v1beta1_PurgeRecycleRequest,
-    requestDeserialize: deserialize_cs3_gateway_v1beta1_PurgeRecycleRequest,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_PurgeRecycleRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_PurgeRecycleRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_PurgeRecycleResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_PurgeRecycleResponse,
   },

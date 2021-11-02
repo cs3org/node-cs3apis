@@ -18,6 +18,9 @@ export class GetGroupRequest extends jspb.Message {
   getGroupId(): cs3_identity_group_v1beta1_resources_pb.GroupId | undefined;
   setGroupId(value?: cs3_identity_group_v1beta1_resources_pb.GroupId): void;
 
+  getSkipFetchingMembers(): boolean;
+  setSkipFetchingMembers(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetGroupRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetGroupRequest): GetGroupRequest.AsObject;
@@ -32,6 +35,7 @@ export namespace GetGroupRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     groupId?: cs3_identity_group_v1beta1_resources_pb.GroupId.AsObject,
+    skipFetchingMembers: boolean,
   }
 }
 
@@ -81,6 +85,9 @@ export class GetGroupByClaimRequest extends jspb.Message {
   getValue(): string;
   setValue(value: string): void;
 
+  getSkipFetchingMembers(): boolean;
+  setSkipFetchingMembers(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetGroupByClaimRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetGroupByClaimRequest): GetGroupByClaimRequest.AsObject;
@@ -96,6 +103,7 @@ export namespace GetGroupByClaimRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     claim: string,
     value: string,
+    skipFetchingMembers: boolean,
   }
 }
 
@@ -270,6 +278,9 @@ export class FindGroupsRequest extends jspb.Message {
   getFilter(): string;
   setFilter(value: string): void;
 
+  getSkipFetchingMembers(): boolean;
+  setSkipFetchingMembers(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FindGroupsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: FindGroupsRequest): FindGroupsRequest.AsObject;
@@ -284,6 +295,7 @@ export namespace FindGroupsRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     filter: string,
+    skipFetchingMembers: boolean,
   }
 }
 

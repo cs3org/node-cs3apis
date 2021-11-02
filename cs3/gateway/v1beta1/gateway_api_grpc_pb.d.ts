@@ -261,22 +261,22 @@ interface IGatewayAPIService_IListFileVersions extends grpc.MethodDefinition<cs3
   responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse>;
 }
 
-interface IGatewayAPIService_IListRecycleStream extends grpc.MethodDefinition<cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse> {
+interface IGatewayAPIService_IListRecycleStream extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/ListRecycleStream'
   requestStream: false
   responseStream: true
-  requestSerialize: grpc.serialize<cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest>;
-  requestDeserialize: grpc.deserialize<cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest>;
+  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest>;
+  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest>;
   responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
   responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
 }
 
-interface IGatewayAPIService_IListRecycle extends grpc.MethodDefinition<cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse> {
+interface IGatewayAPIService_IListRecycle extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/ListRecycle'
   requestStream: false
   responseStream: false
-  requestSerialize: grpc.serialize<cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest>;
-  requestDeserialize: grpc.deserialize<cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest>;
+  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest>;
+  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest>;
   responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse>;
   responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse>;
 }
@@ -291,12 +291,12 @@ interface IGatewayAPIService_IMove extends grpc.MethodDefinition<cs3_storage_pro
   responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse>;
 }
 
-interface IGatewayAPIService_IPurgeRecycle extends grpc.MethodDefinition<cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest, cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse> {
+interface IGatewayAPIService_IPurgeRecycle extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest, cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/PurgeRecycle'
   requestStream: false
   responseStream: false
-  requestSerialize: grpc.serialize<cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest>;
-  requestDeserialize: grpc.deserialize<cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest>;
+  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest>;
+  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest>;
   responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse>;
   responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse>;
 }
@@ -968,10 +968,10 @@ export interface IGatewayAPIServer extends grpc.UntypedServiceImplementation {
   listContainerStream: grpc.handleServerStreamingCall<cs3_storage_provider_v1beta1_provider_api_pb.ListContainerStreamRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListContainerStreamResponse>;
   listContainer: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.ListContainerRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListContainerResponse>;
   listFileVersions: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse>;
-  listRecycleStream: grpc.handleServerStreamingCall<cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
-  listRecycle: grpc.handleUnaryCall<cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse>;
+  listRecycleStream: grpc.handleServerStreamingCall<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
+  listRecycle: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse>;
   move: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.MoveRequest, cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse>;
-  purgeRecycle: grpc.handleUnaryCall<cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest, cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse>;
+  purgeRecycle: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest, cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse>;
   restoreFileVersion: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionRequest, cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionResponse>;
   restoreRecycleItem: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.RestoreRecycleItemRequest, cs3_storage_provider_v1beta1_provider_api_pb.RestoreRecycleItemResponse>;
   stat: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.StatRequest, cs3_storage_provider_v1beta1_provider_api_pb.StatResponse>;
@@ -1084,17 +1084,17 @@ export interface IGatewayAPIClient {
   listFileVersions(request: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse) => void): grpc.ClientUnaryCall;
   listFileVersions(request: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse) => void): grpc.ClientUnaryCall;
   listFileVersions(request: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse) => void): grpc.ClientUnaryCall;
-  listRecycleStream(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
-  listRecycleStream(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
-  listRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
-  listRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
-  listRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
+  listRecycleStream(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
+  listRecycleStream(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
+  listRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
+  listRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
+  listRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
   move(request: cs3_storage_provider_v1beta1_provider_api_pb.MoveRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse) => void): grpc.ClientUnaryCall;
   move(request: cs3_storage_provider_v1beta1_provider_api_pb.MoveRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse) => void): grpc.ClientUnaryCall;
   move(request: cs3_storage_provider_v1beta1_provider_api_pb.MoveRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse) => void): grpc.ClientUnaryCall;
-  purgeRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
-  purgeRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
-  purgeRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
+  purgeRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
+  purgeRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
+  purgeRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
   restoreFileVersion(request: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionResponse) => void): grpc.ClientUnaryCall;
   restoreFileVersion(request: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionResponse) => void): grpc.ClientUnaryCall;
   restoreFileVersion(request: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionResponse) => void): grpc.ClientUnaryCall;
@@ -1338,17 +1338,17 @@ export class GatewayAPIClient extends grpc.Client implements IGatewayAPIClient {
   public listFileVersions(request: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse) => void): grpc.ClientUnaryCall;
   public listFileVersions(request: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse) => void): grpc.ClientUnaryCall;
   public listFileVersions(request: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListFileVersionsResponse) => void): grpc.ClientUnaryCall;
-  public listRecycleStream(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
-  public listRecycleStream(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleStreamRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
-  public listRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
-  public listRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
-  public listRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.ListRecycleRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
+  public listRecycleStream(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
+  public listRecycleStream(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamRequest, metadata?: grpc.Metadata, options?: Partial<grpc.CallOptions>): grpc.ClientReadableStream<cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleStreamResponse>;
+  public listRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
+  public listRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
+  public listRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListRecycleResponse) => void): grpc.ClientUnaryCall;
   public move(request: cs3_storage_provider_v1beta1_provider_api_pb.MoveRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse) => void): grpc.ClientUnaryCall;
   public move(request: cs3_storage_provider_v1beta1_provider_api_pb.MoveRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse) => void): grpc.ClientUnaryCall;
   public move(request: cs3_storage_provider_v1beta1_provider_api_pb.MoveRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.MoveResponse) => void): grpc.ClientUnaryCall;
-  public purgeRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
-  public purgeRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
-  public purgeRecycle(request: cs3_gateway_v1beta1_gateway_api_pb.PurgeRecycleRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
+  public purgeRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
+  public purgeRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
+  public purgeRecycle(request: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse) => void): grpc.ClientUnaryCall;
   public restoreFileVersion(request: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionResponse) => void): grpc.ClientUnaryCall;
   public restoreFileVersion(request: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionResponse) => void): grpc.ClientUnaryCall;
   public restoreFileVersion(request: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionResponse) => void): grpc.ClientUnaryCall;

@@ -17,6 +17,9 @@ export class GetUserRequest extends jspb.Message {
   getUserId(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
   setUserId(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
 
+  getSkipFetchingUserGroups(): boolean;
+  setSkipFetchingUserGroups(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserRequest): GetUserRequest.AsObject;
@@ -31,6 +34,7 @@ export namespace GetUserRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     userId?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
+    skipFetchingUserGroups: boolean,
   }
 }
 
@@ -80,6 +84,9 @@ export class GetUserByClaimRequest extends jspb.Message {
   getValue(): string;
   setValue(value: string): void;
 
+  getSkipFetchingUserGroups(): boolean;
+  setSkipFetchingUserGroups(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetUserByClaimRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetUserByClaimRequest): GetUserByClaimRequest.AsObject;
@@ -95,6 +102,7 @@ export namespace GetUserByClaimRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     claim: string,
     value: string,
+    skipFetchingUserGroups: boolean,
   }
 }
 
@@ -203,6 +211,9 @@ export class FindUsersRequest extends jspb.Message {
   getFilter(): string;
   setFilter(value: string): void;
 
+  getSkipFetchingUserGroups(): boolean;
+  setSkipFetchingUserGroups(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FindUsersRequest.AsObject;
   static toObject(includeInstance: boolean, msg: FindUsersRequest): FindUsersRequest.AsObject;
@@ -217,6 +228,7 @@ export namespace FindUsersRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     filter: string,
+    skipFetchingUserGroups: boolean,
   }
 }
 
