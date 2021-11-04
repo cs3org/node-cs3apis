@@ -505,7 +505,8 @@ proto.cs3.app.registry.v1beta1.MimeTypeInfo.toObject = function(includeInstance,
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     icon: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    allowCreation: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    allowCreation: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    defaultApplication: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -575,6 +576,10 @@ proto.cs3.app.registry.v1beta1.MimeTypeInfo.deserializeBinaryFromReader = functi
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAllowCreation(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDefaultApplication(value);
       break;
     default:
       reader.skipField();
@@ -660,6 +665,13 @@ proto.cs3.app.registry.v1beta1.MimeTypeInfo.serializeBinaryToWriter = function(m
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getDefaultApplication();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -846,6 +858,24 @@ proto.cs3.app.registry.v1beta1.MimeTypeInfo.prototype.getAllowCreation = functio
  */
 proto.cs3.app.registry.v1beta1.MimeTypeInfo.prototype.setAllowCreation = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional string default_application = 9;
+ * @return {string}
+ */
+proto.cs3.app.registry.v1beta1.MimeTypeInfo.prototype.getDefaultApplication = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.app.registry.v1beta1.MimeTypeInfo} returns this
+ */
+proto.cs3.app.registry.v1beta1.MimeTypeInfo.prototype.setDefaultApplication = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
