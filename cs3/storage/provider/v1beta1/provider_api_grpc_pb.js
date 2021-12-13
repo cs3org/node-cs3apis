@@ -643,6 +643,28 @@ function deserialize_cs3_storage_provider_v1beta1_StatResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.StatResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_storage_provider_v1beta1_TouchFileRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.TouchFileRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.TouchFileRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_TouchFileRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.TouchFileRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_TouchFileResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.TouchFileResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.TouchFileResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_TouchFileResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.TouchFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_storage_provider_v1beta1_UnsetArbitraryMetadataRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.UnsetArbitraryMetadataRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.UnsetArbitraryMetadataRequest');
@@ -753,6 +775,20 @@ createContainer: {
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_CreateContainerRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_CreateContainerResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_CreateContainerResponse,
+  },
+  // Creates a new resource of type file.
+// MUST return CODE_PRECONDITION_FAILED if the file
+// cannot be created at the specified reference.
+touchFile: {
+    path: '/cs3.storage.provider.v1beta1.ProviderAPI/TouchFile',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.TouchFileRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.TouchFileResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_TouchFileRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_TouchFileRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_TouchFileResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_TouchFileResponse,
   },
   // Deletes a resource.
 // If a resource specifies the non-empty container (directory, ...),
