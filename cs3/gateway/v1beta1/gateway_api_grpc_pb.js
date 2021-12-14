@@ -1462,6 +1462,28 @@ function deserialize_cs3_storage_provider_v1beta1_GetHomeResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.GetHomeResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_storage_provider_v1beta1_GetLockRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.GetLockRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.GetLockRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_GetLockRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.GetLockRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_GetLockResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.GetLockResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.GetLockResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_GetLockResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.GetLockResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_storage_provider_v1beta1_GetPathRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.GetPathRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.GetPathRequest');
@@ -1693,6 +1715,28 @@ function deserialize_cs3_storage_provider_v1beta1_PurgeRecycleResponse(buffer_ar
   return cs3_storage_provider_v1beta1_provider_api_pb.PurgeRecycleResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_storage_provider_v1beta1_RefreshLockRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.RefreshLockRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_RefreshLockRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_RefreshLockResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.RefreshLockResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_RefreshLockResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_storage_provider_v1beta1_RestoreFileVersionRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.RestoreFileVersionRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.RestoreFileVersionRequest');
@@ -1759,6 +1803,28 @@ function deserialize_cs3_storage_provider_v1beta1_SetArbitraryMetadataResponse(b
   return cs3_storage_provider_v1beta1_provider_api_pb.SetArbitraryMetadataResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_storage_provider_v1beta1_SetLockRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.SetLockRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.SetLockRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_SetLockRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.SetLockRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_SetLockResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.SetLockResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.SetLockResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_SetLockResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.SetLockResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_storage_provider_v1beta1_StatRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.StatRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.StatRequest');
@@ -1801,6 +1867,28 @@ function serialize_cs3_storage_provider_v1beta1_TouchFileResponse(arg) {
 
 function deserialize_cs3_storage_provider_v1beta1_TouchFileResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.TouchFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_UnlockRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.UnlockRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.UnlockRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_UnlockRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.UnlockRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_UnlockResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.UnlockResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.UnlockResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_UnlockResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.UnlockResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_UnsetArbitraryMetadataRequest(arg) {
@@ -2287,6 +2375,69 @@ unsetArbitraryMetadata: {
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_UnsetArbitraryMetadataRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_UnsetArbitraryMetadataResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_UnsetArbitraryMetadataResponse,
+  },
+  // Locks a storage resource.
+// MUST return CODE_NOT_FOUND if the reference does not exist.
+// MUST return CODE_PRECONDITION_FAILED if the reference is already locked.
+// In addition, the implementation MUST ensure atomicity when multiple users
+// concurrently attempt to set a lock.
+// The caller MUST have write permissions on the resource.
+setLock: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/SetLock',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.SetLockRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.SetLockResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_SetLockRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_SetLockRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_SetLockResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_SetLockResponse,
+  },
+  // Gets the lock metadata of a storage resource.
+// MUST return CODE_NOT_FOUND if the reference does not exist or is not locked.
+// The caller MUST have read permissions on the resource.
+getLock: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/GetLock',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.GetLockRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.GetLockResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_GetLockRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_GetLockRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_GetLockResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_GetLockResponse,
+  },
+  // Refreshes the lock metadata of a storage resource.
+// MUST return CODE_NOT_FOUND if the reference does not exist.
+// MUST return CODE_PRECONDITION_FAILED if the reference is not locked
+// or if the caller does not hold the lock.
+// The caller MUST have write permissions on the resource.
+refreshLock: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/RefreshLock',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_RefreshLockRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_RefreshLockRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_RefreshLockResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_RefreshLockResponse,
+  },
+  // Unlocks a storage resource.
+// MUST return CODE_NOT_FOUND if the reference does not exist.
+// MUST return CODE_PRECONDITION_FAILED if the reference is not locked
+// or if the caller does not hold the lock.
+// The caller MUST have write permissions on the resource.
+unlock: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/Unlock',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.UnlockRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.UnlockResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_UnlockRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_UnlockRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_UnlockResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_UnlockResponse,
   },
   // Creates the home directory for a user.
 createHome: {
