@@ -33,6 +33,7 @@ var cs3_identity_user_v1beta1_user_api_pb = require('../../../cs3/identity/user/
 var cs3_ocm_core_v1beta1_ocm_core_api_pb = require('../../../cs3/ocm/core/v1beta1/ocm_core_api_pb.js');
 var cs3_ocm_invite_v1beta1_invite_api_pb = require('../../../cs3/ocm/invite/v1beta1/invite_api_pb.js');
 var cs3_ocm_provider_v1beta1_provider_api_pb = require('../../../cs3/ocm/provider/v1beta1/provider_api_pb.js');
+var cs3_permissions_v1beta1_permissions_api_pb = require('../../../cs3/permissions/v1beta1/permissions_api_pb.js');
 var cs3_preferences_v1beta1_preferences_api_pb = require('../../../cs3/preferences/v1beta1/preferences_api_pb.js');
 var cs3_rpc_v1beta1_status_pb = require('../../../cs3/rpc/v1beta1/status_pb.js');
 var cs3_sharing_collaboration_v1beta1_collaboration_api_pb = require('../../../cs3/sharing/collaboration/v1beta1/collaboration_api_pb.js');
@@ -778,6 +779,28 @@ function serialize_cs3_ocm_provider_v1beta1_ListAllProvidersResponse(arg) {
 
 function deserialize_cs3_ocm_provider_v1beta1_ListAllProvidersResponse(buffer_arg) {
   return cs3_ocm_provider_v1beta1_provider_api_pb.ListAllProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_permissions_v1beta1_CheckPermissionRequest(arg) {
+  if (!(arg instanceof cs3_permissions_v1beta1_permissions_api_pb.CheckPermissionRequest)) {
+    throw new Error('Expected argument of type cs3.permissions.v1beta1.CheckPermissionRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_permissions_v1beta1_CheckPermissionRequest(buffer_arg) {
+  return cs3_permissions_v1beta1_permissions_api_pb.CheckPermissionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_permissions_v1beta1_CheckPermissionResponse(arg) {
+  if (!(arg instanceof cs3_permissions_v1beta1_permissions_api_pb.CheckPermissionResponse)) {
+    throw new Error('Expected argument of type cs3.permissions.v1beta1.CheckPermissionResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_permissions_v1beta1_CheckPermissionResponse(buffer_arg) {
+  return cs3_permissions_v1beta1_permissions_api_pb.CheckPermissionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_preferences_v1beta1_GetKeyRequest(arg) {
@@ -3227,6 +3250,21 @@ cancelTransfer: {
     requestDeserialize: deserialize_cs3_tx_v1beta1_CancelTransferRequest,
     responseSerialize: serialize_cs3_tx_v1beta1_CancelTransferResponse,
     responseDeserialize: deserialize_cs3_tx_v1beta1_CancelTransferResponse,
+  },
+  // *****************************************************************/
+// ************************** Permissions **************************/
+// *****************************************************************/
+// CheckPermission checks if a user or group has a certain permission.
+checkPermission: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/CheckPermission',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_permissions_v1beta1_permissions_api_pb.CheckPermissionRequest,
+    responseType: cs3_permissions_v1beta1_permissions_api_pb.CheckPermissionResponse,
+    requestSerialize: serialize_cs3_permissions_v1beta1_CheckPermissionRequest,
+    requestDeserialize: deserialize_cs3_permissions_v1beta1_CheckPermissionRequest,
+    responseSerialize: serialize_cs3_permissions_v1beta1_CheckPermissionResponse,
+    responseDeserialize: deserialize_cs3_permissions_v1beta1_CheckPermissionResponse,
   },
 };
 

@@ -37,6 +37,8 @@ var cs3_ocm_invite_v1beta1_invite_api_pb = require('../../../cs3/ocm/invite/v1be
 goog.object.extend(proto, cs3_ocm_invite_v1beta1_invite_api_pb);
 var cs3_ocm_provider_v1beta1_provider_api_pb = require('../../../cs3/ocm/provider/v1beta1/provider_api_pb.js');
 goog.object.extend(proto, cs3_ocm_provider_v1beta1_provider_api_pb);
+var cs3_permissions_v1beta1_permissions_api_pb = require('../../../cs3/permissions/v1beta1/permissions_api_pb.js');
+goog.object.extend(proto, cs3_permissions_v1beta1_permissions_api_pb);
 var cs3_preferences_v1beta1_preferences_api_pb = require('../../../cs3/preferences/v1beta1/preferences_api_pb.js');
 goog.object.extend(proto, cs3_preferences_v1beta1_preferences_api_pb);
 var cs3_rpc_v1beta1_status_pb = require('../../../cs3/rpc/v1beta1/status_pb.js');
