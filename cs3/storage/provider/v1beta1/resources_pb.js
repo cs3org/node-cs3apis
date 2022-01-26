@@ -31,7 +31,6 @@ goog.exportSymbol('proto.cs3.storage.provider.v1beta1.Grantee', null, global);
 goog.exportSymbol('proto.cs3.storage.provider.v1beta1.Grantee.IdCase', null, global);
 goog.exportSymbol('proto.cs3.storage.provider.v1beta1.GranteeType', null, global);
 goog.exportSymbol('proto.cs3.storage.provider.v1beta1.Lock', null, global);
-goog.exportSymbol('proto.cs3.storage.provider.v1beta1.Lock.HolderCase', null, global);
 goog.exportSymbol('proto.cs3.storage.provider.v1beta1.LockType', null, global);
 goog.exportSymbol('proto.cs3.storage.provider.v1beta1.Quota', null, global);
 goog.exportSymbol('proto.cs3.storage.provider.v1beta1.RecycleItem', null, global);
@@ -56,7 +55,7 @@ goog.exportSymbol('proto.cs3.storage.provider.v1beta1.StorageSpaceId', null, glo
  * @constructor
  */
 proto.cs3.storage.provider.v1beta1.ResourceInfo = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.cs3.storage.provider.v1beta1.ResourceInfo.repeatedFields_, null);
 };
 goog.inherits(proto.cs3.storage.provider.v1beta1.ResourceInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -119,7 +118,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.cs3.storage.provider.v1beta1.Lock = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.cs3.storage.provider.v1beta1.Lock.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.cs3.storage.provider.v1beta1.Lock, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -424,6 +423,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.cs3.storage.provider.v1beta1.Quota.displayName = 'proto.cs3.storage.provider.v1beta1.Quota';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.repeatedFields_ = [16];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -468,7 +474,10 @@ proto.cs3.storage.provider.v1beta1.ResourceInfo.toObject = function(includeInsta
     owner: (f = msg.getOwner()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f),
     target: jspb.Message.getFieldWithDefault(msg, 12, ""),
     canonicalMetadata: (f = msg.getCanonicalMetadata()) && proto.cs3.storage.provider.v1beta1.CanonicalMetadata.toObject(includeInstance, f),
-    arbitraryMetadata: (f = msg.getArbitraryMetadata()) && proto.cs3.storage.provider.v1beta1.ArbitraryMetadata.toObject(includeInstance, f)
+    arbitraryMetadata: (f = msg.getArbitraryMetadata()) && proto.cs3.storage.provider.v1beta1.ArbitraryMetadata.toObject(includeInstance, f),
+    lock: (f = msg.getLock()) && proto.cs3.storage.provider.v1beta1.Lock.toObject(includeInstance, f),
+    advisoryLocksList: jspb.Message.toObjectList(msg.getAdvisoryLocksList(),
+    proto.cs3.storage.provider.v1beta1.Lock.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -568,6 +577,16 @@ proto.cs3.storage.provider.v1beta1.ResourceInfo.deserializeBinaryFromReader = fu
       var value = new proto.cs3.storage.provider.v1beta1.ArbitraryMetadata;
       reader.readMessage(value,proto.cs3.storage.provider.v1beta1.ArbitraryMetadata.deserializeBinaryFromReader);
       msg.setArbitraryMetadata(value);
+      break;
+    case 15:
+      var value = new proto.cs3.storage.provider.v1beta1.Lock;
+      reader.readMessage(value,proto.cs3.storage.provider.v1beta1.Lock.deserializeBinaryFromReader);
+      msg.setLock(value);
+      break;
+    case 16:
+      var value = new proto.cs3.storage.provider.v1beta1.Lock;
+      reader.readMessage(value,proto.cs3.storage.provider.v1beta1.Lock.deserializeBinaryFromReader);
+      msg.addAdvisoryLocks(value);
       break;
     default:
       reader.skipField();
@@ -702,6 +721,22 @@ proto.cs3.storage.provider.v1beta1.ResourceInfo.serializeBinaryToWriter = functi
       14,
       f,
       proto.cs3.storage.provider.v1beta1.ArbitraryMetadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getLock();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      proto.cs3.storage.provider.v1beta1.Lock.serializeBinaryToWriter
+    );
+  }
+  f = message.getAdvisoryLocksList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      16,
+      f,
+      proto.cs3.storage.provider.v1beta1.Lock.serializeBinaryToWriter
     );
   }
 };
@@ -1111,6 +1146,81 @@ proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.hasArbitraryMetadata =
 };
 
 
+/**
+ * optional Lock lock = 15;
+ * @return {?proto.cs3.storage.provider.v1beta1.Lock}
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.getLock = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Lock} */ (
+    jspb.Message.getWrapperField(this, proto.cs3.storage.provider.v1beta1.Lock, 15));
+};
+
+
+/**
+ * @param {?proto.cs3.storage.provider.v1beta1.Lock|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.ResourceInfo} returns this
+*/
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.setLock = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.ResourceInfo} returns this
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.clearLock = function() {
+  return this.setLock(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.hasLock = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * repeated Lock advisory_locks = 16;
+ * @return {!Array<!proto.cs3.storage.provider.v1beta1.Lock>}
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.getAdvisoryLocksList = function() {
+  return /** @type{!Array<!proto.cs3.storage.provider.v1beta1.Lock>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.cs3.storage.provider.v1beta1.Lock, 16));
+};
+
+
+/**
+ * @param {!Array<!proto.cs3.storage.provider.v1beta1.Lock>} value
+ * @return {!proto.cs3.storage.provider.v1beta1.ResourceInfo} returns this
+*/
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.setAdvisoryLocksList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 16, value);
+};
+
+
+/**
+ * @param {!proto.cs3.storage.provider.v1beta1.Lock=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.cs3.storage.provider.v1beta1.Lock}
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.addAdvisoryLocks = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 16, opt_value, proto.cs3.storage.provider.v1beta1.Lock, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.cs3.storage.provider.v1beta1.ResourceInfo} returns this
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.clearAdvisoryLocksList = function() {
+  return this.setAdvisoryLocksList([]);
+};
+
+
 
 
 
@@ -1396,32 +1506,6 @@ proto.cs3.storage.provider.v1beta1.ArbitraryMetadata.prototype.clearMetadataMap 
 
 
 
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.cs3.storage.provider.v1beta1.Lock.oneofGroups_ = [[2,3]];
-
-/**
- * @enum {number}
- */
-proto.cs3.storage.provider.v1beta1.Lock.HolderCase = {
-  HOLDER_NOT_SET: 0,
-  USER: 2,
-  APP_NAME: 3
-};
-
-/**
- * @return {proto.cs3.storage.provider.v1beta1.Lock.HolderCase}
- */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.getHolderCase = function() {
-  return /** @type {proto.cs3.storage.provider.v1beta1.Lock.HolderCase} */(jspb.Message.computeOneofCase(this, proto.cs3.storage.provider.v1beta1.Lock.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1453,11 +1537,12 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.toObject = function(opt_includ
  */
 proto.cs3.storage.provider.v1beta1.Lock.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
+    lockId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 3, 0),
     user: (f = msg.getUser()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f),
-    appName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    metadata: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    mtime: (f = msg.getMtime()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
+    appName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    expiration: (f = msg.getExpiration()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1495,26 +1580,31 @@ proto.cs3.storage.provider.v1beta1.Lock.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new cs3_types_v1beta1_types_pb.Opaque;
+      reader.readMessage(value,cs3_types_v1beta1_types_pb.Opaque.deserializeBinaryFromReader);
+      msg.setOpaque(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLockId(value);
+      break;
+    case 3:
       var value = /** @type {!proto.cs3.storage.provider.v1beta1.LockType} */ (reader.readEnum());
       msg.setType(value);
       break;
-    case 2:
+    case 4:
       var value = new cs3_identity_user_v1beta1_resources_pb.UserId;
       reader.readMessage(value,cs3_identity_user_v1beta1_resources_pb.UserId.deserializeBinaryFromReader);
       msg.setUser(value);
       break;
-    case 3:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setAppName(value);
       break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMetadata(value);
-      break;
-    case 5:
+    case 6:
       var value = new cs3_types_v1beta1_types_pb.Timestamp;
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setMtime(value);
+      msg.setExpiration(value);
       break;
     default:
       reader.skipField();
@@ -1545,39 +1635,47 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.serializeBinary = function() {
  */
 proto.cs3.storage.provider.v1beta1.Lock.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOpaque();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      cs3_types_v1beta1_types_pb.Opaque.serializeBinaryToWriter
+    );
+  }
+  f = message.getLockId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getType();
   if (f !== 0.0) {
     writer.writeEnum(
-      1,
+      3,
       f
     );
   }
   f = message.getUser();
   if (f != null) {
     writer.writeMessage(
-      2,
+      4,
       f,
       cs3_identity_user_v1beta1_resources_pb.UserId.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getMetadata();
+  f = message.getAppName();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
-  f = message.getMtime();
+  f = message.getExpiration();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
     );
@@ -1586,11 +1684,66 @@ proto.cs3.storage.provider.v1beta1.Lock.serializeBinaryToWriter = function(messa
 
 
 /**
- * optional LockType type = 1;
+ * optional cs3.types.v1beta1.Opaque opaque = 1;
+ * @return {?proto.cs3.types.v1beta1.Opaque}
+ */
+proto.cs3.storage.provider.v1beta1.Lock.prototype.getOpaque = function() {
+  return /** @type{?proto.cs3.types.v1beta1.Opaque} */ (
+    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Opaque, 1));
+};
+
+
+/**
+ * @param {?proto.cs3.types.v1beta1.Opaque|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
+*/
+proto.cs3.storage.provider.v1beta1.Lock.prototype.setOpaque = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
+ */
+proto.cs3.storage.provider.v1beta1.Lock.prototype.clearOpaque = function() {
+  return this.setOpaque(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.Lock.prototype.hasOpaque = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string lock_id = 2;
+ * @return {string}
+ */
+proto.cs3.storage.provider.v1beta1.Lock.prototype.getLockId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
+ */
+proto.cs3.storage.provider.v1beta1.Lock.prototype.setLockId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional LockType type = 3;
  * @return {!proto.cs3.storage.provider.v1beta1.LockType}
  */
 proto.cs3.storage.provider.v1beta1.Lock.prototype.getType = function() {
-  return /** @type {!proto.cs3.storage.provider.v1beta1.LockType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.cs3.storage.provider.v1beta1.LockType} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -1599,17 +1752,17 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.getType = function() {
  * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
  */
 proto.cs3.storage.provider.v1beta1.Lock.prototype.setType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
 /**
- * optional cs3.identity.user.v1beta1.UserId user = 2;
+ * optional cs3.identity.user.v1beta1.UserId user = 4;
  * @return {?proto.cs3.identity.user.v1beta1.UserId}
  */
 proto.cs3.storage.provider.v1beta1.Lock.prototype.getUser = function() {
   return /** @type{?proto.cs3.identity.user.v1beta1.UserId} */ (
-    jspb.Message.getWrapperField(this, cs3_identity_user_v1beta1_resources_pb.UserId, 2));
+    jspb.Message.getWrapperField(this, cs3_identity_user_v1beta1_resources_pb.UserId, 4));
 };
 
 
@@ -1618,7 +1771,7 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.getUser = function() {
  * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
 */
 proto.cs3.storage.provider.v1beta1.Lock.prototype.setUser = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 2, proto.cs3.storage.provider.v1beta1.Lock.oneofGroups_[0], value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -1636,16 +1789,16 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.clearUser = function() {
  * @return {boolean}
  */
 proto.cs3.storage.provider.v1beta1.Lock.prototype.hasUser = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string app_name = 3;
+ * optional string app_name = 5;
  * @return {string}
  */
 proto.cs3.storage.provider.v1beta1.Lock.prototype.getAppName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -1654,53 +1807,17 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.getAppName = function() {
  * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
  */
 proto.cs3.storage.provider.v1beta1.Lock.prototype.setAppName = function(value) {
-  return jspb.Message.setOneofField(this, 3, proto.cs3.storage.provider.v1beta1.Lock.oneofGroups_[0], value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * Clears the field making it undefined.
- * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
- */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.clearAppName = function() {
-  return jspb.Message.setOneofField(this, 3, proto.cs3.storage.provider.v1beta1.Lock.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.hasAppName = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string metadata = 4;
- * @return {string}
- */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.getMetadata = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
- */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.setMetadata = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional cs3.types.v1beta1.Timestamp mtime = 5;
+ * optional cs3.types.v1beta1.Timestamp expiration = 6;
  * @return {?proto.cs3.types.v1beta1.Timestamp}
  */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.getMtime = function() {
+proto.cs3.storage.provider.v1beta1.Lock.prototype.getExpiration = function() {
   return /** @type{?proto.cs3.types.v1beta1.Timestamp} */ (
-    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Timestamp, 5));
+    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Timestamp, 6));
 };
 
 
@@ -1708,8 +1825,8 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.getMtime = function() {
  * @param {?proto.cs3.types.v1beta1.Timestamp|undefined} value
  * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
 */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.setMtime = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+proto.cs3.storage.provider.v1beta1.Lock.prototype.setExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -1717,8 +1834,8 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.setMtime = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.cs3.storage.provider.v1beta1.Lock} returns this
  */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.clearMtime = function() {
-  return this.setMtime(undefined);
+proto.cs3.storage.provider.v1beta1.Lock.prototype.clearExpiration = function() {
+  return this.setExpiration(undefined);
 };
 
 
@@ -1726,8 +1843,8 @@ proto.cs3.storage.provider.v1beta1.Lock.prototype.clearMtime = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.cs3.storage.provider.v1beta1.Lock.prototype.hasMtime = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.cs3.storage.provider.v1beta1.Lock.prototype.hasExpiration = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -15637,7 +15637,8 @@ proto.cs3.storage.provider.v1beta1.UnlockRequest.prototype.toObject = function(o
 proto.cs3.storage.provider.v1beta1.UnlockRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
-    ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f)
+    ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f),
+    lock: (f = msg.getLock()) && cs3_storage_provider_v1beta1_resources_pb.Lock.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -15684,6 +15685,11 @@ proto.cs3.storage.provider.v1beta1.UnlockRequest.deserializeBinaryFromReader = f
       reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
       msg.setRef(value);
       break;
+    case 3:
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Lock;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Lock.deserializeBinaryFromReader);
+      msg.setLock(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -15727,6 +15733,14 @@ proto.cs3.storage.provider.v1beta1.UnlockRequest.serializeBinaryToWriter = funct
       2,
       f,
       cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
+    );
+  }
+  f = message.getLock();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      cs3_storage_provider_v1beta1_resources_pb.Lock.serializeBinaryToWriter
     );
   }
 };
@@ -15803,6 +15817,43 @@ proto.cs3.storage.provider.v1beta1.UnlockRequest.prototype.clearRef = function()
  */
 proto.cs3.storage.provider.v1beta1.UnlockRequest.prototype.hasRef = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Lock lock = 3;
+ * @return {?proto.cs3.storage.provider.v1beta1.Lock}
+ */
+proto.cs3.storage.provider.v1beta1.UnlockRequest.prototype.getLock = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Lock} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Lock, 3));
+};
+
+
+/**
+ * @param {?proto.cs3.storage.provider.v1beta1.Lock|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.UnlockRequest} returns this
+*/
+proto.cs3.storage.provider.v1beta1.UnlockRequest.prototype.setLock = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.UnlockRequest} returns this
+ */
+proto.cs3.storage.provider.v1beta1.UnlockRequest.prototype.clearLock = function() {
+  return this.setLock(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.UnlockRequest.prototype.hasLock = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
