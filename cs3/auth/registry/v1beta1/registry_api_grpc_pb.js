@@ -20,32 +20,32 @@
 // or submit itself to any jurisdiction.
 //
 'use strict';
-var grpc = require('grpc');
+var grpc = require('@grpc/grpc-js');
 var cs3_auth_registry_v1beta1_registry_api_pb = require('../../../../cs3/auth/registry/v1beta1/registry_api_pb.js');
 var cs3_auth_registry_v1beta1_resources_pb = require('../../../../cs3/auth/registry/v1beta1/resources_pb.js');
 var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../../cs3/types/v1beta1/types_pb.js');
 
-function serialize_cs3_auth_registry_v1beta1_GetAuthProviderRequest(arg) {
-  if (!(arg instanceof cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProviderRequest)) {
-    throw new Error('Expected argument of type cs3.auth.registry.v1beta1.GetAuthProviderRequest');
+function serialize_cs3_auth_registry_v1beta1_GetAuthProvidersRequest(arg) {
+  if (!(arg instanceof cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProvidersRequest)) {
+    throw new Error('Expected argument of type cs3.auth.registry.v1beta1.GetAuthProvidersRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_cs3_auth_registry_v1beta1_GetAuthProviderRequest(buffer_arg) {
-  return cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProviderRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_cs3_auth_registry_v1beta1_GetAuthProvidersRequest(buffer_arg) {
+  return cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProvidersRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_cs3_auth_registry_v1beta1_GetAuthProviderResponse(arg) {
-  if (!(arg instanceof cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProviderResponse)) {
-    throw new Error('Expected argument of type cs3.auth.registry.v1beta1.GetAuthProviderResponse');
+function serialize_cs3_auth_registry_v1beta1_GetAuthProvidersResponse(arg) {
+  if (!(arg instanceof cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProvidersResponse)) {
+    throw new Error('Expected argument of type cs3.auth.registry.v1beta1.GetAuthProvidersResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_cs3_auth_registry_v1beta1_GetAuthProviderResponse(buffer_arg) {
-  return cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProviderResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_cs3_auth_registry_v1beta1_GetAuthProvidersResponse(buffer_arg) {
+  return cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_auth_registry_v1beta1_ListAuthProvidersRequest(arg) {
@@ -92,16 +92,16 @@ var RegistryAPIService = exports.RegistryAPIService = {
   // Returns the auth provider that is reponsible for the given
 // resource reference.
 // MUST return CODE_NOT_FOUND if the reference does not exist.
-getAuthProvider: {
-    path: '/cs3.auth.registry.v1beta1.RegistryAPI/GetAuthProvider',
+getAuthProviders: {
+    path: '/cs3.auth.registry.v1beta1.RegistryAPI/GetAuthProviders',
     requestStream: false,
     responseStream: false,
-    requestType: cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProviderRequest,
-    responseType: cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProviderResponse,
-    requestSerialize: serialize_cs3_auth_registry_v1beta1_GetAuthProviderRequest,
-    requestDeserialize: deserialize_cs3_auth_registry_v1beta1_GetAuthProviderRequest,
-    responseSerialize: serialize_cs3_auth_registry_v1beta1_GetAuthProviderResponse,
-    responseDeserialize: deserialize_cs3_auth_registry_v1beta1_GetAuthProviderResponse,
+    requestType: cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProvidersRequest,
+    responseType: cs3_auth_registry_v1beta1_registry_api_pb.GetAuthProvidersResponse,
+    requestSerialize: serialize_cs3_auth_registry_v1beta1_GetAuthProvidersRequest,
+    requestDeserialize: deserialize_cs3_auth_registry_v1beta1_GetAuthProvidersRequest,
+    responseSerialize: serialize_cs3_auth_registry_v1beta1_GetAuthProvidersResponse,
+    responseDeserialize: deserialize_cs3_auth_registry_v1beta1_GetAuthProvidersResponse,
   },
   // Returns a list of the available auth providers known by this registry.
 listAuthProviders: {
