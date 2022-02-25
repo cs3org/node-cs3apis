@@ -303,6 +303,9 @@ export class OpenInAppRequest extends jspb.Message {
   getApp(): string;
   setApp(value: string): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OpenInAppRequest.AsObject;
   static toObject(includeInstance: boolean, msg: OpenInAppRequest): OpenInAppRequest.AsObject;
@@ -319,6 +322,7 @@ export namespace OpenInAppRequest {
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     viewMode: OpenInAppRequest.ViewMode,
     app: string,
+    lockId: string,
   }
 
   export enum ViewMode {

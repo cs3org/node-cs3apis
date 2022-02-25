@@ -77,6 +77,9 @@ export class AddGrantRequest extends jspb.Message {
   getGrant(): cs3_storage_provider_v1beta1_resources_pb.Grant | undefined;
   setGrant(value?: cs3_storage_provider_v1beta1_resources_pb.Grant): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddGrantRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AddGrantRequest): AddGrantRequest.AsObject;
@@ -92,6 +95,7 @@ export namespace AddGrantRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     grant?: cs3_storage_provider_v1beta1_resources_pb.Grant.AsObject,
+    lockId: string,
   }
 }
 
@@ -139,6 +143,9 @@ export class DenyGrantRequest extends jspb.Message {
   getGrantee(): cs3_storage_provider_v1beta1_resources_pb.Grantee | undefined;
   setGrantee(value?: cs3_storage_provider_v1beta1_resources_pb.Grantee): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DenyGrantRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DenyGrantRequest): DenyGrantRequest.AsObject;
@@ -154,6 +161,7 @@ export namespace DenyGrantRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     grantee?: cs3_storage_provider_v1beta1_resources_pb.Grantee.AsObject,
+    lockId: string,
   }
 }
 
@@ -308,6 +316,9 @@ export class DeleteRequest extends jspb.Message {
   getRef(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setRef(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeleteRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DeleteRequest): DeleteRequest.AsObject;
@@ -322,6 +333,7 @@ export namespace DeleteRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    lockId: string,
   }
 }
 
@@ -498,6 +510,9 @@ export class InitiateFileUploadRequest extends jspb.Message {
   getIfMatch(): string;
   setIfMatch(value: string): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   getOptionsCase(): InitiateFileUploadRequest.OptionsCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InitiateFileUploadRequest.AsObject;
@@ -515,6 +530,7 @@ export namespace InitiateFileUploadRequest {
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     ifNotExist: boolean,
     ifMatch: string,
+    lockId: string,
   }
 
   export enum OptionsCase {
@@ -569,6 +585,9 @@ export class InitiateFileDownloadRequest extends jspb.Message {
   getRef(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setRef(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InitiateFileDownloadRequest.AsObject;
   static toObject(includeInstance: boolean, msg: InitiateFileDownloadRequest): InitiateFileDownloadRequest.AsObject;
@@ -583,6 +602,7 @@ export namespace InitiateFileDownloadRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    lockId: string,
   }
 }
 
@@ -1052,6 +1072,9 @@ export class MoveRequest extends jspb.Message {
   getDestination(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setDestination(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MoveRequest.AsObject;
   static toObject(includeInstance: boolean, msg: MoveRequest): MoveRequest.AsObject;
@@ -1067,6 +1090,7 @@ export namespace MoveRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     source?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     destination?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    lockId: string,
   }
 }
 
@@ -1172,6 +1196,9 @@ export class RestoreFileVersionRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RestoreFileVersionRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RestoreFileVersionRequest): RestoreFileVersionRequest.AsObject;
@@ -1187,6 +1214,7 @@ export namespace RestoreFileVersionRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     key: string,
+    lockId: string,
   }
 }
 
@@ -1237,6 +1265,9 @@ export class RestoreRecycleItemRequest extends jspb.Message {
   getRestoreRef(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setRestoreRef(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RestoreRecycleItemRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RestoreRecycleItemRequest): RestoreRecycleItemRequest.AsObject;
@@ -1253,6 +1284,7 @@ export namespace RestoreRecycleItemRequest {
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     key: string,
     restoreRef?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    lockId: string,
   }
 }
 
@@ -1300,6 +1332,9 @@ export class RemoveGrantRequest extends jspb.Message {
   getGrant(): cs3_storage_provider_v1beta1_resources_pb.Grant | undefined;
   setGrant(value?: cs3_storage_provider_v1beta1_resources_pb.Grant): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RemoveGrantRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RemoveGrantRequest): RemoveGrantRequest.AsObject;
@@ -1315,6 +1350,7 @@ export namespace RemoveGrantRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     grant?: cs3_storage_provider_v1beta1_resources_pb.Grant.AsObject,
+    lockId: string,
   }
 }
 
@@ -1430,6 +1466,9 @@ export class UpdateGrantRequest extends jspb.Message {
   getGrant(): cs3_storage_provider_v1beta1_resources_pb.Grant | undefined;
   setGrant(value?: cs3_storage_provider_v1beta1_resources_pb.Grant): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateGrantRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateGrantRequest): UpdateGrantRequest.AsObject;
@@ -1445,6 +1484,7 @@ export namespace UpdateGrantRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     grant?: cs3_storage_provider_v1beta1_resources_pb.Grant.AsObject,
+    lockId: string,
   }
 }
 
@@ -1612,6 +1652,9 @@ export class SetArbitraryMetadataRequest extends jspb.Message {
   getArbitraryMetadata(): cs3_storage_provider_v1beta1_resources_pb.ArbitraryMetadata | undefined;
   setArbitraryMetadata(value?: cs3_storage_provider_v1beta1_resources_pb.ArbitraryMetadata): void;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SetArbitraryMetadataRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SetArbitraryMetadataRequest): SetArbitraryMetadataRequest.AsObject;
@@ -1627,6 +1670,7 @@ export namespace SetArbitraryMetadataRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     arbitraryMetadata?: cs3_storage_provider_v1beta1_resources_pb.ArbitraryMetadata.AsObject,
+    lockId: string,
   }
 }
 
@@ -1674,6 +1718,9 @@ export class UnsetArbitraryMetadataRequest extends jspb.Message {
   setArbitraryMetadataKeysList(value: Array<string>): void;
   addArbitraryMetadataKeys(value: string, index?: number): string;
 
+  getLockId(): string;
+  setLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UnsetArbitraryMetadataRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UnsetArbitraryMetadataRequest): UnsetArbitraryMetadataRequest.AsObject;
@@ -1689,6 +1736,7 @@ export namespace UnsetArbitraryMetadataRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     arbitraryMetadataKeysList: Array<string>,
+    lockId: string,
   }
 }
 

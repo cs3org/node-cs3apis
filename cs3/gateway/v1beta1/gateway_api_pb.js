@@ -2233,7 +2233,8 @@ proto.cs3.gateway.v1beta1.OpenInAppRequest.toObject = function(includeInstance, 
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     ref: (f = msg.getRef()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f),
     viewMode: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    app: jspb.Message.getFieldWithDefault(msg, 4, "")
+    app: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    lockId: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -2287,6 +2288,10 @@ proto.cs3.gateway.v1beta1.OpenInAppRequest.deserializeBinaryFromReader = functio
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setApp(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLockId(value);
       break;
     default:
       reader.skipField();
@@ -2344,6 +2349,13 @@ proto.cs3.gateway.v1beta1.OpenInAppRequest.serializeBinaryToWriter = function(me
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getLockId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -2467,6 +2479,24 @@ proto.cs3.gateway.v1beta1.OpenInAppRequest.prototype.getApp = function() {
  */
 proto.cs3.gateway.v1beta1.OpenInAppRequest.prototype.setApp = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string lock_id = 5;
+ * @return {string}
+ */
+proto.cs3.gateway.v1beta1.OpenInAppRequest.prototype.getLockId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.gateway.v1beta1.OpenInAppRequest} returns this
+ */
+proto.cs3.gateway.v1beta1.OpenInAppRequest.prototype.setLockId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

@@ -2167,7 +2167,7 @@ getAppPassword: {
 // ************************ STORAGE PROVIDER ***********************/
 // *****************************************************************/
 // Creates a new resource of type container.
-// MUST return CODE_PRECONDITION_FAILED if the container
+// MUST return CODE_FAILED_PRECONDITION if the container
 // cannot be created at the specified reference.
 createContainer: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/CreateContainer',
@@ -2181,7 +2181,7 @@ createContainer: {
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_CreateContainerResponse,
   },
   // Creates a new resource of type file.
-// MUST return CODE_PRECONDITION_FAILED if the file
+// MUST return CODE_FAILED_PRECONDITION if the file
 // cannot be created at the specified reference.
 touchFile: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/TouchFile',
@@ -2336,7 +2336,7 @@ listRecycle: {
   },
   // Moves a resource from one reference to another.
 // MUST return CODE_NOT_FOUND if any of the references do not exist.
-// MUST return CODE_PRECONDITION_FAILED if the source reference
+// MUST return CODE_FAILED_PRECONDITION if the source reference
 // cannot be moved to the destination reference.
 move: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/Move',
@@ -2379,7 +2379,7 @@ restoreFileVersion: {
   },
   // Restores a recycle item from the recycle.
 // MUST return CODE_NOT_FOUND if the recycle item id does not exist.
-// MUST return CODE_PRECONDITION_FAILED if the restore_path is non-empty
+// MUST return CODE_FAILED_PRECONDITION if the restore_path is non-empty
 // and the recycle item cannot be restored to the restore_path.
 restoreRecycleItem: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/RestoreRecycleItem',
@@ -2445,7 +2445,7 @@ unsetArbitraryMetadata: {
   },
   // Locks a storage resource.
 // MUST return CODE_NOT_FOUND if the reference does not exist.
-// MUST return CODE_PRECONDITION_FAILED if the reference is already locked.
+// MUST return CODE_FAILED_PRECONDITION if the reference is already locked.
 // In addition, the implementation MUST ensure atomicity when multiple users
 // concurrently attempt to set a lock.
 // The caller MUST have write permissions on the resource.
@@ -2476,7 +2476,7 @@ getLock: {
   },
   // Refreshes the lock metadata of a storage resource.
 // MUST return CODE_NOT_FOUND if the reference does not exist.
-// MUST return CODE_PRECONDITION_FAILED if the reference is not locked
+// MUST return CODE_FAILED_PRECONDITION if the reference is not locked
 // or if the caller does not hold the lock.
 // The caller MUST have write permissions on the resource.
 refreshLock: {
@@ -2492,7 +2492,7 @@ refreshLock: {
   },
   // Unlocks a storage resource.
 // MUST return CODE_NOT_FOUND if the reference does not exist.
-// MUST return CODE_PRECONDITION_FAILED if the reference is not locked
+// MUST return CODE_FAILED_PRECONDITION if the reference is not locked
 // or if the caller does not hold the lock.
 // The caller MUST have write permissions on the resource.
 unlock: {
