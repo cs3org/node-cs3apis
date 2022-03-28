@@ -75,6 +75,11 @@ export class ResourceInfo extends jspb.Message {
   setAdvisoryLocksList(value: Array<Lock>): void;
   addAdvisoryLocks(value?: Lock, index?: number): Lock;
 
+  hasParentId(): boolean;
+  clearParentId(): void;
+  getParentId(): ResourceId | undefined;
+  setParentId(value?: ResourceId): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResourceInfo.AsObject;
   static toObject(includeInstance: boolean, msg: ResourceInfo): ResourceInfo.AsObject;
@@ -103,6 +108,7 @@ export namespace ResourceInfo {
     arbitraryMetadata?: ArbitraryMetadata.AsObject,
     lock?: Lock.AsObject,
     advisoryLocksList: Array<Lock.AsObject>,
+    parentId?: ResourceId.AsObject,
   }
 }
 
