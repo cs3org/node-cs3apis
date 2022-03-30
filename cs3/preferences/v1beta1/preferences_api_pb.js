@@ -15,6 +15,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var cs3_preferences_v1beta1_resources_pb = require('../../../cs3/preferences/v1beta1/resources_pb.js');
+goog.object.extend(proto, cs3_preferences_v1beta1_resources_pb);
 var cs3_rpc_v1beta1_status_pb = require('../../../cs3/rpc/v1beta1/status_pb.js');
 goog.object.extend(proto, cs3_rpc_v1beta1_status_pb);
 goog.exportSymbol('proto.cs3.preferences.v1beta1.GetKeyRequest', null, global);
@@ -137,7 +139,7 @@ proto.cs3.preferences.v1beta1.SetKeyRequest.prototype.toObject = function(opt_in
  */
 proto.cs3.preferences.v1beta1.SetKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    key: (f = msg.getKey()) && cs3_preferences_v1beta1_resources_pb.PreferenceKey.toObject(includeInstance, f),
     val: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -176,7 +178,8 @@ proto.cs3.preferences.v1beta1.SetKeyRequest.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new cs3_preferences_v1beta1_resources_pb.PreferenceKey;
+      reader.readMessage(value,cs3_preferences_v1beta1_resources_pb.PreferenceKey.deserializeBinaryFromReader);
       msg.setKey(value);
       break;
     case 2:
@@ -213,10 +216,11 @@ proto.cs3.preferences.v1beta1.SetKeyRequest.prototype.serializeBinary = function
 proto.cs3.preferences.v1beta1.SetKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getKey();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      cs3_preferences_v1beta1_resources_pb.PreferenceKey.serializeBinaryToWriter
     );
   }
   f = message.getVal();
@@ -230,20 +234,39 @@ proto.cs3.preferences.v1beta1.SetKeyRequest.serializeBinaryToWriter = function(m
 
 
 /**
- * optional string key = 1;
- * @return {string}
+ * optional PreferenceKey key = 1;
+ * @return {?proto.cs3.preferences.v1beta1.PreferenceKey}
  */
 proto.cs3.preferences.v1beta1.SetKeyRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type{?proto.cs3.preferences.v1beta1.PreferenceKey} */ (
+    jspb.Message.getWrapperField(this, cs3_preferences_v1beta1_resources_pb.PreferenceKey, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.cs3.preferences.v1beta1.PreferenceKey|undefined} value
+ * @return {!proto.cs3.preferences.v1beta1.SetKeyRequest} returns this
+*/
+proto.cs3.preferences.v1beta1.SetKeyRequest.prototype.setKey = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.cs3.preferences.v1beta1.SetKeyRequest} returns this
  */
-proto.cs3.preferences.v1beta1.SetKeyRequest.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.cs3.preferences.v1beta1.SetKeyRequest.prototype.clearKey = function() {
+  return this.setKey(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.preferences.v1beta1.SetKeyRequest.prototype.hasKey = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -448,7 +471,7 @@ proto.cs3.preferences.v1beta1.GetKeyRequest.prototype.toObject = function(opt_in
  */
 proto.cs3.preferences.v1beta1.GetKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, "")
+    key: (f = msg.getKey()) && cs3_preferences_v1beta1_resources_pb.PreferenceKey.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -486,7 +509,8 @@ proto.cs3.preferences.v1beta1.GetKeyRequest.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new cs3_preferences_v1beta1_resources_pb.PreferenceKey;
+      reader.readMessage(value,cs3_preferences_v1beta1_resources_pb.PreferenceKey.deserializeBinaryFromReader);
       msg.setKey(value);
       break;
     default:
@@ -519,30 +543,50 @@ proto.cs3.preferences.v1beta1.GetKeyRequest.prototype.serializeBinary = function
 proto.cs3.preferences.v1beta1.GetKeyRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getKey();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      cs3_preferences_v1beta1_resources_pb.PreferenceKey.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string key = 1;
- * @return {string}
+ * optional PreferenceKey key = 1;
+ * @return {?proto.cs3.preferences.v1beta1.PreferenceKey}
  */
 proto.cs3.preferences.v1beta1.GetKeyRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type{?proto.cs3.preferences.v1beta1.PreferenceKey} */ (
+    jspb.Message.getWrapperField(this, cs3_preferences_v1beta1_resources_pb.PreferenceKey, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.cs3.preferences.v1beta1.PreferenceKey|undefined} value
+ * @return {!proto.cs3.preferences.v1beta1.GetKeyRequest} returns this
+*/
+proto.cs3.preferences.v1beta1.GetKeyRequest.prototype.setKey = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.cs3.preferences.v1beta1.GetKeyRequest} returns this
  */
-proto.cs3.preferences.v1beta1.GetKeyRequest.prototype.setKey = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.cs3.preferences.v1beta1.GetKeyRequest.prototype.clearKey = function() {
+  return this.setKey(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.preferences.v1beta1.GetKeyRequest.prototype.hasKey = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

@@ -3,6 +3,7 @@
 
 import * as grpc from '@grpc/grpc-js';
 import * as cs3_preferences_v1beta1_preferences_api_pb from '../../../cs3/preferences/v1beta1/preferences_api_pb';
+import * as cs3_preferences_v1beta1_resources_pb from '../../../cs3/preferences/v1beta1/resources_pb';
 import * as cs3_rpc_v1beta1_status_pb from '../../../cs3/rpc/v1beta1/status_pb';
 
 interface IPreferencesAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {

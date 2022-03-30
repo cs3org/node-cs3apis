@@ -2,11 +2,14 @@
 // file: cs3/preferences/v1beta1/preferences_api.proto
 
 import * as jspb from 'google-protobuf';
+import * as cs3_preferences_v1beta1_resources_pb from '../../../cs3/preferences/v1beta1/resources_pb';
 import * as cs3_rpc_v1beta1_status_pb from '../../../cs3/rpc/v1beta1/status_pb';
 
 export class SetKeyRequest extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): void;
+  hasKey(): boolean;
+  clearKey(): void;
+  getKey(): cs3_preferences_v1beta1_resources_pb.PreferenceKey | undefined;
+  setKey(value?: cs3_preferences_v1beta1_resources_pb.PreferenceKey): void;
 
   getVal(): string;
   setVal(value: string): void;
@@ -23,7 +26,7 @@ export class SetKeyRequest extends jspb.Message {
 
 export namespace SetKeyRequest {
   export type AsObject = {
-    key: string,
+    key?: cs3_preferences_v1beta1_resources_pb.PreferenceKey.AsObject,
     val: string,
   }
 }
@@ -51,8 +54,10 @@ export namespace SetKeyResponse {
 }
 
 export class GetKeyRequest extends jspb.Message {
-  getKey(): string;
-  setKey(value: string): void;
+  hasKey(): boolean;
+  clearKey(): void;
+  getKey(): cs3_preferences_v1beta1_resources_pb.PreferenceKey | undefined;
+  setKey(value?: cs3_preferences_v1beta1_resources_pb.PreferenceKey): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetKeyRequest.AsObject;
@@ -66,7 +71,7 @@ export class GetKeyRequest extends jspb.Message {
 
 export namespace GetKeyRequest {
   export type AsObject = {
-    key: string,
+    key?: cs3_preferences_v1beta1_resources_pb.PreferenceKey.AsObject,
   }
 }
 
