@@ -61,6 +61,9 @@ export class PublicShare extends jspb.Message {
   getSignature(): ShareSignature | undefined;
   setSignature(value?: ShareSignature): void;
 
+  getQuicklink(): boolean;
+  setQuicklink(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublicShare.AsObject;
   static toObject(includeInstance: boolean, msg: PublicShare): PublicShare.AsObject;
@@ -85,6 +88,7 @@ export namespace PublicShare {
     expiration?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     displayName: string,
     signature?: ShareSignature.AsObject,
+    quicklink: boolean,
   }
 }
 

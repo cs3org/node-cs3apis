@@ -220,7 +220,8 @@ proto.cs3.sharing.link.v1beta1.PublicShare.toObject = function(includeInstance, 
     passwordProtected: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
     expiration: (f = msg.getExpiration()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
     displayName: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    signature: (f = msg.getSignature()) && proto.cs3.sharing.link.v1beta1.ShareSignature.toObject(includeInstance, f)
+    signature: (f = msg.getSignature()) && proto.cs3.sharing.link.v1beta1.ShareSignature.toObject(includeInstance, f),
+    quicklink: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
   };
 
   if (includeInstance) {
@@ -313,6 +314,10 @@ proto.cs3.sharing.link.v1beta1.PublicShare.deserializeBinaryFromReader = functio
       var value = new proto.cs3.sharing.link.v1beta1.ShareSignature;
       reader.readMessage(value,proto.cs3.sharing.link.v1beta1.ShareSignature.deserializeBinaryFromReader);
       msg.setSignature(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setQuicklink(value);
       break;
     default:
       reader.skipField();
@@ -434,6 +439,13 @@ proto.cs3.sharing.link.v1beta1.PublicShare.serializeBinaryToWriter = function(me
       12,
       f,
       proto.cs3.sharing.link.v1beta1.ShareSignature.serializeBinaryToWriter
+    );
+  }
+  f = message.getQuicklink();
+  if (f) {
+    writer.writeBool(
+      13,
+      f
     );
   }
 };
@@ -823,6 +835,24 @@ proto.cs3.sharing.link.v1beta1.PublicShare.prototype.clearSignature = function()
  */
 proto.cs3.sharing.link.v1beta1.PublicShare.prototype.hasSignature = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool quicklink = 13;
+ * @return {boolean}
+ */
+proto.cs3.sharing.link.v1beta1.PublicShare.prototype.getQuicklink = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.cs3.sharing.link.v1beta1.PublicShare} returns this
+ */
+proto.cs3.sharing.link.v1beta1.PublicShare.prototype.setQuicklink = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
