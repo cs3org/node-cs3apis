@@ -17483,7 +17483,7 @@ proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.serializeBinaryToWri
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.oneofGroups_ = [[2,3,4]];
+proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.oneofGroups_ = [[2,3,4,5]];
 
 /**
  * @enum {number}
@@ -17492,7 +17492,8 @@ proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.TermCase = {
   TERM_NOT_SET: 0,
   ID: 2,
   OWNER: 3,
-  SPACE_TYPE: 4
+  SPACE_TYPE: 4,
+  PATH: 5
 };
 
 /**
@@ -17536,7 +17537,8 @@ proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.toObject = fu
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     id: (f = msg.getId()) && cs3_storage_provider_v1beta1_resources_pb.StorageSpaceId.toObject(includeInstance, f),
     owner: (f = msg.getOwner()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f),
-    spaceType: jspb.Message.getFieldWithDefault(msg, 4, "")
+    spaceType: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    path: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -17590,6 +17592,10 @@ proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.deserializeBi
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setSpaceType(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPath(value);
       break;
     default:
       reader.skipField();
@@ -17650,6 +17656,13 @@ proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.serializeBina
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -17661,7 +17674,8 @@ proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.Type = {
   TYPE_NO: 1,
   TYPE_ID: 2,
   TYPE_OWNER: 3,
-  TYPE_SPACE_TYPE: 4
+  TYPE_SPACE_TYPE: 4,
+  TYPE_PATH: 5
 };
 
 /**
@@ -17789,6 +17803,42 @@ proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.prototype.cle
  */
 proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.prototype.hasSpaceType = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string path = 5;
+ * @return {string}
+ */
+proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.prototype.getPath = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter} returns this
+ */
+proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.prototype.setPath = function(value) {
+  return jspb.Message.setOneofField(this, 5, proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter} returns this
+ */
+proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.prototype.clearPath = function() {
+  return jspb.Message.setOneofField(this, 5, proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.ListStorageSpacesRequest.Filter.prototype.hasPath = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
