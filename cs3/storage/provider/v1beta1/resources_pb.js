@@ -3263,7 +3263,8 @@ proto.cs3.storage.provider.v1beta1.Grant.prototype.toObject = function(opt_inclu
 proto.cs3.storage.provider.v1beta1.Grant.toObject = function(includeInstance, msg) {
   var f, obj = {
     grantee: (f = msg.getGrantee()) && proto.cs3.storage.provider.v1beta1.Grantee.toObject(includeInstance, f),
-    permissions: (f = msg.getPermissions()) && proto.cs3.storage.provider.v1beta1.ResourcePermissions.toObject(includeInstance, f)
+    permissions: (f = msg.getPermissions()) && proto.cs3.storage.provider.v1beta1.ResourcePermissions.toObject(includeInstance, f),
+    creator: (f = msg.getCreator()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3310,6 +3311,11 @@ proto.cs3.storage.provider.v1beta1.Grant.deserializeBinaryFromReader = function(
       reader.readMessage(value,proto.cs3.storage.provider.v1beta1.ResourcePermissions.deserializeBinaryFromReader);
       msg.setPermissions(value);
       break;
+    case 3:
+      var value = new cs3_identity_user_v1beta1_resources_pb.UserId;
+      reader.readMessage(value,cs3_identity_user_v1beta1_resources_pb.UserId.deserializeBinaryFromReader);
+      msg.setCreator(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3353,6 +3359,14 @@ proto.cs3.storage.provider.v1beta1.Grant.serializeBinaryToWriter = function(mess
       2,
       f,
       proto.cs3.storage.provider.v1beta1.ResourcePermissions.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreator();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      cs3_identity_user_v1beta1_resources_pb.UserId.serializeBinaryToWriter
     );
   }
 };
@@ -3429,6 +3443,43 @@ proto.cs3.storage.provider.v1beta1.Grant.prototype.clearPermissions = function()
  */
 proto.cs3.storage.provider.v1beta1.Grant.prototype.hasPermissions = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional cs3.identity.user.v1beta1.UserId creator = 3;
+ * @return {?proto.cs3.identity.user.v1beta1.UserId}
+ */
+proto.cs3.storage.provider.v1beta1.Grant.prototype.getCreator = function() {
+  return /** @type{?proto.cs3.identity.user.v1beta1.UserId} */ (
+    jspb.Message.getWrapperField(this, cs3_identity_user_v1beta1_resources_pb.UserId, 3));
+};
+
+
+/**
+ * @param {?proto.cs3.identity.user.v1beta1.UserId|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.Grant} returns this
+*/
+proto.cs3.storage.provider.v1beta1.Grant.prototype.setCreator = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.Grant} returns this
+ */
+proto.cs3.storage.provider.v1beta1.Grant.prototype.clearCreator = function() {
+  return this.setCreator(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.Grant.prototype.hasCreator = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
