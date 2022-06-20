@@ -6,6 +6,7 @@ import * as cs3_identity_user_v1beta1_resources_pb from '../../../../cs3/identit
 import * as cs3_rpc_v1beta1_status_pb from '../../../../cs3/rpc/v1beta1/status_pb';
 import * as cs3_storage_provider_v1beta1_resources_pb from '../../../../cs3/storage/provider/v1beta1/resources_pb';
 import * as cs3_types_v1beta1_types_pb from '../../../../cs3/types/v1beta1/types_pb';
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 
 export class GetHomeRequest extends jspb.Message {
   hasOpaque(): boolean;
@@ -651,6 +652,12 @@ export class ListGrantsRequest extends jspb.Message {
   getRef(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setRef(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListGrantsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListGrantsRequest): ListGrantsRequest.AsObject;
@@ -665,6 +672,8 @@ export namespace ListGrantsRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -684,6 +693,9 @@ export class ListGrantsResponse extends jspb.Message {
   setGrantsList(value: Array<cs3_storage_provider_v1beta1_resources_pb.Grant>): void;
   addGrants(value?: cs3_storage_provider_v1beta1_resources_pb.Grant, index?: number): cs3_storage_provider_v1beta1_resources_pb.Grant;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListGrantsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListGrantsResponse): ListGrantsResponse.AsObject;
@@ -699,6 +711,7 @@ export namespace ListGrantsResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     grantsList: Array<cs3_storage_provider_v1beta1_resources_pb.Grant.AsObject>,
+    nextPageToken: string,
   }
 }
 
@@ -718,6 +731,17 @@ export class ListContainerStreamRequest extends jspb.Message {
   setArbitraryMetadataKeysList(value: Array<string>): void;
   addArbitraryMetadataKeys(value: string, index?: number): string;
 
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContainerStreamRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListContainerStreamRequest): ListContainerStreamRequest.AsObject;
@@ -733,6 +757,9 @@ export namespace ListContainerStreamRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     arbitraryMetadataKeysList: Array<string>,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -752,6 +779,9 @@ export class ListContainerStreamResponse extends jspb.Message {
   getInfo(): cs3_storage_provider_v1beta1_resources_pb.ResourceInfo | undefined;
   setInfo(value?: cs3_storage_provider_v1beta1_resources_pb.ResourceInfo): void;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContainerStreamResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListContainerStreamResponse): ListContainerStreamResponse.AsObject;
@@ -767,6 +797,7 @@ export namespace ListContainerStreamResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     info?: cs3_storage_provider_v1beta1_resources_pb.ResourceInfo.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -786,6 +817,17 @@ export class ListContainerRequest extends jspb.Message {
   setArbitraryMetadataKeysList(value: Array<string>): void;
   addArbitraryMetadataKeys(value: string, index?: number): string;
 
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContainerRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListContainerRequest): ListContainerRequest.AsObject;
@@ -801,6 +843,9 @@ export namespace ListContainerRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     arbitraryMetadataKeysList: Array<string>,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -820,6 +865,9 @@ export class ListContainerResponse extends jspb.Message {
   setInfosList(value: Array<cs3_storage_provider_v1beta1_resources_pb.ResourceInfo>): void;
   addInfos(value?: cs3_storage_provider_v1beta1_resources_pb.ResourceInfo, index?: number): cs3_storage_provider_v1beta1_resources_pb.ResourceInfo;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListContainerResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListContainerResponse): ListContainerResponse.AsObject;
@@ -835,6 +883,7 @@ export namespace ListContainerResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     infosList: Array<cs3_storage_provider_v1beta1_resources_pb.ResourceInfo.AsObject>,
+    nextPageToken: string,
   }
 }
 
@@ -848,6 +897,12 @@ export class ListFileVersionsRequest extends jspb.Message {
   clearRef(): void;
   getRef(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setRef(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFileVersionsRequest.AsObject;
@@ -863,6 +918,8 @@ export namespace ListFileVersionsRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -882,6 +939,9 @@ export class ListFileVersionsResponse extends jspb.Message {
   setVersionsList(value: Array<cs3_storage_provider_v1beta1_resources_pb.FileVersion>): void;
   addVersions(value?: cs3_storage_provider_v1beta1_resources_pb.FileVersion, index?: number): cs3_storage_provider_v1beta1_resources_pb.FileVersion;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFileVersionsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListFileVersionsResponse): ListFileVersionsResponse.AsObject;
@@ -897,6 +957,7 @@ export namespace ListFileVersionsResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     versionsList: Array<cs3_storage_provider_v1beta1_resources_pb.FileVersion.AsObject>,
+    nextPageToken: string,
   }
 }
 
@@ -924,6 +985,12 @@ export class ListRecycleRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecycleRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListRecycleRequest): ListRecycleRequest.AsObject;
@@ -941,6 +1008,8 @@ export namespace ListRecycleRequest {
     toTs?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     key: string,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -960,6 +1029,9 @@ export class ListRecycleResponse extends jspb.Message {
   setRecycleItemsList(value: Array<cs3_storage_provider_v1beta1_resources_pb.RecycleItem>): void;
   addRecycleItems(value?: cs3_storage_provider_v1beta1_resources_pb.RecycleItem, index?: number): cs3_storage_provider_v1beta1_resources_pb.RecycleItem;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecycleResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListRecycleResponse): ListRecycleResponse.AsObject;
@@ -975,6 +1047,7 @@ export namespace ListRecycleResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     recycleItemsList: Array<cs3_storage_provider_v1beta1_resources_pb.RecycleItem.AsObject>,
+    nextPageToken: string,
   }
 }
 
@@ -1002,6 +1075,12 @@ export class ListRecycleStreamRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecycleStreamRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListRecycleStreamRequest): ListRecycleStreamRequest.AsObject;
@@ -1019,6 +1098,8 @@ export namespace ListRecycleStreamRequest {
     toTs?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     key: string,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -1038,6 +1119,9 @@ export class ListRecycleStreamResponse extends jspb.Message {
   getRecycleItem(): cs3_storage_provider_v1beta1_resources_pb.RecycleItem | undefined;
   setRecycleItem(value?: cs3_storage_provider_v1beta1_resources_pb.RecycleItem): void;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecycleStreamResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListRecycleStreamResponse): ListRecycleStreamResponse.AsObject;
@@ -1053,6 +1137,7 @@ export namespace ListRecycleStreamResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     recycleItem?: cs3_storage_provider_v1beta1_resources_pb.RecycleItem.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -1398,6 +1483,11 @@ export class StatRequest extends jspb.Message {
   setArbitraryMetadataKeysList(value: Array<string>): void;
   addArbitraryMetadataKeys(value: string, index?: number): string;
 
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StatRequest.AsObject;
   static toObject(includeInstance: boolean, msg: StatRequest): StatRequest.AsObject;
@@ -1413,6 +1503,7 @@ export namespace StatRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     arbitraryMetadataKeysList: Array<string>,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -2153,6 +2244,17 @@ export class ListStorageSpacesRequest extends jspb.Message {
   setFiltersList(value: Array<ListStorageSpacesRequest.Filter>): void;
   addFilters(value?: ListStorageSpacesRequest.Filter, index?: number): ListStorageSpacesRequest.Filter;
 
+  hasFieldMask(): boolean;
+  clearFieldMask(): void;
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListStorageSpacesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListStorageSpacesRequest): ListStorageSpacesRequest.AsObject;
@@ -2167,6 +2269,9 @@ export namespace ListStorageSpacesRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     filtersList: Array<ListStorageSpacesRequest.Filter.AsObject>,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    pageSize: number,
+    pageToken: string,
   }
 
   export class Filter extends jspb.Message {
@@ -2248,6 +2353,9 @@ export class ListStorageSpacesResponse extends jspb.Message {
   setStorageSpacesList(value: Array<cs3_storage_provider_v1beta1_resources_pb.StorageSpace>): void;
   addStorageSpaces(value?: cs3_storage_provider_v1beta1_resources_pb.StorageSpace, index?: number): cs3_storage_provider_v1beta1_resources_pb.StorageSpace;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListStorageSpacesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListStorageSpacesResponse): ListStorageSpacesResponse.AsObject;
@@ -2263,6 +2371,7 @@ export namespace ListStorageSpacesResponse {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     storageSpacesList: Array<cs3_storage_provider_v1beta1_resources_pb.StorageSpace.AsObject>,
+    nextPageToken: string,
   }
 }
 

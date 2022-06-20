@@ -196,6 +196,12 @@ export class ListPublicSharesRequest extends jspb.Message {
   getSign(): boolean;
   setSign(value: boolean): void;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPublicSharesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListPublicSharesRequest): ListPublicSharesRequest.AsObject;
@@ -211,6 +217,8 @@ export namespace ListPublicSharesRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     filtersList: Array<ListPublicSharesRequest.Filter.AsObject>,
     sign: boolean,
+    pageSize: number,
+    pageToken: string,
   }
 
   export class Filter extends jspb.Message {
@@ -283,6 +291,9 @@ export class ListPublicSharesResponse extends jspb.Message {
   setShareList(value: Array<cs3_sharing_link_v1beta1_resources_pb.PublicShare>): void;
   addShare(value?: cs3_sharing_link_v1beta1_resources_pb.PublicShare, index?: number): cs3_sharing_link_v1beta1_resources_pb.PublicShare;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPublicSharesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListPublicSharesResponse): ListPublicSharesResponse.AsObject;
@@ -298,6 +309,7 @@ export namespace ListPublicSharesResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     shareList: Array<cs3_sharing_link_v1beta1_resources_pb.PublicShare.AsObject>,
+    nextPageToken: string,
   }
 }
 

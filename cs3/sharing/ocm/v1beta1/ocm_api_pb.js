@@ -1706,7 +1706,9 @@ proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.toObject = function(includeIn
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
-    proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.Filter.toObject, includeInstance)
+    proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.Filter.toObject, includeInstance),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1753,6 +1755,14 @@ proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.deserializeBinaryFromReader =
       reader.readMessage(value,proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.Filter.deserializeBinaryFromReader);
       msg.addFilters(value);
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1796,6 +1806,20 @@ proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.serializeBinaryToWriter = fun
       2,
       f,
       proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.Filter.serializeBinaryToWriter
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -2199,6 +2223,42 @@ proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.prototype.clearFiltersList = 
 };
 
 
+/**
+ * optional int32 page_size = 3;
+ * @return {number}
+ */
+proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -2241,7 +2301,8 @@ proto.cs3.sharing.ocm.v1beta1.ListOCMSharesResponse.toObject = function(includeI
     status: (f = msg.getStatus()) && cs3_rpc_v1beta1_status_pb.Status.toObject(includeInstance, f),
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     sharesList: jspb.Message.toObjectList(msg.getSharesList(),
-    cs3_sharing_ocm_v1beta1_resources_pb.Share.toObject, includeInstance)
+    cs3_sharing_ocm_v1beta1_resources_pb.Share.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2292,6 +2353,10 @@ proto.cs3.sharing.ocm.v1beta1.ListOCMSharesResponse.deserializeBinaryFromReader 
       var value = new cs3_sharing_ocm_v1beta1_resources_pb.Share;
       reader.readMessage(value,cs3_sharing_ocm_v1beta1_resources_pb.Share.deserializeBinaryFromReader);
       msg.addShares(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -2344,6 +2409,13 @@ proto.cs3.sharing.ocm.v1beta1.ListOCMSharesResponse.serializeBinaryToWriter = fu
       3,
       f,
       cs3_sharing_ocm_v1beta1_resources_pb.Share.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -2458,6 +2530,24 @@ proto.cs3.sharing.ocm.v1beta1.ListOCMSharesResponse.prototype.addShares = functi
  */
 proto.cs3.sharing.ocm.v1beta1.ListOCMSharesResponse.prototype.clearSharesList = function() {
   return this.setSharesList([]);
+};
+
+
+/**
+ * optional string next_page_token = 4;
+ * @return {string}
+ */
+proto.cs3.sharing.ocm.v1beta1.ListOCMSharesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.ListOCMSharesResponse} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.ListOCMSharesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -3352,7 +3442,9 @@ proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.prototype.toObject = 
  */
 proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f)
+    opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3394,6 +3486,14 @@ proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.deserializeBinaryFrom
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Opaque.deserializeBinaryFromReader);
       msg.setOpaque(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3429,6 +3529,20 @@ proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.serializeBinaryToWrit
       1,
       f,
       cs3_types_v1beta1_types_pb.Opaque.serializeBinaryToWriter
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -3468,6 +3582,42 @@ proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.prototype.clearOpaque
  */
 proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.prototype.hasOpaque = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 page_size = 2;
+ * @return {number}
+ */
+proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional string page_token = 3;
+ * @return {string}
+ */
+proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -3513,7 +3663,8 @@ proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse.toObject = function(
     status: (f = msg.getStatus()) && cs3_rpc_v1beta1_status_pb.Status.toObject(includeInstance, f),
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     sharesList: jspb.Message.toObjectList(msg.getSharesList(),
-    cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare.toObject, includeInstance)
+    cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -3564,6 +3715,10 @@ proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse.deserializeBinaryFro
       var value = new cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare;
       reader.readMessage(value,cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare.deserializeBinaryFromReader);
       msg.addShares(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -3616,6 +3771,13 @@ proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse.serializeBinaryToWri
       3,
       f,
       cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -3730,6 +3892,24 @@ proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse.prototype.addShares 
  */
 proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse.prototype.clearSharesList = function() {
   return this.setSharesList([]);
+};
+
+
+/**
+ * optional string next_page_token = 4;
+ * @return {string}
+ */
+proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

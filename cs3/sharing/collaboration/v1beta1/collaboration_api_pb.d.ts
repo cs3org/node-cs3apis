@@ -190,6 +190,12 @@ export class ListSharesRequest extends jspb.Message {
   setFiltersList(value: Array<cs3_sharing_collaboration_v1beta1_resources_pb.Filter>): void;
   addFilters(value?: cs3_sharing_collaboration_v1beta1_resources_pb.Filter, index?: number): cs3_sharing_collaboration_v1beta1_resources_pb.Filter;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSharesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListSharesRequest): ListSharesRequest.AsObject;
@@ -204,6 +210,8 @@ export namespace ListSharesRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     filtersList: Array<cs3_sharing_collaboration_v1beta1_resources_pb.Filter.AsObject>,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -223,6 +231,9 @@ export class ListSharesResponse extends jspb.Message {
   setSharesList(value: Array<cs3_sharing_collaboration_v1beta1_resources_pb.Share>): void;
   addShares(value?: cs3_sharing_collaboration_v1beta1_resources_pb.Share, index?: number): cs3_sharing_collaboration_v1beta1_resources_pb.Share;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSharesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListSharesResponse): ListSharesResponse.AsObject;
@@ -238,6 +249,7 @@ export namespace ListSharesResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     sharesList: Array<cs3_sharing_collaboration_v1beta1_resources_pb.Share.AsObject>,
+    nextPageToken: string,
   }
 }
 
@@ -370,6 +382,12 @@ export class ListReceivedSharesRequest extends jspb.Message {
   setFiltersList(value: Array<cs3_sharing_collaboration_v1beta1_resources_pb.Filter>): void;
   addFilters(value?: cs3_sharing_collaboration_v1beta1_resources_pb.Filter, index?: number): cs3_sharing_collaboration_v1beta1_resources_pb.Filter;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListReceivedSharesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListReceivedSharesRequest): ListReceivedSharesRequest.AsObject;
@@ -384,6 +402,8 @@ export namespace ListReceivedSharesRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     filtersList: Array<cs3_sharing_collaboration_v1beta1_resources_pb.Filter.AsObject>,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -403,6 +423,9 @@ export class ListReceivedSharesResponse extends jspb.Message {
   setSharesList(value: Array<cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare>): void;
   addShares(value?: cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare, index?: number): cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListReceivedSharesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListReceivedSharesResponse): ListReceivedSharesResponse.AsObject;
@@ -418,6 +441,7 @@ export namespace ListReceivedSharesResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     sharesList: Array<cs3_sharing_collaboration_v1beta1_resources_pb.ReceivedShare.AsObject>,
+    nextPageToken: string,
   }
 }
 

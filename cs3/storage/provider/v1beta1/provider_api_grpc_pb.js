@@ -26,6 +26,7 @@ var cs3_identity_user_v1beta1_resources_pb = require('../../../../cs3/identity/u
 var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.js');
 var cs3_storage_provider_v1beta1_resources_pb = require('../../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../../cs3/types/v1beta1/types_pb.js');
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 
 function serialize_cs3_storage_provider_v1beta1_AddGrantRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.AddGrantRequest)) {

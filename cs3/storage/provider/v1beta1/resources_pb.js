@@ -478,7 +478,9 @@ proto.cs3.storage.provider.v1beta1.ResourceInfo.toObject = function(includeInsta
     lock: (f = msg.getLock()) && proto.cs3.storage.provider.v1beta1.Lock.toObject(includeInstance, f),
     advisoryLocksList: jspb.Message.toObjectList(msg.getAdvisoryLocksList(),
     proto.cs3.storage.provider.v1beta1.Lock.toObject, includeInstance),
-    parentId: (f = msg.getParentId()) && proto.cs3.storage.provider.v1beta1.ResourceId.toObject(includeInstance, f)
+    parentId: (f = msg.getParentId()) && proto.cs3.storage.provider.v1beta1.ResourceId.toObject(includeInstance, f),
+    name: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    space: (f = msg.getSpace()) && proto.cs3.storage.provider.v1beta1.StorageSpace.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -593,6 +595,15 @@ proto.cs3.storage.provider.v1beta1.ResourceInfo.deserializeBinaryFromReader = fu
       var value = new proto.cs3.storage.provider.v1beta1.ResourceId;
       reader.readMessage(value,proto.cs3.storage.provider.v1beta1.ResourceId.deserializeBinaryFromReader);
       msg.setParentId(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 19:
+      var value = new proto.cs3.storage.provider.v1beta1.StorageSpace;
+      reader.readMessage(value,proto.cs3.storage.provider.v1beta1.StorageSpace.deserializeBinaryFromReader);
+      msg.setSpace(value);
       break;
     default:
       reader.skipField();
@@ -751,6 +762,21 @@ proto.cs3.storage.provider.v1beta1.ResourceInfo.serializeBinaryToWriter = functi
       17,
       f,
       proto.cs3.storage.provider.v1beta1.ResourceId.serializeBinaryToWriter
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
+      f
+    );
+  }
+  f = message.getSpace();
+  if (f != null) {
+    writer.writeMessage(
+      19,
+      f,
+      proto.cs3.storage.provider.v1beta1.StorageSpace.serializeBinaryToWriter
     );
   }
 };
@@ -1269,6 +1295,61 @@ proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.clearParentId = functi
  */
 proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.hasParentId = function() {
   return jspb.Message.getField(this, 17) != null;
+};
+
+
+/**
+ * optional string name = 18;
+ * @return {string}
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.storage.provider.v1beta1.ResourceInfo} returns this
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional StorageSpace space = 19;
+ * @return {?proto.cs3.storage.provider.v1beta1.StorageSpace}
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.getSpace = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.StorageSpace} */ (
+    jspb.Message.getWrapperField(this, proto.cs3.storage.provider.v1beta1.StorageSpace, 19));
+};
+
+
+/**
+ * @param {?proto.cs3.storage.provider.v1beta1.StorageSpace|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.ResourceInfo} returns this
+*/
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.setSpace = function(value) {
+  return jspb.Message.setWrapperField(this, 19, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.ResourceInfo} returns this
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.clearSpace = function() {
+  return this.setSpace(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.ResourceInfo.prototype.hasSpace = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
@@ -4987,7 +5068,8 @@ proto.cs3.storage.provider.v1beta1.StorageSpace.toObject = function(includeInsta
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     quota: (f = msg.getQuota()) && proto.cs3.storage.provider.v1beta1.Quota.toObject(includeInstance, f),
     spaceType: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    mtime: (f = msg.getMtime()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
+    mtime: (f = msg.getMtime()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
+    rootInfo: (f = msg.getRootInfo()) && proto.cs3.storage.provider.v1beta1.ResourceInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5061,6 +5143,11 @@ proto.cs3.storage.provider.v1beta1.StorageSpace.deserializeBinaryFromReader = fu
       var value = new cs3_types_v1beta1_types_pb.Timestamp;
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
       msg.setMtime(value);
+      break;
+    case 9:
+      var value = new proto.cs3.storage.provider.v1beta1.ResourceInfo;
+      reader.readMessage(value,proto.cs3.storage.provider.v1beta1.ResourceInfo.deserializeBinaryFromReader);
+      msg.setRootInfo(value);
       break;
     default:
       reader.skipField();
@@ -5151,6 +5238,14 @@ proto.cs3.storage.provider.v1beta1.StorageSpace.serializeBinaryToWriter = functi
       8,
       f,
       cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getRootInfo();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.cs3.storage.provider.v1beta1.ResourceInfo.serializeBinaryToWriter
     );
   }
 };
@@ -5411,6 +5506,43 @@ proto.cs3.storage.provider.v1beta1.StorageSpace.prototype.clearMtime = function(
  */
 proto.cs3.storage.provider.v1beta1.StorageSpace.prototype.hasMtime = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional ResourceInfo root_info = 9;
+ * @return {?proto.cs3.storage.provider.v1beta1.ResourceInfo}
+ */
+proto.cs3.storage.provider.v1beta1.StorageSpace.prototype.getRootInfo = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.ResourceInfo} */ (
+    jspb.Message.getWrapperField(this, proto.cs3.storage.provider.v1beta1.ResourceInfo, 9));
+};
+
+
+/**
+ * @param {?proto.cs3.storage.provider.v1beta1.ResourceInfo|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.StorageSpace} returns this
+*/
+proto.cs3.storage.provider.v1beta1.StorageSpace.prototype.setRootInfo = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.StorageSpace} returns this
+ */
+proto.cs3.storage.provider.v1beta1.StorageSpace.prototype.clearRootInfo = function() {
+  return this.setRootInfo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.StorageSpace.prototype.hasRootInfo = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

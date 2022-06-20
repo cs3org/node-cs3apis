@@ -1612,7 +1612,9 @@ proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.toObject = function(inclu
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
     proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.Filter.toObject, includeInstance),
-    sign: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    sign: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1663,6 +1665,14 @@ proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.deserializeBinaryFromRead
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSign(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1712,6 +1722,20 @@ proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.serializeBinaryToWriter =
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -2131,6 +2155,42 @@ proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.prototype.setSign = funct
 };
 
 
+/**
+ * optional int32 page_size = 4;
+ * @return {number}
+ */
+proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest} returns this
+ */
+proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional string page_token = 5;
+ * @return {string}
+ */
+proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest} returns this
+ */
+proto.cs3.sharing.link.v1beta1.ListPublicSharesRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -2173,7 +2233,8 @@ proto.cs3.sharing.link.v1beta1.ListPublicSharesResponse.toObject = function(incl
     status: (f = msg.getStatus()) && cs3_rpc_v1beta1_status_pb.Status.toObject(includeInstance, f),
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     shareList: jspb.Message.toObjectList(msg.getShareList(),
-    cs3_sharing_link_v1beta1_resources_pb.PublicShare.toObject, includeInstance)
+    cs3_sharing_link_v1beta1_resources_pb.PublicShare.toObject, includeInstance),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2224,6 +2285,10 @@ proto.cs3.sharing.link.v1beta1.ListPublicSharesResponse.deserializeBinaryFromRea
       var value = new cs3_sharing_link_v1beta1_resources_pb.PublicShare;
       reader.readMessage(value,cs3_sharing_link_v1beta1_resources_pb.PublicShare.deserializeBinaryFromReader);
       msg.addShare(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -2276,6 +2341,13 @@ proto.cs3.sharing.link.v1beta1.ListPublicSharesResponse.serializeBinaryToWriter 
       3,
       f,
       cs3_sharing_link_v1beta1_resources_pb.PublicShare.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -2390,6 +2462,24 @@ proto.cs3.sharing.link.v1beta1.ListPublicSharesResponse.prototype.addShare = fun
  */
 proto.cs3.sharing.link.v1beta1.ListPublicSharesResponse.prototype.clearShareList = function() {
   return this.setShareList([]);
+};
+
+
+/**
+ * optional string next_page_token = 4;
+ * @return {string}
+ */
+proto.cs3.sharing.link.v1beta1.ListPublicSharesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.link.v1beta1.ListPublicSharesResponse} returns this
+ */
+proto.cs3.sharing.link.v1beta1.ListPublicSharesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

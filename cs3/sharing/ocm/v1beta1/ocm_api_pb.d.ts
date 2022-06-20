@@ -192,6 +192,12 @@ export class ListOCMSharesRequest extends jspb.Message {
   setFiltersList(value: Array<ListOCMSharesRequest.Filter>): void;
   addFilters(value?: ListOCMSharesRequest.Filter, index?: number): ListOCMSharesRequest.Filter;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOCMSharesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListOCMSharesRequest): ListOCMSharesRequest.AsObject;
@@ -206,6 +212,8 @@ export namespace ListOCMSharesRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     filtersList: Array<ListOCMSharesRequest.Filter.AsObject>,
+    pageSize: number,
+    pageToken: string,
   }
 
   export class Filter extends jspb.Message {
@@ -281,6 +289,9 @@ export class ListOCMSharesResponse extends jspb.Message {
   setSharesList(value: Array<cs3_sharing_ocm_v1beta1_resources_pb.Share>): void;
   addShares(value?: cs3_sharing_ocm_v1beta1_resources_pb.Share, index?: number): cs3_sharing_ocm_v1beta1_resources_pb.Share;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListOCMSharesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListOCMSharesResponse): ListOCMSharesResponse.AsObject;
@@ -296,6 +307,7 @@ export namespace ListOCMSharesResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     sharesList: Array<cs3_sharing_ocm_v1beta1_resources_pb.Share.AsObject>,
+    nextPageToken: string,
   }
 }
 
@@ -423,6 +435,12 @@ export class ListReceivedOCMSharesRequest extends jspb.Message {
   getOpaque(): cs3_types_v1beta1_types_pb.Opaque | undefined;
   setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
 
+  getPageSize(): number;
+  setPageSize(value: number): void;
+
+  getPageToken(): string;
+  setPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListReceivedOCMSharesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListReceivedOCMSharesRequest): ListReceivedOCMSharesRequest.AsObject;
@@ -436,6 +454,8 @@ export class ListReceivedOCMSharesRequest extends jspb.Message {
 export namespace ListReceivedOCMSharesRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
+    pageSize: number,
+    pageToken: string,
   }
 }
 
@@ -455,6 +475,9 @@ export class ListReceivedOCMSharesResponse extends jspb.Message {
   setSharesList(value: Array<cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare>): void;
   addShares(value?: cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare, index?: number): cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListReceivedOCMSharesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListReceivedOCMSharesResponse): ListReceivedOCMSharesResponse.AsObject;
@@ -470,6 +493,7 @@ export namespace ListReceivedOCMSharesResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     sharesList: Array<cs3_sharing_ocm_v1beta1_resources_pb.ReceivedShare.AsObject>,
+    nextPageToken: string,
   }
 }
 

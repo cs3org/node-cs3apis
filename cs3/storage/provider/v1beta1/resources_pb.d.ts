@@ -80,6 +80,14 @@ export class ResourceInfo extends jspb.Message {
   getParentId(): ResourceId | undefined;
   setParentId(value?: ResourceId): void;
 
+  getName(): string;
+  setName(value: string): void;
+
+  hasSpace(): boolean;
+  clearSpace(): void;
+  getSpace(): StorageSpace | undefined;
+  setSpace(value?: StorageSpace): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResourceInfo.AsObject;
   static toObject(includeInstance: boolean, msg: ResourceInfo): ResourceInfo.AsObject;
@@ -109,6 +117,8 @@ export namespace ResourceInfo {
     lock?: Lock.AsObject,
     advisoryLocksList: Array<Lock.AsObject>,
     parentId?: ResourceId.AsObject,
+    name: string,
+    space?: StorageSpace.AsObject,
   }
 }
 
@@ -663,6 +673,11 @@ export class StorageSpace extends jspb.Message {
   getMtime(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
   setMtime(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
 
+  hasRootInfo(): boolean;
+  clearRootInfo(): void;
+  getRootInfo(): ResourceInfo | undefined;
+  setRootInfo(value?: ResourceInfo): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StorageSpace.AsObject;
   static toObject(includeInstance: boolean, msg: StorageSpace): StorageSpace.AsObject;
@@ -683,6 +698,7 @@ export namespace StorageSpace {
     quota?: Quota.AsObject,
     spaceType: string,
     mtime?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
+    rootInfo?: ResourceInfo.AsObject,
   }
 }
 

@@ -7,6 +7,7 @@ import * as cs3_identity_user_v1beta1_resources_pb from '../../../../cs3/identit
 import * as cs3_rpc_v1beta1_status_pb from '../../../../cs3/rpc/v1beta1/status_pb';
 import * as cs3_storage_provider_v1beta1_resources_pb from '../../../../cs3/storage/provider/v1beta1/resources_pb';
 import * as cs3_types_v1beta1_types_pb from '../../../../cs3/types/v1beta1/types_pb';
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 
 interface IProviderAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   addGrant: IProviderAPIService_IAddGrant;
