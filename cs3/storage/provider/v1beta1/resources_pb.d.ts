@@ -290,6 +290,9 @@ export class ResourceId extends jspb.Message {
   getOpaqueId(): string;
   setOpaqueId(value: string): void;
 
+  getSpaceId(): string;
+  setSpaceId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResourceId.AsObject;
   static toObject(includeInstance: boolean, msg: ResourceId): ResourceId.AsObject;
@@ -304,6 +307,7 @@ export namespace ResourceId {
   export type AsObject = {
     storageId: string,
     opaqueId: string,
+    spaceId: string,
   }
 }
 
