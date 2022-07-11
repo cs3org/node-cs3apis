@@ -2298,6 +2298,11 @@ export namespace ListStorageSpacesRequest {
     getPath(): string;
     setPath(value: string): void;
 
+    hasUser(): boolean;
+    clearUser(): void;
+    getUser(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
+    setUser(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
+
     getTermCase(): Filter.TermCase;
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Filter.AsObject;
@@ -2316,6 +2321,7 @@ export namespace ListStorageSpacesRequest {
       owner?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
       spaceType: string,
       path: string,
+      user?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
     }
 
     export enum Type {
@@ -2325,6 +2331,7 @@ export namespace ListStorageSpacesRequest {
       TYPE_OWNER = 3,
       TYPE_SPACE_TYPE = 4,
       TYPE_PATH = 5,
+      TYPE_USER = 6,
     }
 
     export enum TermCase {
@@ -2333,6 +2340,7 @@ export namespace ListStorageSpacesRequest {
       OWNER = 3,
       SPACE_TYPE = 4,
       PATH = 5,
+      USER = 6,
     }
   }
 }
