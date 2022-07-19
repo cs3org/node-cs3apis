@@ -4561,7 +4561,8 @@ proto.cs3.storage.provider.v1beta1.FileUploadProtocol.toObject = function(includ
     uploadEndpoint: jspb.Message.getFieldWithDefault(msg, 3, ""),
     availableChecksumsList: jspb.Message.toObjectList(msg.getAvailableChecksumsList(),
     proto.cs3.storage.provider.v1beta1.ResourceChecksumPriority.toObject, includeInstance),
-    expose: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+    expose: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    expiration: (f = msg.getExpiration()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4619,6 +4620,11 @@ proto.cs3.storage.provider.v1beta1.FileUploadProtocol.deserializeBinaryFromReade
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setExpose(value);
+      break;
+    case 6:
+      var value = new cs3_types_v1beta1_types_pb.Timestamp;
+      reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiration(value);
       break;
     default:
       reader.skipField();
@@ -4684,6 +4690,14 @@ proto.cs3.storage.provider.v1beta1.FileUploadProtocol.serializeBinaryToWriter = 
     writer.writeBool(
       5,
       f
+    );
+  }
+  f = message.getExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -4815,6 +4829,43 @@ proto.cs3.storage.provider.v1beta1.FileUploadProtocol.prototype.getExpose = func
  */
 proto.cs3.storage.provider.v1beta1.FileUploadProtocol.prototype.setExpose = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional cs3.types.v1beta1.Timestamp expiration = 6;
+ * @return {?proto.cs3.types.v1beta1.Timestamp}
+ */
+proto.cs3.storage.provider.v1beta1.FileUploadProtocol.prototype.getExpiration = function() {
+  return /** @type{?proto.cs3.types.v1beta1.Timestamp} */ (
+    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.cs3.types.v1beta1.Timestamp|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.FileUploadProtocol} returns this
+*/
+proto.cs3.storage.provider.v1beta1.FileUploadProtocol.prototype.setExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.FileUploadProtocol} returns this
+ */
+proto.cs3.storage.provider.v1beta1.FileUploadProtocol.prototype.clearExpiration = function() {
+  return this.setExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.FileUploadProtocol.prototype.hasExpiration = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

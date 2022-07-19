@@ -586,6 +586,11 @@ export class FileUploadProtocol extends jspb.Message {
   getExpose(): boolean;
   setExpose(value: boolean): void;
 
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
+  setExpiration(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileUploadProtocol.AsObject;
   static toObject(includeInstance: boolean, msg: FileUploadProtocol): FileUploadProtocol.AsObject;
@@ -603,6 +608,7 @@ export namespace FileUploadProtocol {
     uploadEndpoint: string,
     availableChecksumsList: Array<ResourceChecksumPriority.AsObject>,
     expose: boolean,
+    expiration?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
   }
 }
 
