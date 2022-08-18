@@ -511,6 +511,11 @@ export class InitiateFileUploadRequest extends jspb.Message {
   getIfMatch(): string;
   setIfMatch(value: string): void;
 
+  hasIfUnmodifiedSince(): boolean;
+  clearIfUnmodifiedSince(): void;
+  getIfUnmodifiedSince(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
+  setIfUnmodifiedSince(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
+
   getLockId(): string;
   setLockId(value: string): void;
 
@@ -531,6 +536,7 @@ export namespace InitiateFileUploadRequest {
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     ifNotExist: boolean,
     ifMatch: string,
+    ifUnmodifiedSince?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     lockId: string,
   }
 
@@ -538,6 +544,7 @@ export namespace InitiateFileUploadRequest {
     OPTIONS_NOT_SET = 0,
     IF_NOT_EXIST = 3,
     IF_MATCH = 4,
+    IF_UNMODIFIED_SINCE = 6,
   }
 }
 
