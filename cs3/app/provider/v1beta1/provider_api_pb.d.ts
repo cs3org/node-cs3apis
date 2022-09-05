@@ -47,6 +47,7 @@ export namespace OpenInAppRequest {
     VIEW_MODE_VIEW_ONLY = 1,
     VIEW_MODE_READ_ONLY = 2,
     VIEW_MODE_READ_WRITE = 3,
+    VIEW_MODE_PREVIEW = 4,
   }
 }
 
