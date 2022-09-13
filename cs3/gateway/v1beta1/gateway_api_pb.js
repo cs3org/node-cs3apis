@@ -2369,7 +2369,8 @@ proto.cs3.gateway.v1beta1.OpenInAppRequest.ViewMode = {
   VIEW_MODE_INVALID: 0,
   VIEW_MODE_VIEW_ONLY: 1,
   VIEW_MODE_READ_ONLY: 2,
-  VIEW_MODE_READ_WRITE: 3
+  VIEW_MODE_READ_WRITE: 3,
+  VIEW_MODE_PREVIEW: 4
 };
 
 /**
