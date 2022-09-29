@@ -2006,6 +2006,9 @@ export class RefreshLockRequest extends jspb.Message {
   getLock(): cs3_storage_provider_v1beta1_resources_pb.Lock | undefined;
   setLock(value?: cs3_storage_provider_v1beta1_resources_pb.Lock): void;
 
+  getExistingLockId(): string;
+  setExistingLockId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RefreshLockRequest.AsObject;
   static toObject(includeInstance: boolean, msg: RefreshLockRequest): RefreshLockRequest.AsObject;
@@ -2021,6 +2024,7 @@ export namespace RefreshLockRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
     lock?: cs3_storage_provider_v1beta1_resources_pb.Lock.AsObject,
+    existingLockId: string,
   }
 }
 
