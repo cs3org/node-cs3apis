@@ -121,6 +121,9 @@ export namespace UpdatePublicShareRequest {
     getDisplayName(): string;
     setDisplayName(value: string): void;
 
+    getDescription(): string;
+    setDescription(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Update.AsObject;
     static toObject(includeInstance: boolean, msg: Update): Update.AsObject;
@@ -136,6 +139,7 @@ export namespace UpdatePublicShareRequest {
       type: UpdatePublicShareRequest.Update.Type,
       grant?: cs3_sharing_link_v1beta1_resources_pb.Grant.AsObject,
       displayName: string,
+      description: string,
     }
 
     export enum Type {
@@ -144,6 +148,7 @@ export namespace UpdatePublicShareRequest {
       TYPE_PASSWORD = 2,
       TYPE_EXPIRATION = 3,
       TYPE_DISPLAYNAME = 4,
+      TYPE_DESCRIPTION = 5,
     }
   }
 }
