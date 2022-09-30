@@ -24,6 +24,9 @@ export class CreatePublicShareRequest extends jspb.Message {
   getGrant(): cs3_sharing_link_v1beta1_resources_pb.Grant | undefined;
   setGrant(value?: cs3_sharing_link_v1beta1_resources_pb.Grant): void;
 
+  getDescription(): string;
+  setDescription(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePublicShareRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreatePublicShareRequest): CreatePublicShareRequest.AsObject;
@@ -39,6 +42,7 @@ export namespace CreatePublicShareRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     resourceInfo?: cs3_storage_provider_v1beta1_resources_pb.ResourceInfo.AsObject,
     grant?: cs3_sharing_link_v1beta1_resources_pb.Grant.AsObject,
+    description: string,
   }
 }
 

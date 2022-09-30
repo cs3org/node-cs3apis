@@ -370,7 +370,8 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.toObject = function(incl
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     resourceInfo: (f = msg.getResourceInfo()) && cs3_storage_provider_v1beta1_resources_pb.ResourceInfo.toObject(includeInstance, f),
-    grant: (f = msg.getGrant()) && cs3_sharing_link_v1beta1_resources_pb.Grant.toObject(includeInstance, f)
+    grant: (f = msg.getGrant()) && cs3_sharing_link_v1beta1_resources_pb.Grant.toObject(includeInstance, f),
+    description: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -421,6 +422,10 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.deserializeBinaryFromRea
       var value = new cs3_sharing_link_v1beta1_resources_pb.Grant;
       reader.readMessage(value,cs3_sharing_link_v1beta1_resources_pb.Grant.deserializeBinaryFromReader);
       msg.setGrant(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -473,6 +478,13 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.serializeBinaryToWriter 
       3,
       f,
       cs3_sharing_link_v1beta1_resources_pb.Grant.serializeBinaryToWriter
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -586,6 +598,24 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.clearGrant = f
  */
 proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.hasGrant = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string description = 4;
+ * @return {string}
+ */
+proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest} returns this
+ */
+proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.setDescription = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
