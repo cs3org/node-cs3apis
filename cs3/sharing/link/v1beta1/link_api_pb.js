@@ -371,7 +371,8 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.toObject = function(incl
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     resourceInfo: (f = msg.getResourceInfo()) && cs3_storage_provider_v1beta1_resources_pb.ResourceInfo.toObject(includeInstance, f),
     grant: (f = msg.getGrant()) && cs3_sharing_link_v1beta1_resources_pb.Grant.toObject(includeInstance, f),
-    description: jspb.Message.getFieldWithDefault(msg, 4, "")
+    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    internal: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -426,6 +427,10 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.deserializeBinaryFromRea
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setInternal(value);
       break;
     default:
       reader.skipField();
@@ -484,6 +489,13 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.serializeBinaryToWriter 
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getInternal();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -616,6 +628,24 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.getDescription
  */
 proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional bool internal = 5;
+ * @return {boolean}
+ */
+proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.getInternal = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest} returns this
+ */
+proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.setInternal = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
