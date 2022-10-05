@@ -265,6 +265,16 @@ export class Filter extends jspb.Message {
   getGranteeType(): cs3_storage_provider_v1beta1_resources_pb.GranteeType;
   setGranteeType(value: cs3_storage_provider_v1beta1_resources_pb.GranteeType): void;
 
+  hasSpaceId(): boolean;
+  clearSpaceId(): void;
+  getSpaceId(): string;
+  setSpaceId(value: string): void;
+
+  hasState(): boolean;
+  clearState(): void;
+  getState(): ShareState;
+  setState(value: ShareState): void;
+
   getTermCase(): Filter.TermCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Filter.AsObject;
@@ -283,6 +293,8 @@ export namespace Filter {
     owner?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
     creator?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
     granteeType: cs3_storage_provider_v1beta1_resources_pb.GranteeType,
+    spaceId: string,
+    state: ShareState,
   }
 
   export enum Type {
@@ -293,6 +305,8 @@ export namespace Filter {
     TYPE_CREATOR = 4,
     TYPE_GRANTEE_TYPE = 5,
     TYPE_EXCLUDE_DENIALS = 6,
+    TYPE_SPACE_ID = 7,
+    TYPE_STATE = 8,
   }
 
   export enum TermCase {
@@ -301,6 +315,8 @@ export namespace Filter {
     OWNER = 4,
     CREATOR = 5,
     GRANTEE_TYPE = 6,
+    SPACE_ID = 7,
+    STATE = 8,
   }
 }
 
