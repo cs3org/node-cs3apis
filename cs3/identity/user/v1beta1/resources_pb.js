@@ -701,7 +701,8 @@ proto.cs3.identity.user.v1beta1.UserType = {
   USER_TYPE_APPLICATION: 4,
   USER_TYPE_GUEST: 5,
   USER_TYPE_FEDERATED: 6,
-  USER_TYPE_LIGHTWEIGHT: 7
+  USER_TYPE_LIGHTWEIGHT: 7,
+  USER_TYPE_SPACE_OWNER: 8
 };
 
 goog.object.extend(exports, proto.cs3.identity.user.v1beta1);
