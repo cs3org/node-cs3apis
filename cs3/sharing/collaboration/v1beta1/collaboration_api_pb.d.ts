@@ -92,6 +92,16 @@ export class UpdateShareRequest extends jspb.Message {
   getField(): UpdateShareRequest.UpdateField | undefined;
   setField(value?: UpdateShareRequest.UpdateField): void;
 
+  hasUpdateMask(): boolean;
+  clearUpdateMask(): void;
+  getUpdateMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setUpdateMask(value?: google_protobuf_field_mask_pb.FieldMask): void;
+
+  hasShare(): boolean;
+  clearShare(): void;
+  getShare(): cs3_sharing_collaboration_v1beta1_resources_pb.Share | undefined;
+  setShare(value?: cs3_sharing_collaboration_v1beta1_resources_pb.Share): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateShareRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateShareRequest): UpdateShareRequest.AsObject;
@@ -107,6 +117,8 @@ export namespace UpdateShareRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_sharing_collaboration_v1beta1_resources_pb.ShareReference.AsObject,
     field?: UpdateShareRequest.UpdateField.AsObject,
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
+    share?: cs3_sharing_collaboration_v1beta1_resources_pb.Share.AsObject,
   }
 
   export class UpdateField extends jspb.Message {

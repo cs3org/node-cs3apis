@@ -3375,7 +3375,8 @@ proto.cs3.storage.provider.v1beta1.Grant.toObject = function(includeInstance, ms
   var f, obj = {
     grantee: (f = msg.getGrantee()) && proto.cs3.storage.provider.v1beta1.Grantee.toObject(includeInstance, f),
     permissions: (f = msg.getPermissions()) && proto.cs3.storage.provider.v1beta1.ResourcePermissions.toObject(includeInstance, f),
-    creator: (f = msg.getCreator()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f)
+    creator: (f = msg.getCreator()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f),
+    expiration: (f = msg.getExpiration()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3426,6 +3427,11 @@ proto.cs3.storage.provider.v1beta1.Grant.deserializeBinaryFromReader = function(
       var value = new cs3_identity_user_v1beta1_resources_pb.UserId;
       reader.readMessage(value,cs3_identity_user_v1beta1_resources_pb.UserId.deserializeBinaryFromReader);
       msg.setCreator(value);
+      break;
+    case 4:
+      var value = new cs3_types_v1beta1_types_pb.Timestamp;
+      reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiration(value);
       break;
     default:
       reader.skipField();
@@ -3478,6 +3484,14 @@ proto.cs3.storage.provider.v1beta1.Grant.serializeBinaryToWriter = function(mess
       3,
       f,
       cs3_identity_user_v1beta1_resources_pb.UserId.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -3591,6 +3605,43 @@ proto.cs3.storage.provider.v1beta1.Grant.prototype.clearCreator = function() {
  */
 proto.cs3.storage.provider.v1beta1.Grant.prototype.hasCreator = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional cs3.types.v1beta1.Timestamp expiration = 4;
+ * @return {?proto.cs3.types.v1beta1.Timestamp}
+ */
+proto.cs3.storage.provider.v1beta1.Grant.prototype.getExpiration = function() {
+  return /** @type{?proto.cs3.types.v1beta1.Timestamp} */ (
+    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Timestamp, 4));
+};
+
+
+/**
+ * @param {?proto.cs3.types.v1beta1.Timestamp|undefined} value
+ * @return {!proto.cs3.storage.provider.v1beta1.Grant} returns this
+*/
+proto.cs3.storage.provider.v1beta1.Grant.prototype.setExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.storage.provider.v1beta1.Grant} returns this
+ */
+proto.cs3.storage.provider.v1beta1.Grant.prototype.clearExpiration = function() {
+  return this.setExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.storage.provider.v1beta1.Grant.prototype.hasExpiration = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

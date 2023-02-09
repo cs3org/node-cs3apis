@@ -940,7 +940,9 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.toObject = function(i
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     ref: (f = msg.getRef()) && cs3_sharing_collaboration_v1beta1_resources_pb.ShareReference.toObject(includeInstance, f),
-    field: (f = msg.getField()) && proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.UpdateField.toObject(includeInstance, f)
+    field: (f = msg.getField()) && proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.UpdateField.toObject(includeInstance, f),
+    updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f),
+    share: (f = msg.getShare()) && cs3_sharing_collaboration_v1beta1_resources_pb.Share.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -991,6 +993,16 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.deserializeBinaryFrom
       var value = new proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.UpdateField;
       reader.readMessage(value,proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.UpdateField.deserializeBinaryFromReader);
       msg.setField(value);
+      break;
+    case 4:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setUpdateMask(value);
+      break;
+    case 5:
+      var value = new cs3_sharing_collaboration_v1beta1_resources_pb.Share;
+      reader.readMessage(value,cs3_sharing_collaboration_v1beta1_resources_pb.Share.deserializeBinaryFromReader);
+      msg.setShare(value);
       break;
     default:
       reader.skipField();
@@ -1043,6 +1055,22 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.serializeBinaryToWrit
       3,
       f,
       proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.UpdateField.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdateMask();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
+    );
+  }
+  f = message.getShare();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      cs3_sharing_collaboration_v1beta1_resources_pb.Share.serializeBinaryToWriter
     );
   }
 };
@@ -1381,6 +1409,80 @@ proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.clearField 
  */
 proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.hasField = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask update_mask = 4;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.getUpdateMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest} returns this
+*/
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.setUpdateMask = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest} returns this
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.clearUpdateMask = function() {
+  return this.setUpdateMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.hasUpdateMask = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional Share share = 5;
+ * @return {?proto.cs3.sharing.collaboration.v1beta1.Share}
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.getShare = function() {
+  return /** @type{?proto.cs3.sharing.collaboration.v1beta1.Share} */ (
+    jspb.Message.getWrapperField(this, cs3_sharing_collaboration_v1beta1_resources_pb.Share, 5));
+};
+
+
+/**
+ * @param {?proto.cs3.sharing.collaboration.v1beta1.Share|undefined} value
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest} returns this
+*/
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.setShare = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest} returns this
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.clearShare = function() {
+  return this.setShare(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.prototype.hasShare = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

@@ -240,7 +240,8 @@ proto.cs3.sharing.collaboration.v1beta1.Share.toObject = function(includeInstanc
     owner: (f = msg.getOwner()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f),
     creator: (f = msg.getCreator()) && cs3_identity_user_v1beta1_resources_pb.UserId.toObject(includeInstance, f),
     ctime: (f = msg.getCtime()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
-    mtime: (f = msg.getMtime()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
+    mtime: (f = msg.getMtime()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
+    expiration: (f = msg.getExpiration()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -316,6 +317,11 @@ proto.cs3.sharing.collaboration.v1beta1.Share.deserializeBinaryFromReader = func
       var value = new cs3_types_v1beta1_types_pb.Timestamp;
       reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
       msg.setMtime(value);
+      break;
+    case 9:
+      var value = new cs3_types_v1beta1_types_pb.Timestamp;
+      reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiration(value);
       break;
     default:
       reader.skipField();
@@ -406,6 +412,14 @@ proto.cs3.sharing.collaboration.v1beta1.Share.serializeBinaryToWriter = function
   if (f != null) {
     writer.writeMessage(
       8,
+      f,
+      cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      9,
       f,
       cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
     );
@@ -706,6 +720,43 @@ proto.cs3.sharing.collaboration.v1beta1.Share.prototype.clearMtime = function() 
  */
 proto.cs3.sharing.collaboration.v1beta1.Share.prototype.hasMtime = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional cs3.types.v1beta1.Timestamp expiration = 9;
+ * @return {?proto.cs3.types.v1beta1.Timestamp}
+ */
+proto.cs3.sharing.collaboration.v1beta1.Share.prototype.getExpiration = function() {
+  return /** @type{?proto.cs3.types.v1beta1.Timestamp} */ (
+    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Timestamp, 9));
+};
+
+
+/**
+ * @param {?proto.cs3.types.v1beta1.Timestamp|undefined} value
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.Share} returns this
+*/
+proto.cs3.sharing.collaboration.v1beta1.Share.prototype.setExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.Share} returns this
+ */
+proto.cs3.sharing.collaboration.v1beta1.Share.prototype.clearExpiration = function() {
+  return this.setExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.collaboration.v1beta1.Share.prototype.hasExpiration = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -1736,7 +1787,8 @@ proto.cs3.sharing.collaboration.v1beta1.ShareGrant.prototype.toObject = function
 proto.cs3.sharing.collaboration.v1beta1.ShareGrant.toObject = function(includeInstance, msg) {
   var f, obj = {
     grantee: (f = msg.getGrantee()) && cs3_storage_provider_v1beta1_resources_pb.Grantee.toObject(includeInstance, f),
-    permissions: (f = msg.getPermissions()) && proto.cs3.sharing.collaboration.v1beta1.SharePermissions.toObject(includeInstance, f)
+    permissions: (f = msg.getPermissions()) && proto.cs3.sharing.collaboration.v1beta1.SharePermissions.toObject(includeInstance, f),
+    expiration: (f = msg.getExpiration()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1783,6 +1835,11 @@ proto.cs3.sharing.collaboration.v1beta1.ShareGrant.deserializeBinaryFromReader =
       reader.readMessage(value,proto.cs3.sharing.collaboration.v1beta1.SharePermissions.deserializeBinaryFromReader);
       msg.setPermissions(value);
       break;
+    case 3:
+      var value = new cs3_types_v1beta1_types_pb.Timestamp;
+      reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiration(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1826,6 +1883,14 @@ proto.cs3.sharing.collaboration.v1beta1.ShareGrant.serializeBinaryToWriter = fun
       2,
       f,
       proto.cs3.sharing.collaboration.v1beta1.SharePermissions.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -1902,6 +1967,43 @@ proto.cs3.sharing.collaboration.v1beta1.ShareGrant.prototype.clearPermissions = 
  */
 proto.cs3.sharing.collaboration.v1beta1.ShareGrant.prototype.hasPermissions = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional cs3.types.v1beta1.Timestamp expiration = 3;
+ * @return {?proto.cs3.types.v1beta1.Timestamp}
+ */
+proto.cs3.sharing.collaboration.v1beta1.ShareGrant.prototype.getExpiration = function() {
+  return /** @type{?proto.cs3.types.v1beta1.Timestamp} */ (
+    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Timestamp, 3));
+};
+
+
+/**
+ * @param {?proto.cs3.types.v1beta1.Timestamp|undefined} value
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.ShareGrant} returns this
+*/
+proto.cs3.sharing.collaboration.v1beta1.ShareGrant.prototype.setExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.ShareGrant} returns this
+ */
+proto.cs3.sharing.collaboration.v1beta1.ShareGrant.prototype.clearExpiration = function() {
+  return this.setExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.collaboration.v1beta1.ShareGrant.prototype.hasExpiration = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

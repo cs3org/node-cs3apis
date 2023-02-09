@@ -419,6 +419,11 @@ export class Grant extends jspb.Message {
   getCreator(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
   setCreator(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
 
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
+  setExpiration(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Grant.AsObject;
   static toObject(includeInstance: boolean, msg: Grant): Grant.AsObject;
@@ -434,6 +439,7 @@ export namespace Grant {
     grantee?: Grantee.AsObject,
     permissions?: ResourcePermissions.AsObject,
     creator?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
+    expiration?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
   }
 }
 

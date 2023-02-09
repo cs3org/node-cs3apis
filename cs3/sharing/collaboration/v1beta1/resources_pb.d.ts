@@ -47,6 +47,11 @@ export class Share extends jspb.Message {
   getMtime(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
   setMtime(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
 
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
+  setExpiration(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Share.AsObject;
   static toObject(includeInstance: boolean, msg: Share): Share.AsObject;
@@ -67,6 +72,7 @@ export namespace Share {
     creator?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
     ctime?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
     mtime?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
+    expiration?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
   }
 }
 
@@ -224,6 +230,11 @@ export class ShareGrant extends jspb.Message {
   getPermissions(): SharePermissions | undefined;
   setPermissions(value?: SharePermissions): void;
 
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
+  setExpiration(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShareGrant.AsObject;
   static toObject(includeInstance: boolean, msg: ShareGrant): ShareGrant.AsObject;
@@ -238,6 +249,7 @@ export namespace ShareGrant {
   export type AsObject = {
     grantee?: cs3_storage_provider_v1beta1_resources_pb.Grantee.AsObject,
     permissions?: SharePermissions.AsObject,
+    expiration?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
   }
 }
 
