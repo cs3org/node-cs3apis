@@ -7,12 +7,17 @@ import * as cs3_sharing_ocm_v1beta1_resources_pb from '../../../cs3/sharing/ocm/
 import * as cs3_tx_v1beta1_resources_pb from '../../../cs3/tx/v1beta1/resources_pb';
 import * as cs3_types_v1beta1_types_pb from '../../../cs3/types/v1beta1/types_pb';
 
-export class PullTransferRequest extends jspb.Message {
+export class CreateTransferRequest extends jspb.Message {
   getSrcTargetUri(): string;
   setSrcTargetUri(value: string): void;
 
   getDestTargetUri(): string;
   setDestTargetUri(value: string): void;
+
+  hasShareId(): boolean;
+  clearShareId(): void;
+  getShareId(): cs3_sharing_ocm_v1beta1_resources_pb.ShareId | undefined;
+  setShareId(value?: cs3_sharing_ocm_v1beta1_resources_pb.ShareId): void;
 
   hasOpaque(): boolean;
   clearOpaque(): void;
@@ -20,24 +25,25 @@ export class PullTransferRequest extends jspb.Message {
   setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PullTransferRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PullTransferRequest): PullTransferRequest.AsObject;
+  toObject(includeInstance?: boolean): CreateTransferRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTransferRequest): CreateTransferRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PullTransferRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PullTransferRequest;
-  static deserializeBinaryFromReader(message: PullTransferRequest, reader: jspb.BinaryReader): PullTransferRequest;
+  static serializeBinaryToWriter(message: CreateTransferRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTransferRequest;
+  static deserializeBinaryFromReader(message: CreateTransferRequest, reader: jspb.BinaryReader): CreateTransferRequest;
 }
 
-export namespace PullTransferRequest {
+export namespace CreateTransferRequest {
   export type AsObject = {
     srcTargetUri: string,
     destTargetUri: string,
+    shareId?: cs3_sharing_ocm_v1beta1_resources_pb.ShareId.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
   }
 }
 
-export class PullTransferResponse extends jspb.Message {
+export class CreateTransferResponse extends jspb.Message {
   hasStatus(): boolean;
   clearStatus(): void;
   getStatus(): cs3_rpc_v1beta1_status_pb.Status | undefined;
@@ -54,16 +60,16 @@ export class PullTransferResponse extends jspb.Message {
   setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PullTransferResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PullTransferResponse): PullTransferResponse.AsObject;
+  toObject(includeInstance?: boolean): CreateTransferResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateTransferResponse): CreateTransferResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PullTransferResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PullTransferResponse;
-  static deserializeBinaryFromReader(message: PullTransferResponse, reader: jspb.BinaryReader): PullTransferResponse;
+  static serializeBinaryToWriter(message: CreateTransferResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateTransferResponse;
+  static deserializeBinaryFromReader(message: CreateTransferResponse, reader: jspb.BinaryReader): CreateTransferResponse;
 }
 
-export namespace PullTransferResponse {
+export namespace CreateTransferResponse {
   export type AsObject = {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     txInfo?: cs3_tx_v1beta1_resources_pb.TxInfo.AsObject,

@@ -169,6 +169,10 @@ generateInviteToken: {
     responseDeserialize: deserialize_cs3_ocm_invite_v1beta1_GenerateInviteTokenResponse,
   },
   // Forwards a received invite to the sync'n'share system provider.
+// MUST return CODE_NOT_FOUND if the token does not exist.
+// MUST return CODE_INVALID_ARGUMENT if the token expired.
+// MUST return CODE_ALREADY_EXISTS if the user already accepted an invite.
+// MUST return CODE_PERMISSION_DENIED if the remote service is not trusted to accept invitations.
 forwardInvite: {
     path: '/cs3.ocm.invite.v1beta1.InviteAPI/ForwardInvite',
     requestStream: false,
@@ -181,6 +185,9 @@ forwardInvite: {
     responseDeserialize: deserialize_cs3_ocm_invite_v1beta1_ForwardInviteResponse,
   },
   // Completes an invitation acceptance.
+// MUST return CODE_NOT_FOUND if the token does not exist.
+// MUST return CODE_INVALID_ARGUMENT if the token expired.
+// MUST return CODE_ALREADY_EXISTS if the user already accepted an invite.
 acceptInvite: {
     path: '/cs3.ocm.invite.v1beta1.InviteAPI/AcceptInvite',
     requestStream: false,
@@ -193,6 +200,7 @@ acceptInvite: {
     responseDeserialize: deserialize_cs3_ocm_invite_v1beta1_AcceptInviteResponse,
   },
   // Retrieves details about a remote user who has accepted an invite to share.
+// MUST return CODE_NOT_FOUND if the user does not exist.
 getAcceptedUser: {
     path: '/cs3.ocm.invite.v1beta1.InviteAPI/GetAcceptedUser',
     requestStream: false,

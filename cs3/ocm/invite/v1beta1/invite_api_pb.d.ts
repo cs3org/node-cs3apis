@@ -14,6 +14,9 @@ export class GenerateInviteTokenRequest extends jspb.Message {
   getOpaque(): cs3_types_v1beta1_types_pb.Opaque | undefined;
   setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
 
+  getDescription(): string;
+  setDescription(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GenerateInviteTokenRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GenerateInviteTokenRequest): GenerateInviteTokenRequest.AsObject;
@@ -27,6 +30,7 @@ export class GenerateInviteTokenRequest extends jspb.Message {
 export namespace GenerateInviteTokenRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
+    description: string,
   }
 }
 
@@ -109,6 +113,17 @@ export class ForwardInviteResponse extends jspb.Message {
   getOpaque(): cs3_types_v1beta1_types_pb.Opaque | undefined;
   setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
 
+  hasUserId(): boolean;
+  clearUserId(): void;
+  getUserId(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
+  setUserId(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ForwardInviteResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ForwardInviteResponse): ForwardInviteResponse.AsObject;
@@ -123,6 +138,9 @@ export namespace ForwardInviteResponse {
   export type AsObject = {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
+    userId?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
+    email: string,
+    displayName: string,
   }
 }
 
@@ -171,6 +189,17 @@ export class AcceptInviteResponse extends jspb.Message {
   getOpaque(): cs3_types_v1beta1_types_pb.Opaque | undefined;
   setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
 
+  hasUserId(): boolean;
+  clearUserId(): void;
+  getUserId(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
+  setUserId(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
+
+  getEmail(): string;
+  setEmail(value: string): void;
+
+  getDisplayName(): string;
+  setDisplayName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AcceptInviteResponse.AsObject;
   static toObject(includeInstance: boolean, msg: AcceptInviteResponse): AcceptInviteResponse.AsObject;
@@ -185,6 +214,9 @@ export namespace AcceptInviteResponse {
   export type AsObject = {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
+    userId?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
+    email: string,
+    displayName: string,
   }
 }
 

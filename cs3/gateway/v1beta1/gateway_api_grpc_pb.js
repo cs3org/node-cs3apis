@@ -1980,6 +1980,28 @@ function deserialize_cs3_tx_v1beta1_CancelTransferResponse(buffer_arg) {
   return cs3_tx_v1beta1_tx_api_pb.CancelTransferResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_tx_v1beta1_CreateTransferRequest(arg) {
+  if (!(arg instanceof cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest)) {
+    throw new Error('Expected argument of type cs3.tx.v1beta1.CreateTransferRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_tx_v1beta1_CreateTransferRequest(buffer_arg) {
+  return cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_tx_v1beta1_CreateTransferResponse(arg) {
+  if (!(arg instanceof cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse)) {
+    throw new Error('Expected argument of type cs3.tx.v1beta1.CreateTransferResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_tx_v1beta1_CreateTransferResponse(buffer_arg) {
+  return cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_tx_v1beta1_GetTransferStatusRequest(arg) {
   if (!(arg instanceof cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest)) {
     throw new Error('Expected argument of type cs3.tx.v1beta1.GetTransferStatusRequest');
@@ -2022,28 +2044,6 @@ function serialize_cs3_tx_v1beta1_ListTransfersResponse(arg) {
 
 function deserialize_cs3_tx_v1beta1_ListTransfersResponse(buffer_arg) {
   return cs3_tx_v1beta1_tx_api_pb.ListTransfersResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_cs3_tx_v1beta1_PullTransferRequest(arg) {
-  if (!(arg instanceof cs3_tx_v1beta1_tx_api_pb.PullTransferRequest)) {
-    throw new Error('Expected argument of type cs3.tx.v1beta1.PullTransferRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_tx_v1beta1_PullTransferRequest(buffer_arg) {
-  return cs3_tx_v1beta1_tx_api_pb.PullTransferRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_cs3_tx_v1beta1_PullTransferResponse(arg) {
-  if (!(arg instanceof cs3_tx_v1beta1_tx_api_pb.PullTransferResponse)) {
-    throw new Error('Expected argument of type cs3.tx.v1beta1.PullTransferResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_tx_v1beta1_PullTransferResponse(buffer_arg) {
-  return cs3_tx_v1beta1_tx_api_pb.PullTransferResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_tx_v1beta1_RetryTransferRequest(arg) {
@@ -3259,17 +3259,17 @@ createOCMCoreShare: {
   // *****************************************************************/
 // ************************** FILE TRANSFER ************************/
 // *****************************************************************/
-//  Requests the destination to pull a resource from source.
-pullTransfer: {
-    path: '/cs3.gateway.v1beta1.GatewayAPI/PullTransfer',
+//  Requests creation of a transfer.
+createTransfer: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/CreateTransfer',
     requestStream: false,
     responseStream: false,
-    requestType: cs3_tx_v1beta1_tx_api_pb.PullTransferRequest,
-    responseType: cs3_tx_v1beta1_tx_api_pb.PullTransferResponse,
-    requestSerialize: serialize_cs3_tx_v1beta1_PullTransferRequest,
-    requestDeserialize: deserialize_cs3_tx_v1beta1_PullTransferRequest,
-    responseSerialize: serialize_cs3_tx_v1beta1_PullTransferResponse,
-    responseDeserialize: deserialize_cs3_tx_v1beta1_PullTransferResponse,
+    requestType: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest,
+    responseType: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse,
+    requestSerialize: serialize_cs3_tx_v1beta1_CreateTransferRequest,
+    requestDeserialize: deserialize_cs3_tx_v1beta1_CreateTransferRequest,
+    responseSerialize: serialize_cs3_tx_v1beta1_CreateTransferResponse,
+    responseDeserialize: deserialize_cs3_tx_v1beta1_CreateTransferResponse,
   },
   // Requests a transfer status.
 getTransferStatus: {

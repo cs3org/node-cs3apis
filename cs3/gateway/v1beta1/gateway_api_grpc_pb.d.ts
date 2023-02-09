@@ -112,7 +112,7 @@ interface IGatewayAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceI
   getInfoByDomain: IGatewayAPIService_IGetInfoByDomain;
   listAllProviders: IGatewayAPIService_IListAllProviders;
   createOCMCoreShare: IGatewayAPIService_ICreateOCMCoreShare;
-  pullTransfer: IGatewayAPIService_IPullTransfer;
+  createTransfer: IGatewayAPIService_ICreateTransfer;
   getTransferStatus: IGatewayAPIService_IGetTransferStatus;
   cancelTransfer: IGatewayAPIService_ICancelTransfer;
   listTransfers: IGatewayAPIService_IListTransfers;
@@ -980,14 +980,14 @@ interface IGatewayAPIService_ICreateOCMCoreShare extends grpc.MethodDefinition<c
   responseDeserialize: grpc.deserialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse>;
 }
 
-interface IGatewayAPIService_IPullTransfer extends grpc.MethodDefinition<cs3_tx_v1beta1_tx_api_pb.PullTransferRequest, cs3_tx_v1beta1_tx_api_pb.PullTransferResponse> {
-  path: '/cs3.gateway.v1beta1.GatewayAPI/PullTransfer'
+interface IGatewayAPIService_ICreateTransfer extends grpc.MethodDefinition<cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse> {
+  path: '/cs3.gateway.v1beta1.GatewayAPI/CreateTransfer'
   requestStream: false
   responseStream: false
-  requestSerialize: grpc.serialize<cs3_tx_v1beta1_tx_api_pb.PullTransferRequest>;
-  requestDeserialize: grpc.deserialize<cs3_tx_v1beta1_tx_api_pb.PullTransferRequest>;
-  responseSerialize: grpc.serialize<cs3_tx_v1beta1_tx_api_pb.PullTransferResponse>;
-  responseDeserialize: grpc.deserialize<cs3_tx_v1beta1_tx_api_pb.PullTransferResponse>;
+  requestSerialize: grpc.serialize<cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest>;
+  requestDeserialize: grpc.deserialize<cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest>;
+  responseSerialize: grpc.serialize<cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse>;
+  responseDeserialize: grpc.deserialize<cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse>;
 }
 
 interface IGatewayAPIService_IGetTransferStatus extends grpc.MethodDefinition<cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse> {
@@ -1128,7 +1128,7 @@ export interface IGatewayAPIServer extends grpc.UntypedServiceImplementation {
   getInfoByDomain: grpc.handleUnaryCall<cs3_ocm_provider_v1beta1_provider_api_pb.GetInfoByDomainRequest, cs3_ocm_provider_v1beta1_provider_api_pb.GetInfoByDomainResponse>;
   listAllProviders: grpc.handleUnaryCall<cs3_ocm_provider_v1beta1_provider_api_pb.ListAllProvidersRequest, cs3_ocm_provider_v1beta1_provider_api_pb.ListAllProvidersResponse>;
   createOCMCoreShare: grpc.handleUnaryCall<cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse>;
-  pullTransfer: grpc.handleUnaryCall<cs3_tx_v1beta1_tx_api_pb.PullTransferRequest, cs3_tx_v1beta1_tx_api_pb.PullTransferResponse>;
+  createTransfer: grpc.handleUnaryCall<cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse>;
   getTransferStatus: grpc.handleUnaryCall<cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse>;
   cancelTransfer: grpc.handleUnaryCall<cs3_tx_v1beta1_tx_api_pb.CancelTransferRequest, cs3_tx_v1beta1_tx_api_pb.CancelTransferResponse>;
   listTransfers: grpc.handleUnaryCall<cs3_tx_v1beta1_tx_api_pb.ListTransfersRequest, cs3_tx_v1beta1_tx_api_pb.ListTransfersResponse>;
@@ -1393,9 +1393,9 @@ export interface IGatewayAPIClient {
   createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
-  pullTransfer(request: cs3_tx_v1beta1_tx_api_pb.PullTransferRequest, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.PullTransferResponse) => void): grpc.ClientUnaryCall;
-  pullTransfer(request: cs3_tx_v1beta1_tx_api_pb.PullTransferRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.PullTransferResponse) => void): grpc.ClientUnaryCall;
-  pullTransfer(request: cs3_tx_v1beta1_tx_api_pb.PullTransferRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.PullTransferResponse) => void): grpc.ClientUnaryCall;
+  createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
+  createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
+  createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
   getTransferStatus(request: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse) => void): grpc.ClientUnaryCall;
   getTransferStatus(request: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse) => void): grpc.ClientUnaryCall;
   getTransferStatus(request: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse) => void): grpc.ClientUnaryCall;
@@ -1671,9 +1671,9 @@ export class GatewayAPIClient extends grpc.Client implements IGatewayAPIClient {
   public createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   public createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   public createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
-  public pullTransfer(request: cs3_tx_v1beta1_tx_api_pb.PullTransferRequest, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.PullTransferResponse) => void): grpc.ClientUnaryCall;
-  public pullTransfer(request: cs3_tx_v1beta1_tx_api_pb.PullTransferRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.PullTransferResponse) => void): grpc.ClientUnaryCall;
-  public pullTransfer(request: cs3_tx_v1beta1_tx_api_pb.PullTransferRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.PullTransferResponse) => void): grpc.ClientUnaryCall;
+  public createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
+  public createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
+  public createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
   public getTransferStatus(request: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse) => void): grpc.ClientUnaryCall;
   public getTransferStatus(request: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse) => void): grpc.ClientUnaryCall;
   public getTransferStatus(request: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse) => void): grpc.ClientUnaryCall;
