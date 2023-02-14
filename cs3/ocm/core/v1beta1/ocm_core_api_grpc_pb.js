@@ -23,8 +23,9 @@
 var grpc = require('@grpc/grpc-js');
 var cs3_ocm_core_v1beta1_ocm_core_api_pb = require('../../../../cs3/ocm/core/v1beta1/ocm_core_api_pb.js');
 var cs3_identity_user_v1beta1_resources_pb = require('../../../../cs3/identity/user/v1beta1/resources_pb.js');
-var cs3_ocm_core_v1beta1_resources_pb = require('../../../../cs3/ocm/core/v1beta1/resources_pb.js');
 var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.js');
+var cs3_sharing_ocm_v1beta1_resources_pb = require('../../../../cs3/sharing/ocm/v1beta1/resources_pb.js');
+var cs3_storage_provider_v1beta1_resources_pb = require('../../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../../cs3/types/v1beta1/types_pb.js');
 
 function serialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareRequest(arg) {

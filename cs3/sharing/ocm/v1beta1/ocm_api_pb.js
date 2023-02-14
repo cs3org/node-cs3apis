@@ -61,7 +61,7 @@ goog.exportSymbol('proto.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareResponse'
  * @constructor
  */
 proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.repeatedFields_, null);
 };
 goog.inherits(proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -429,6 +429,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponse.displayName = 'proto.cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponse';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -462,8 +469,11 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.toObject = function(includeI
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     resourceId: (f = msg.getResourceId()) && cs3_storage_provider_v1beta1_resources_pb.ResourceId.toObject(includeInstance, f),
-    grant: (f = msg.getGrant()) && cs3_sharing_ocm_v1beta1_resources_pb.ShareGrant.toObject(includeInstance, f),
-    recipientMeshProvider: (f = msg.getRecipientMeshProvider()) && cs3_ocm_provider_v1beta1_resources_pb.ProviderInfo.toObject(includeInstance, f)
+    grantee: (f = msg.getGrantee()) && cs3_storage_provider_v1beta1_resources_pb.Grantee.toObject(includeInstance, f),
+    recipientMeshProvider: (f = msg.getRecipientMeshProvider()) && cs3_ocm_provider_v1beta1_resources_pb.ProviderInfo.toObject(includeInstance, f),
+    accessMethodsList: jspb.Message.toObjectList(msg.getAccessMethodsList(),
+    cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod.toObject, includeInstance),
+    expiration: (f = msg.getExpiration()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -511,14 +521,24 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.deserializeBinaryFromReader 
       msg.setResourceId(value);
       break;
     case 3:
-      var value = new cs3_sharing_ocm_v1beta1_resources_pb.ShareGrant;
-      reader.readMessage(value,cs3_sharing_ocm_v1beta1_resources_pb.ShareGrant.deserializeBinaryFromReader);
-      msg.setGrant(value);
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Grantee;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Grantee.deserializeBinaryFromReader);
+      msg.setGrantee(value);
       break;
     case 4:
       var value = new cs3_ocm_provider_v1beta1_resources_pb.ProviderInfo;
       reader.readMessage(value,cs3_ocm_provider_v1beta1_resources_pb.ProviderInfo.deserializeBinaryFromReader);
       msg.setRecipientMeshProvider(value);
+      break;
+    case 5:
+      var value = new cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod;
+      reader.readMessage(value,cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod.deserializeBinaryFromReader);
+      msg.addAccessMethods(value);
+      break;
+    case 6:
+      var value = new cs3_types_v1beta1_types_pb.Timestamp;
+      reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiration(value);
       break;
     default:
       reader.skipField();
@@ -565,12 +585,12 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.serializeBinaryToWriter = fu
       cs3_storage_provider_v1beta1_resources_pb.ResourceId.serializeBinaryToWriter
     );
   }
-  f = message.getGrant();
+  f = message.getGrantee();
   if (f != null) {
     writer.writeMessage(
       3,
       f,
-      cs3_sharing_ocm_v1beta1_resources_pb.ShareGrant.serializeBinaryToWriter
+      cs3_storage_provider_v1beta1_resources_pb.Grantee.serializeBinaryToWriter
     );
   }
   f = message.getRecipientMeshProvider();
@@ -579,6 +599,22 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.serializeBinaryToWriter = fu
       4,
       f,
       cs3_ocm_provider_v1beta1_resources_pb.ProviderInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getAccessMethodsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
     );
   }
 };
@@ -659,20 +695,20 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.hasResourceId = fu
 
 
 /**
- * optional ShareGrant grant = 3;
- * @return {?proto.cs3.sharing.ocm.v1beta1.ShareGrant}
+ * optional cs3.storage.provider.v1beta1.Grantee grantee = 3;
+ * @return {?proto.cs3.storage.provider.v1beta1.Grantee}
  */
-proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.getGrant = function() {
-  return /** @type{?proto.cs3.sharing.ocm.v1beta1.ShareGrant} */ (
-    jspb.Message.getWrapperField(this, cs3_sharing_ocm_v1beta1_resources_pb.ShareGrant, 3));
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.getGrantee = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Grantee} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Grantee, 3));
 };
 
 
 /**
- * @param {?proto.cs3.sharing.ocm.v1beta1.ShareGrant|undefined} value
+ * @param {?proto.cs3.storage.provider.v1beta1.Grantee|undefined} value
  * @return {!proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest} returns this
 */
-proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.setGrant = function(value) {
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.setGrantee = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -681,8 +717,8 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.setGrant = functio
  * Clears the message field making it undefined.
  * @return {!proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest} returns this
  */
-proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.clearGrant = function() {
-  return this.setGrant(undefined);
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.clearGrantee = function() {
+  return this.setGrantee(undefined);
 };
 
 
@@ -690,7 +726,7 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.clearGrant = funct
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.hasGrant = function() {
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.hasGrantee = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -732,6 +768,81 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.hasRecipientMeshPr
 };
 
 
+/**
+ * repeated AccessMethod access_methods = 5;
+ * @return {!Array<!proto.cs3.sharing.ocm.v1beta1.AccessMethod>}
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.getAccessMethodsList = function() {
+  return /** @type{!Array<!proto.cs3.sharing.ocm.v1beta1.AccessMethod>} */ (
+    jspb.Message.getRepeatedWrapperField(this, cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.cs3.sharing.ocm.v1beta1.AccessMethod>} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest} returns this
+*/
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.setAccessMethodsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.cs3.sharing.ocm.v1beta1.AccessMethod=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.cs3.sharing.ocm.v1beta1.AccessMethod}
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.addAccessMethods = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.cs3.sharing.ocm.v1beta1.AccessMethod, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.clearAccessMethodsList = function() {
+  return this.setAccessMethodsList([]);
+};
+
+
+/**
+ * optional cs3.types.v1beta1.Timestamp expiration = 6;
+ * @return {?proto.cs3.types.v1beta1.Timestamp}
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.getExpiration = function() {
+  return /** @type{?proto.cs3.types.v1beta1.Timestamp} */ (
+    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.cs3.types.v1beta1.Timestamp|undefined} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest} returns this
+*/
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.setExpiration = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.clearExpiration = function() {
+  return this.setExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareRequest.prototype.hasExpiration = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
 
 
 
@@ -766,7 +877,8 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse.toObject = function(include
   var f, obj = {
     status: (f = msg.getStatus()) && cs3_rpc_v1beta1_status_pb.Status.toObject(includeInstance, f),
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
-    share: (f = msg.getShare()) && cs3_sharing_ocm_v1beta1_resources_pb.Share.toObject(includeInstance, f)
+    share: (f = msg.getShare()) && cs3_sharing_ocm_v1beta1_resources_pb.Share.toObject(includeInstance, f),
+    recipientDisplayName: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -817,6 +929,10 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse.deserializeBinaryFromReader
       var value = new cs3_sharing_ocm_v1beta1_resources_pb.Share;
       reader.readMessage(value,cs3_sharing_ocm_v1beta1_resources_pb.Share.deserializeBinaryFromReader);
       msg.setShare(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRecipientDisplayName(value);
       break;
     default:
       reader.skipField();
@@ -869,6 +985,13 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse.serializeBinaryToWriter = f
       3,
       f,
       cs3_sharing_ocm_v1beta1_resources_pb.Share.serializeBinaryToWriter
+    );
+  }
+  f = message.getRecipientDisplayName();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -982,6 +1105,24 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse.prototype.clearShare = func
  */
 proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse.prototype.hasShare = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string recipient_display_name = 4;
+ * @return {string}
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse.prototype.getRecipientDisplayName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse.prototype.setRecipientDisplayName = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

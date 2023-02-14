@@ -18,8 +18,8 @@ export class OpenInAppRequest extends jspb.Message {
   getResourceInfo(): cs3_storage_provider_v1beta1_resources_pb.ResourceInfo | undefined;
   setResourceInfo(value?: cs3_storage_provider_v1beta1_resources_pb.ResourceInfo): void;
 
-  getViewMode(): OpenInAppRequest.ViewMode;
-  setViewMode(value: OpenInAppRequest.ViewMode): void;
+  getViewMode(): cs3_app_provider_v1beta1_resources_pb.ViewMode;
+  setViewMode(value: cs3_app_provider_v1beta1_resources_pb.ViewMode): void;
 
   getAccessToken(): string;
   setAccessToken(value: string): void;
@@ -38,16 +38,8 @@ export namespace OpenInAppRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     resourceInfo?: cs3_storage_provider_v1beta1_resources_pb.ResourceInfo.AsObject,
-    viewMode: OpenInAppRequest.ViewMode,
+    viewMode: cs3_app_provider_v1beta1_resources_pb.ViewMode,
     accessToken: string,
-  }
-
-  export enum ViewMode {
-    VIEW_MODE_INVALID = 0,
-    VIEW_MODE_VIEW_ONLY = 1,
-    VIEW_MODE_READ_ONLY = 2,
-    VIEW_MODE_READ_WRITE = 3,
-    VIEW_MODE_PREVIEW = 4,
   }
 }
 

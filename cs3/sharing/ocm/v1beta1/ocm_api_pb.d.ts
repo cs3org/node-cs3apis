@@ -21,15 +21,25 @@ export class CreateOCMShareRequest extends jspb.Message {
   getResourceId(): cs3_storage_provider_v1beta1_resources_pb.ResourceId | undefined;
   setResourceId(value?: cs3_storage_provider_v1beta1_resources_pb.ResourceId): void;
 
-  hasGrant(): boolean;
-  clearGrant(): void;
-  getGrant(): cs3_sharing_ocm_v1beta1_resources_pb.ShareGrant | undefined;
-  setGrant(value?: cs3_sharing_ocm_v1beta1_resources_pb.ShareGrant): void;
+  hasGrantee(): boolean;
+  clearGrantee(): void;
+  getGrantee(): cs3_storage_provider_v1beta1_resources_pb.Grantee | undefined;
+  setGrantee(value?: cs3_storage_provider_v1beta1_resources_pb.Grantee): void;
 
   hasRecipientMeshProvider(): boolean;
   clearRecipientMeshProvider(): void;
   getRecipientMeshProvider(): cs3_ocm_provider_v1beta1_resources_pb.ProviderInfo | undefined;
   setRecipientMeshProvider(value?: cs3_ocm_provider_v1beta1_resources_pb.ProviderInfo): void;
+
+  clearAccessMethodsList(): void;
+  getAccessMethodsList(): Array<cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod>;
+  setAccessMethodsList(value: Array<cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod>): void;
+  addAccessMethods(value?: cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod, index?: number): cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod;
+
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
+  setExpiration(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateOCMShareRequest.AsObject;
@@ -45,8 +55,10 @@ export namespace CreateOCMShareRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     resourceId?: cs3_storage_provider_v1beta1_resources_pb.ResourceId.AsObject,
-    grant?: cs3_sharing_ocm_v1beta1_resources_pb.ShareGrant.AsObject,
+    grantee?: cs3_storage_provider_v1beta1_resources_pb.Grantee.AsObject,
     recipientMeshProvider?: cs3_ocm_provider_v1beta1_resources_pb.ProviderInfo.AsObject,
+    accessMethodsList: Array<cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod.AsObject>,
+    expiration?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
   }
 }
 
@@ -66,6 +78,9 @@ export class CreateOCMShareResponse extends jspb.Message {
   getShare(): cs3_sharing_ocm_v1beta1_resources_pb.Share | undefined;
   setShare(value?: cs3_sharing_ocm_v1beta1_resources_pb.Share): void;
 
+  getRecipientDisplayName(): string;
+  setRecipientDisplayName(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateOCMShareResponse.AsObject;
   static toObject(includeInstance: boolean, msg: CreateOCMShareResponse): CreateOCMShareResponse.AsObject;
@@ -81,6 +96,7 @@ export namespace CreateOCMShareResponse {
     status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     share?: cs3_sharing_ocm_v1beta1_resources_pb.Share.AsObject,
+    recipientDisplayName: string,
   }
 }
 

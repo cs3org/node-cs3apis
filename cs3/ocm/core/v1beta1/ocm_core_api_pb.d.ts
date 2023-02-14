@@ -3,8 +3,9 @@
 
 import * as jspb from 'google-protobuf';
 import * as cs3_identity_user_v1beta1_resources_pb from '../../../../cs3/identity/user/v1beta1/resources_pb';
-import * as cs3_ocm_core_v1beta1_resources_pb from '../../../../cs3/ocm/core/v1beta1/resources_pb';
 import * as cs3_rpc_v1beta1_status_pb from '../../../../cs3/rpc/v1beta1/status_pb';
+import * as cs3_sharing_ocm_v1beta1_resources_pb from '../../../../cs3/sharing/ocm/v1beta1/resources_pb';
+import * as cs3_storage_provider_v1beta1_resources_pb from '../../../../cs3/storage/provider/v1beta1/resources_pb';
 import * as cs3_types_v1beta1_types_pb from '../../../../cs3/types/v1beta1/types_pb';
 
 export class CreateOCMCoreShareRequest extends jspb.Message {
@@ -19,23 +20,39 @@ export class CreateOCMCoreShareRequest extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getProviderId(): string;
-  setProviderId(value: string): void;
+  getResourceId(): string;
+  setResourceId(value: string): void;
 
   hasOwner(): boolean;
   clearOwner(): void;
   getOwner(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
   setOwner(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
 
+  hasSender(): boolean;
+  clearSender(): void;
+  getSender(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
+  setSender(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
+
   hasShareWith(): boolean;
   clearShareWith(): void;
   getShareWith(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
   setShareWith(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
 
-  hasProtocol(): boolean;
-  clearProtocol(): void;
-  getProtocol(): cs3_ocm_core_v1beta1_resources_pb.Protocol | undefined;
-  setProtocol(value?: cs3_ocm_core_v1beta1_resources_pb.Protocol): void;
+  getResourceType(): cs3_storage_provider_v1beta1_resources_pb.ResourceType;
+  setResourceType(value: cs3_storage_provider_v1beta1_resources_pb.ResourceType): void;
+
+  getShareType(): cs3_sharing_ocm_v1beta1_resources_pb.ShareType;
+  setShareType(value: cs3_sharing_ocm_v1beta1_resources_pb.ShareType): void;
+
+  hasExpiration(): boolean;
+  clearExpiration(): void;
+  getExpiration(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
+  setExpiration(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
+
+  clearProtocolsList(): void;
+  getProtocolsList(): Array<cs3_sharing_ocm_v1beta1_resources_pb.Protocol>;
+  setProtocolsList(value: Array<cs3_sharing_ocm_v1beta1_resources_pb.Protocol>): void;
+  addProtocols(value?: cs3_sharing_ocm_v1beta1_resources_pb.Protocol, index?: number): cs3_sharing_ocm_v1beta1_resources_pb.Protocol;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateOCMCoreShareRequest.AsObject;
@@ -52,10 +69,14 @@ export namespace CreateOCMCoreShareRequest {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     description: string,
     name: string,
-    providerId: string,
+    resourceId: string,
     owner?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
+    sender?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
     shareWith?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
-    protocol?: cs3_ocm_core_v1beta1_resources_pb.Protocol.AsObject,
+    resourceType: cs3_storage_provider_v1beta1_resources_pb.ResourceType,
+    shareType: cs3_sharing_ocm_v1beta1_resources_pb.ShareType,
+    expiration?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
+    protocolsList: Array<cs3_sharing_ocm_v1beta1_resources_pb.Protocol.AsObject>,
   }
 }
 
