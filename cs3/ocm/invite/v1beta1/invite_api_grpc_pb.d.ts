@@ -11,6 +11,7 @@ import * as cs3_types_v1beta1_types_pb from '../../../../cs3/types/v1beta1/types
 
 interface IInviteAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   generateInviteToken: IInviteAPIService_IGenerateInviteToken;
+  listInviteTokens: IInviteAPIService_IListInviteTokens;
   forwardInvite: IInviteAPIService_IForwardInvite;
   acceptInvite: IInviteAPIService_IAcceptInvite;
   getAcceptedUser: IInviteAPIService_IGetAcceptedUser;
@@ -25,6 +26,16 @@ interface IInviteAPIService_IGenerateInviteToken extends grpc.MethodDefinition<c
   requestDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest>;
   responseSerialize: grpc.serialize<cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse>;
   responseDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse>;
+}
+
+interface IInviteAPIService_IListInviteTokens extends grpc.MethodDefinition<cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest, cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse> {
+  path: '/cs3.ocm.invite.v1beta1.InviteAPI/ListInviteTokens'
+  requestStream: false
+  responseStream: false
+  requestSerialize: grpc.serialize<cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest>;
+  requestDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest>;
+  responseSerialize: grpc.serialize<cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse>;
+  responseDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse>;
 }
 
 interface IInviteAPIService_IForwardInvite extends grpc.MethodDefinition<cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteRequest, cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteResponse> {
@@ -70,6 +81,7 @@ interface IInviteAPIService_IFindAcceptedUsers extends grpc.MethodDefinition<cs3
 export const InviteAPIService: IInviteAPIService;
 export interface IInviteAPIServer extends grpc.UntypedServiceImplementation {
   generateInviteToken: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse>;
+  listInviteTokens: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest, cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse>;
   forwardInvite: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteRequest, cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteResponse>;
   acceptInvite: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteRequest, cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteResponse>;
   getAcceptedUser: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.GetAcceptedUserRequest, cs3_ocm_invite_v1beta1_invite_api_pb.GetAcceptedUserResponse>;
@@ -80,6 +92,9 @@ export interface IInviteAPIClient {
   generateInviteToken(request: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse) => void): grpc.ClientUnaryCall;
   generateInviteToken(request: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse) => void): grpc.ClientUnaryCall;
   generateInviteToken(request: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse) => void): grpc.ClientUnaryCall;
+  listInviteTokens(request: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse) => void): grpc.ClientUnaryCall;
+  listInviteTokens(request: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse) => void): grpc.ClientUnaryCall;
+  listInviteTokens(request: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse) => void): grpc.ClientUnaryCall;
   forwardInvite(request: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteResponse) => void): grpc.ClientUnaryCall;
   forwardInvite(request: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteResponse) => void): grpc.ClientUnaryCall;
   forwardInvite(request: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteResponse) => void): grpc.ClientUnaryCall;
@@ -99,6 +114,9 @@ export class InviteAPIClient extends grpc.Client implements IInviteAPIClient {
   public generateInviteToken(request: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse) => void): grpc.ClientUnaryCall;
   public generateInviteToken(request: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse) => void): grpc.ClientUnaryCall;
   public generateInviteToken(request: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse) => void): grpc.ClientUnaryCall;
+  public listInviteTokens(request: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse) => void): grpc.ClientUnaryCall;
+  public listInviteTokens(request: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse) => void): grpc.ClientUnaryCall;
+  public listInviteTokens(request: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ListInviteTokensResponse) => void): grpc.ClientUnaryCall;
   public forwardInvite(request: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteResponse) => void): grpc.ClientUnaryCall;
   public forwardInvite(request: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteResponse) => void): grpc.ClientUnaryCall;
   public forwardInvite(request: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.ForwardInviteResponse) => void): grpc.ClientUnaryCall;

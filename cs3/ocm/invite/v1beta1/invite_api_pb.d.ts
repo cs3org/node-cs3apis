@@ -68,6 +68,50 @@ export namespace GenerateInviteTokenResponse {
   }
 }
 
+export class ListInviteTokensRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListInviteTokensRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListInviteTokensRequest): ListInviteTokensRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListInviteTokensRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListInviteTokensRequest;
+  static deserializeBinaryFromReader(message: ListInviteTokensRequest, reader: jspb.BinaryReader): ListInviteTokensRequest;
+}
+
+export namespace ListInviteTokensRequest {
+  export type AsObject = {
+  }
+}
+
+export class ListInviteTokensResponse extends jspb.Message {
+  hasStatus(): boolean;
+  clearStatus(): void;
+  getStatus(): cs3_rpc_v1beta1_status_pb.Status | undefined;
+  setStatus(value?: cs3_rpc_v1beta1_status_pb.Status): void;
+
+  clearInviteTokensList(): void;
+  getInviteTokensList(): Array<cs3_ocm_invite_v1beta1_resources_pb.InviteToken>;
+  setInviteTokensList(value: Array<cs3_ocm_invite_v1beta1_resources_pb.InviteToken>): void;
+  addInviteTokens(value?: cs3_ocm_invite_v1beta1_resources_pb.InviteToken, index?: number): cs3_ocm_invite_v1beta1_resources_pb.InviteToken;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListInviteTokensResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListInviteTokensResponse): ListInviteTokensResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListInviteTokensResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListInviteTokensResponse;
+  static deserializeBinaryFromReader(message: ListInviteTokensResponse, reader: jspb.BinaryReader): ListInviteTokensResponse;
+}
+
+export namespace ListInviteTokensResponse {
+  export type AsObject = {
+    status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
+    inviteTokensList: Array<cs3_ocm_invite_v1beta1_resources_pb.InviteToken.AsObject>,
+  }
+}
+
 export class ForwardInviteRequest extends jspb.Message {
   hasOpaque(): boolean;
   clearOpaque(): void;
