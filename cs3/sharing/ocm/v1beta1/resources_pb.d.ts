@@ -181,6 +181,9 @@ export class ReceivedShare extends jspb.Message {
   getOpaque(): cs3_types_v1beta1_types_pb.Opaque | undefined;
   setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
 
+  getResourceType(): cs3_storage_provider_v1beta1_resources_pb.ResourceType;
+  setResourceType(value: cs3_storage_provider_v1beta1_resources_pb.ResourceType): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReceivedShare.AsObject;
   static toObject(includeInstance: boolean, msg: ReceivedShare): ReceivedShare.AsObject;
@@ -206,6 +209,7 @@ export namespace ReceivedShare {
     protocolsList: Array<Protocol.AsObject>,
     state: ShareState,
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
+    resourceType: cs3_storage_provider_v1beta1_resources_pb.ResourceType,
   }
 }
 
