@@ -2379,7 +2379,7 @@ proto.cs3.sharing.ocm.v1beta1.ShareId.prototype.setOpaqueId = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.cs3.sharing.ocm.v1beta1.ShareReference.oneofGroups_ = [[1,2]];
+proto.cs3.sharing.ocm.v1beta1.ShareReference.oneofGroups_ = [[1,2,3]];
 
 /**
  * @enum {number}
@@ -2387,7 +2387,8 @@ proto.cs3.sharing.ocm.v1beta1.ShareReference.oneofGroups_ = [[1,2]];
 proto.cs3.sharing.ocm.v1beta1.ShareReference.SpecCase = {
   SPEC_NOT_SET: 0,
   ID: 1,
-  KEY: 2
+  KEY: 2,
+  TOKEN: 3
 };
 
 /**
@@ -2429,7 +2430,8 @@ proto.cs3.sharing.ocm.v1beta1.ShareReference.prototype.toObject = function(opt_i
 proto.cs3.sharing.ocm.v1beta1.ShareReference.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = msg.getId()) && proto.cs3.sharing.ocm.v1beta1.ShareId.toObject(includeInstance, f),
-    key: (f = msg.getKey()) && proto.cs3.sharing.ocm.v1beta1.ShareKey.toObject(includeInstance, f)
+    key: (f = msg.getKey()) && proto.cs3.sharing.ocm.v1beta1.ShareKey.toObject(includeInstance, f),
+    token: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2476,6 +2478,10 @@ proto.cs3.sharing.ocm.v1beta1.ShareReference.deserializeBinaryFromReader = funct
       reader.readMessage(value,proto.cs3.sharing.ocm.v1beta1.ShareKey.deserializeBinaryFromReader);
       msg.setKey(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2519,6 +2525,13 @@ proto.cs3.sharing.ocm.v1beta1.ShareReference.serializeBinaryToWriter = function(
       2,
       f,
       proto.cs3.sharing.ocm.v1beta1.ShareKey.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
     );
   }
 };
@@ -2595,6 +2608,42 @@ proto.cs3.sharing.ocm.v1beta1.ShareReference.prototype.clearKey = function() {
  */
 proto.cs3.sharing.ocm.v1beta1.ShareReference.prototype.hasKey = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string token = 3;
+ * @return {string}
+ */
+proto.cs3.sharing.ocm.v1beta1.ShareReference.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.ShareReference} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.ShareReference.prototype.setToken = function(value) {
+  return jspb.Message.setOneofField(this, 3, proto.cs3.sharing.ocm.v1beta1.ShareReference.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.cs3.sharing.ocm.v1beta1.ShareReference} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.ShareReference.prototype.clearToken = function() {
+  return jspb.Message.setOneofField(this, 3, proto.cs3.sharing.ocm.v1beta1.ShareReference.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.ocm.v1beta1.ShareReference.prototype.hasToken = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

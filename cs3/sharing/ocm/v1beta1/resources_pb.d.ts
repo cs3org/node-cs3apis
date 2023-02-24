@@ -278,6 +278,11 @@ export class ShareReference extends jspb.Message {
   getKey(): ShareKey | undefined;
   setKey(value?: ShareKey): void;
 
+  hasToken(): boolean;
+  clearToken(): void;
+  getToken(): string;
+  setToken(value: string): void;
+
   getSpecCase(): ShareReference.SpecCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ShareReference.AsObject;
@@ -293,12 +298,14 @@ export namespace ShareReference {
   export type AsObject = {
     id?: ShareId.AsObject,
     key?: ShareKey.AsObject,
+    token: string,
   }
 
   export enum SpecCase {
     SPEC_NOT_SET = 0,
     ID = 1,
     KEY = 2,
+    TOKEN = 3,
   }
 }
 
