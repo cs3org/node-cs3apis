@@ -81,6 +81,7 @@ interface IGatewayAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceI
   createOCMShare: IGatewayAPIService_ICreateOCMShare;
   removeOCMShare: IGatewayAPIService_IRemoveOCMShare;
   getOCMShare: IGatewayAPIService_IGetOCMShare;
+  getOCMShareByToken: IGatewayAPIService_IGetOCMShareByToken;
   listOCMShares: IGatewayAPIService_IListOCMShares;
   updateOCMShare: IGatewayAPIService_IUpdateOCMShare;
   listReceivedOCMShares: IGatewayAPIService_IListReceivedOCMShares;
@@ -671,6 +672,16 @@ interface IGatewayAPIService_IGetOCMShare extends grpc.MethodDefinition<cs3_shar
   responseDeserialize: grpc.deserialize<cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareResponse>;
 }
 
+interface IGatewayAPIService_IGetOCMShareByToken extends grpc.MethodDefinition<cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse> {
+  path: '/cs3.gateway.v1beta1.GatewayAPI/GetOCMShareByToken'
+  requestStream: false
+  responseStream: false
+  requestSerialize: grpc.serialize<cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest>;
+  requestDeserialize: grpc.deserialize<cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest>;
+  responseSerialize: grpc.serialize<cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse>;
+  responseDeserialize: grpc.deserialize<cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse>;
+}
+
 interface IGatewayAPIService_IListOCMShares extends grpc.MethodDefinition<cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/ListOCMShares'
   requestStream: false
@@ -1108,6 +1119,7 @@ export interface IGatewayAPIServer extends grpc.UntypedServiceImplementation {
   createOCMShare: grpc.handleUnaryCall<cs3_sharing_ocm_v1beta1_ocm_api_pb.CreateOCMShareRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.CreateOCMShareResponse>;
   removeOCMShare: grpc.handleUnaryCall<cs3_sharing_ocm_v1beta1_ocm_api_pb.RemoveOCMShareRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.RemoveOCMShareResponse>;
   getOCMShare: grpc.handleUnaryCall<cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareResponse>;
+  getOCMShareByToken: grpc.handleUnaryCall<cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse>;
   listOCMShares: grpc.handleUnaryCall<cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesResponse>;
   updateOCMShare: grpc.handleUnaryCall<cs3_sharing_ocm_v1beta1_ocm_api_pb.UpdateOCMShareRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.UpdateOCMShareResponse>;
   listReceivedOCMShares: grpc.handleUnaryCall<cs3_sharing_ocm_v1beta1_ocm_api_pb.ListReceivedOCMSharesRequest, cs3_sharing_ocm_v1beta1_ocm_api_pb.ListReceivedOCMSharesResponse>;
@@ -1312,6 +1324,9 @@ export interface IGatewayAPIClient {
   getOCMShare(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareResponse) => void): grpc.ClientUnaryCall;
   getOCMShare(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareResponse) => void): grpc.ClientUnaryCall;
   getOCMShare(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareResponse) => void): grpc.ClientUnaryCall;
+  getOCMShareByToken(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse) => void): grpc.ClientUnaryCall;
+  getOCMShareByToken(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse) => void): grpc.ClientUnaryCall;
+  getOCMShareByToken(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse) => void): grpc.ClientUnaryCall;
   listOCMShares(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesResponse) => void): grpc.ClientUnaryCall;
   listOCMShares(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesResponse) => void): grpc.ClientUnaryCall;
   listOCMShares(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesResponse) => void): grpc.ClientUnaryCall;
@@ -1593,6 +1608,9 @@ export class GatewayAPIClient extends grpc.Client implements IGatewayAPIClient {
   public getOCMShare(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareResponse) => void): grpc.ClientUnaryCall;
   public getOCMShare(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareResponse) => void): grpc.ClientUnaryCall;
   public getOCMShare(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareResponse) => void): grpc.ClientUnaryCall;
+  public getOCMShareByToken(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse) => void): grpc.ClientUnaryCall;
+  public getOCMShareByToken(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse) => void): grpc.ClientUnaryCall;
+  public getOCMShareByToken(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse) => void): grpc.ClientUnaryCall;
   public listOCMShares(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesResponse) => void): grpc.ClientUnaryCall;
   public listOCMShares(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesResponse) => void): grpc.ClientUnaryCall;
   public listOCMShares(request: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesResponse) => void): grpc.ClientUnaryCall;

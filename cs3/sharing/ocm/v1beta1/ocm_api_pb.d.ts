@@ -445,6 +445,54 @@ export namespace GetOCMShareResponse {
   }
 }
 
+export class GetOCMShareByTokenRequest extends jspb.Message {
+  getToken(): string;
+  setToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetOCMShareByTokenRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetOCMShareByTokenRequest): GetOCMShareByTokenRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetOCMShareByTokenRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetOCMShareByTokenRequest;
+  static deserializeBinaryFromReader(message: GetOCMShareByTokenRequest, reader: jspb.BinaryReader): GetOCMShareByTokenRequest;
+}
+
+export namespace GetOCMShareByTokenRequest {
+  export type AsObject = {
+    token: string,
+  }
+}
+
+export class GetOCMShareByTokenResponse extends jspb.Message {
+  hasStatus(): boolean;
+  clearStatus(): void;
+  getStatus(): cs3_rpc_v1beta1_status_pb.Status | undefined;
+  setStatus(value?: cs3_rpc_v1beta1_status_pb.Status): void;
+
+  hasShare(): boolean;
+  clearShare(): void;
+  getShare(): cs3_sharing_ocm_v1beta1_resources_pb.Share | undefined;
+  setShare(value?: cs3_sharing_ocm_v1beta1_resources_pb.Share): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetOCMShareByTokenResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetOCMShareByTokenResponse): GetOCMShareByTokenResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetOCMShareByTokenResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetOCMShareByTokenResponse;
+  static deserializeBinaryFromReader(message: GetOCMShareByTokenResponse, reader: jspb.BinaryReader): GetOCMShareByTokenResponse;
+}
+
+export namespace GetOCMShareByTokenResponse {
+  export type AsObject = {
+    status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
+    share?: cs3_sharing_ocm_v1beta1_resources_pb.Share.AsObject,
+  }
+}
+
 export class ListReceivedOCMSharesRequest extends jspb.Message {
   hasOpaque(): boolean;
   clearOpaque(): void;

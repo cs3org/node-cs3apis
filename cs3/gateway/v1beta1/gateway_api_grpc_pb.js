@@ -1199,6 +1199,28 @@ function deserialize_cs3_sharing_ocm_v1beta1_CreateOCMShareResponse(buffer_arg) 
   return cs3_sharing_ocm_v1beta1_ocm_api_pb.CreateOCMShareResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenRequest(arg) {
+  if (!(arg instanceof cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest)) {
+    throw new Error('Expected argument of type cs3.sharing.ocm.v1beta1.GetOCMShareByTokenRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenRequest(buffer_arg) {
+  return cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenResponse(arg) {
+  if (!(arg instanceof cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse)) {
+    throw new Error('Expected argument of type cs3.sharing.ocm.v1beta1.GetOCMShareByTokenResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenResponse(buffer_arg) {
+  return cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_sharing_ocm_v1beta1_GetOCMShareRequest(arg) {
   if (!(arg instanceof cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareRequest)) {
     throw new Error('Expected argument of type cs3.sharing.ocm.v1beta1.GetOCMShareRequest');
@@ -2871,6 +2893,19 @@ getOCMShare: {
     requestDeserialize: deserialize_cs3_sharing_ocm_v1beta1_GetOCMShareRequest,
     responseSerialize: serialize_cs3_sharing_ocm_v1beta1_GetOCMShareResponse,
     responseDeserialize: deserialize_cs3_sharing_ocm_v1beta1_GetOCMShareResponse,
+  },
+  // Gets share information for a single share by its unlisted token.
+// MUST return CODE_NOT_FOUND if the share does not exist.
+getOCMShareByToken: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/GetOCMShareByToken',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenRequest,
+    responseType: cs3_sharing_ocm_v1beta1_ocm_api_pb.GetOCMShareByTokenResponse,
+    requestSerialize: serialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenRequest,
+    requestDeserialize: deserialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenRequest,
+    responseSerialize: serialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenResponse,
+    responseDeserialize: deserialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenResponse,
   },
   // List the shares the authproviderenticated principal has created,
 // both as owner and creator. If a filter is specified, only
