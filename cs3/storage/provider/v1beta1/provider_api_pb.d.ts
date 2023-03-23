@@ -2124,6 +2124,11 @@ export class CreateHomeRequest extends jspb.Message {
   getOpaque(): cs3_types_v1beta1_types_pb.Opaque | undefined;
   setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
 
+  hasQuota(): boolean;
+  clearQuota(): void;
+  getQuota(): cs3_storage_provider_v1beta1_resources_pb.Quota | undefined;
+  setQuota(value?: cs3_storage_provider_v1beta1_resources_pb.Quota): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateHomeRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateHomeRequest): CreateHomeRequest.AsObject;
@@ -2137,6 +2142,7 @@ export class CreateHomeRequest extends jspb.Message {
 export namespace CreateHomeRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
+    quota?: cs3_storage_provider_v1beta1_resources_pb.Quota.AsObject,
   }
 }
 
