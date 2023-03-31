@@ -3424,7 +3424,8 @@ proto.cs3.sharing.ocm.v1beta1.WebappProtocol.prototype.toObject = function(opt_i
  */
 proto.cs3.sharing.ocm.v1beta1.WebappProtocol.toObject = function(includeInstance, msg) {
   var f, obj = {
-    uriTemplate: jspb.Message.getFieldWithDefault(msg, 1, "")
+    uriTemplate: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    viewMode: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -3465,6 +3466,10 @@ proto.cs3.sharing.ocm.v1beta1.WebappProtocol.deserializeBinaryFromReader = funct
       var value = /** @type {string} */ (reader.readString());
       msg.setUriTemplate(value);
       break;
+    case 2:
+      var value = /** @type {!proto.cs3.app.provider.v1beta1.ViewMode} */ (reader.readEnum());
+      msg.setViewMode(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3501,6 +3506,13 @@ proto.cs3.sharing.ocm.v1beta1.WebappProtocol.serializeBinaryToWriter = function(
       f
     );
   }
+  f = message.getViewMode();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -3519,6 +3531,24 @@ proto.cs3.sharing.ocm.v1beta1.WebappProtocol.prototype.getUriTemplate = function
  */
 proto.cs3.sharing.ocm.v1beta1.WebappProtocol.prototype.setUriTemplate = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional cs3.app.provider.v1beta1.ViewMode view_mode = 2;
+ * @return {!proto.cs3.app.provider.v1beta1.ViewMode}
+ */
+proto.cs3.sharing.ocm.v1beta1.WebappProtocol.prototype.getViewMode = function() {
+  return /** @type {!proto.cs3.app.provider.v1beta1.ViewMode} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.cs3.app.provider.v1beta1.ViewMode} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.WebappProtocol} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.WebappProtocol.prototype.setViewMode = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 

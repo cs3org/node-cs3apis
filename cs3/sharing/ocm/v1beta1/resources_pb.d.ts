@@ -420,6 +420,9 @@ export class WebappProtocol extends jspb.Message {
   getUriTemplate(): string;
   setUriTemplate(value: string): void;
 
+  getViewMode(): cs3_app_provider_v1beta1_resources_pb.ViewMode;
+  setViewMode(value: cs3_app_provider_v1beta1_resources_pb.ViewMode): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebappProtocol.AsObject;
   static toObject(includeInstance: boolean, msg: WebappProtocol): WebappProtocol.AsObject;
@@ -433,6 +436,7 @@ export class WebappProtocol extends jspb.Message {
 export namespace WebappProtocol {
   export type AsObject = {
     uriTemplate: string,
+    viewMode: cs3_app_provider_v1beta1_resources_pb.ViewMode,
   }
 }
 
