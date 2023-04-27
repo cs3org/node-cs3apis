@@ -372,7 +372,9 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.toObject = function(incl
     resourceInfo: (f = msg.getResourceInfo()) && cs3_storage_provider_v1beta1_resources_pb.ResourceInfo.toObject(includeInstance, f),
     grant: (f = msg.getGrant()) && cs3_sharing_link_v1beta1_resources_pb.Grant.toObject(includeInstance, f),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    internal: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
+    internal: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    notifyUploads: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    notifyUploadsExtraRecipients: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -431,6 +433,14 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.deserializeBinaryFromRea
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setInternal(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNotifyUploads(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNotifyUploadsExtraRecipients(value);
       break;
     default:
       reader.skipField();
@@ -496,6 +506,20 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.serializeBinaryToWriter 
   if (f) {
     writer.writeBool(
       5,
+      f
+    );
+  }
+  f = message.getNotifyUploads();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = message.getNotifyUploadsExtraRecipients();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -646,6 +670,42 @@ proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.getInternal = 
  */
 proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.setInternal = function(value) {
   return jspb.Message.setProto3BooleanField(this, 5, value);
+};
+
+
+/**
+ * optional bool notify_uploads = 6;
+ * @return {boolean}
+ */
+proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.getNotifyUploads = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest} returns this
+ */
+proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.setNotifyUploads = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional string notify_uploads_extra_recipients = 7;
+ * @return {string}
+ */
+proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.getNotifyUploadsExtraRecipients = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest} returns this
+ */
+proto.cs3.sharing.link.v1beta1.CreatePublicShareRequest.prototype.setNotifyUploadsExtraRecipients = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1079,7 +1139,9 @@ proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.toObject = functi
     type: jspb.Message.getFieldWithDefault(msg, 3, 0),
     grant: (f = msg.getGrant()) && cs3_sharing_link_v1beta1_resources_pb.Grant.toObject(includeInstance, f),
     displayName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 6, "")
+    description: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    notifyUploads: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    notifyUploadsExtraRecipients: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -1132,6 +1194,14 @@ proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.deserializeBinary
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setNotifyUploads(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNotifyUploadsExtraRecipients(value);
       break;
     default:
       reader.skipField();
@@ -1191,6 +1261,20 @@ proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.serializeBinaryTo
       f
     );
   }
+  f = message.getNotifyUploads();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+  f = message.getNotifyUploadsExtraRecipients();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
 };
 
 
@@ -1203,7 +1287,9 @@ proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.Type = {
   TYPE_PASSWORD: 2,
   TYPE_EXPIRATION: 3,
   TYPE_DISPLAYNAME: 4,
-  TYPE_DESCRIPTION: 5
+  TYPE_DESCRIPTION: 5,
+  TYPE_NOTIFYUPLOADS: 6,
+  TYPE_NOTIFYUPLOADSEXTRARECIPIENTS: 7
 };
 
 /**
@@ -1294,6 +1380,42 @@ proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.prototype.getDesc
  */
 proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.prototype.setDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional bool notify_uploads = 7;
+ * @return {boolean}
+ */
+proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.prototype.getNotifyUploads = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update} returns this
+ */
+proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.prototype.setNotifyUploads = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional string notify_uploads_extra_recipients = 8;
+ * @return {string}
+ */
+proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.prototype.getNotifyUploadsExtraRecipients = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update} returns this
+ */
+proto.cs3.sharing.link.v1beta1.UpdatePublicShareRequest.Update.prototype.setNotifyUploadsExtraRecipients = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

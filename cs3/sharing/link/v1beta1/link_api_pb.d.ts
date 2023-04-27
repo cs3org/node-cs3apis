@@ -30,6 +30,12 @@ export class CreatePublicShareRequest extends jspb.Message {
   getInternal(): boolean;
   setInternal(value: boolean): void;
 
+  getNotifyUploads(): boolean;
+  setNotifyUploads(value: boolean): void;
+
+  getNotifyUploadsExtraRecipients(): string;
+  setNotifyUploadsExtraRecipients(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePublicShareRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreatePublicShareRequest): CreatePublicShareRequest.AsObject;
@@ -47,6 +53,8 @@ export namespace CreatePublicShareRequest {
     grant?: cs3_sharing_link_v1beta1_resources_pb.Grant.AsObject,
     description: string,
     internal: boolean,
+    notifyUploads: boolean,
+    notifyUploadsExtraRecipients: string,
   }
 }
 
@@ -132,6 +140,12 @@ export namespace UpdatePublicShareRequest {
     getDescription(): string;
     setDescription(value: string): void;
 
+    getNotifyUploads(): boolean;
+    setNotifyUploads(value: boolean): void;
+
+    getNotifyUploadsExtraRecipients(): string;
+    setNotifyUploadsExtraRecipients(value: string): void;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Update.AsObject;
     static toObject(includeInstance: boolean, msg: Update): Update.AsObject;
@@ -148,6 +162,8 @@ export namespace UpdatePublicShareRequest {
       grant?: cs3_sharing_link_v1beta1_resources_pb.Grant.AsObject,
       displayName: string,
       description: string,
+      notifyUploads: boolean,
+      notifyUploadsExtraRecipients: string,
     }
 
     export enum Type {
@@ -157,6 +173,8 @@ export namespace UpdatePublicShareRequest {
       TYPE_EXPIRATION = 3,
       TYPE_DISPLAYNAME = 4,
       TYPE_DESCRIPTION = 5,
+      TYPE_NOTIFYUPLOADS = 6,
+      TYPE_NOTIFYUPLOADSEXTRARECIPIENTS = 7,
     }
   }
 }

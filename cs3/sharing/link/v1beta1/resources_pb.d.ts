@@ -67,6 +67,12 @@ export class PublicShare extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  getNotifyUploads(): boolean;
+  setNotifyUploads(value: boolean): void;
+
+  getNotifyUploadsExtraRecipients(): string;
+  setNotifyUploadsExtraRecipients(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublicShare.AsObject;
   static toObject(includeInstance: boolean, msg: PublicShare): PublicShare.AsObject;
@@ -93,6 +99,8 @@ export namespace PublicShare {
     signature?: ShareSignature.AsObject,
     quicklink: boolean,
     description: string,
+    notifyUploads: boolean,
+    notifyUploadsExtraRecipients: string,
   }
 }
 
