@@ -130,10 +130,8 @@ export class ReceivedShare extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  hasResourceId(): boolean;
-  clearResourceId(): void;
-  getResourceId(): cs3_storage_provider_v1beta1_resources_pb.ResourceId | undefined;
-  setResourceId(value?: cs3_storage_provider_v1beta1_resources_pb.ResourceId): void;
+  getRemoteShareId(): string;
+  setRemoteShareId(value: string): void;
 
   hasGrantee(): boolean;
   clearGrantee(): void;
@@ -198,7 +196,7 @@ export namespace ReceivedShare {
   export type AsObject = {
     id?: ShareId.AsObject,
     name: string,
-    resourceId?: cs3_storage_provider_v1beta1_resources_pb.ResourceId.AsObject,
+    remoteShareId: string,
     grantee?: cs3_storage_provider_v1beta1_resources_pb.Grantee.AsObject,
     owner?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
     creator?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
