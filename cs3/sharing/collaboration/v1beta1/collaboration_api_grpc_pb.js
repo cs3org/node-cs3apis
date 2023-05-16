@@ -226,6 +226,7 @@ function deserialize_cs3_sharing_collaboration_v1beta1_UpdateShareResponse(buffe
 var CollaborationAPIService = exports.CollaborationAPIService = {
   // Creates a new share.
 // MUST return CODE_NOT_FOUND if the resource reference does not exist.
+// MUST return CODE_LOCKED if the resource reference already locked.
 // MUST return CODE_ALREADY_EXISTS if the share already exists for the 4-tuple consisting of
 // (owner, shared_resource, grantee).
 // New shares MUST be created in the state SHARE_STATE_PENDING.
