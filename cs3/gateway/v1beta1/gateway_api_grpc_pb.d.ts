@@ -110,10 +110,13 @@ interface IGatewayAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceI
   acceptInvite: IGatewayAPIService_IAcceptInvite;
   getAcceptedUser: IGatewayAPIService_IGetAcceptedUser;
   findAcceptedUsers: IGatewayAPIService_IFindAcceptedUsers;
+  deleteAcceptedUser: IGatewayAPIService_IDeleteAcceptedUser;
   isProviderAllowed: IGatewayAPIService_IIsProviderAllowed;
   getInfoByDomain: IGatewayAPIService_IGetInfoByDomain;
   listAllProviders: IGatewayAPIService_IListAllProviders;
   createOCMCoreShare: IGatewayAPIService_ICreateOCMCoreShare;
+  updateOCMCoreShare: IGatewayAPIService_IUpdateOCMCoreShare;
+  deleteOCMCoreShare: IGatewayAPIService_IDeleteOCMCoreShare;
   createTransfer: IGatewayAPIService_ICreateTransfer;
   getTransferStatus: IGatewayAPIService_IGetTransferStatus;
   cancelTransfer: IGatewayAPIService_ICancelTransfer;
@@ -962,6 +965,16 @@ interface IGatewayAPIService_IFindAcceptedUsers extends grpc.MethodDefinition<cs
   responseDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse>;
 }
 
+interface IGatewayAPIService_IDeleteAcceptedUser extends grpc.MethodDefinition<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse> {
+  path: '/cs3.gateway.v1beta1.GatewayAPI/DeleteAcceptedUser'
+  requestStream: false
+  responseStream: false
+  requestSerialize: grpc.serialize<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest>;
+  requestDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest>;
+  responseSerialize: grpc.serialize<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse>;
+  responseDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse>;
+}
+
 interface IGatewayAPIService_IIsProviderAllowed extends grpc.MethodDefinition<cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedRequest, cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/IsProviderAllowed'
   requestStream: false
@@ -1000,6 +1013,26 @@ interface IGatewayAPIService_ICreateOCMCoreShare extends grpc.MethodDefinition<c
   requestDeserialize: grpc.deserialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest>;
   responseSerialize: grpc.serialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse>;
   responseDeserialize: grpc.deserialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse>;
+}
+
+interface IGatewayAPIService_IUpdateOCMCoreShare extends grpc.MethodDefinition<cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest, cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse> {
+  path: '/cs3.gateway.v1beta1.GatewayAPI/UpdateOCMCoreShare'
+  requestStream: false
+  responseStream: false
+  requestSerialize: grpc.serialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest>;
+  requestDeserialize: grpc.deserialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest>;
+  responseSerialize: grpc.serialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse>;
+  responseDeserialize: grpc.deserialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse>;
+}
+
+interface IGatewayAPIService_IDeleteOCMCoreShare extends grpc.MethodDefinition<cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest, cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse> {
+  path: '/cs3.gateway.v1beta1.GatewayAPI/DeleteOCMCoreShare'
+  requestStream: false
+  responseStream: false
+  requestSerialize: grpc.serialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest>;
+  requestDeserialize: grpc.deserialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest>;
+  responseSerialize: grpc.serialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse>;
+  responseDeserialize: grpc.deserialize<cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse>;
 }
 
 interface IGatewayAPIService_ICreateTransfer extends grpc.MethodDefinition<cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse> {
@@ -1148,10 +1181,13 @@ export interface IGatewayAPIServer extends grpc.UntypedServiceImplementation {
   acceptInvite: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteRequest, cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteResponse>;
   getAcceptedUser: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.GetAcceptedUserRequest, cs3_ocm_invite_v1beta1_invite_api_pb.GetAcceptedUserResponse>;
   findAcceptedUsers: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse>;
+  deleteAcceptedUser: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse>;
   isProviderAllowed: grpc.handleUnaryCall<cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedRequest, cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedResponse>;
   getInfoByDomain: grpc.handleUnaryCall<cs3_ocm_provider_v1beta1_provider_api_pb.GetInfoByDomainRequest, cs3_ocm_provider_v1beta1_provider_api_pb.GetInfoByDomainResponse>;
   listAllProviders: grpc.handleUnaryCall<cs3_ocm_provider_v1beta1_provider_api_pb.ListAllProvidersRequest, cs3_ocm_provider_v1beta1_provider_api_pb.ListAllProvidersResponse>;
   createOCMCoreShare: grpc.handleUnaryCall<cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse>;
+  updateOCMCoreShare: grpc.handleUnaryCall<cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest, cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse>;
+  deleteOCMCoreShare: grpc.handleUnaryCall<cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest, cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse>;
   createTransfer: grpc.handleUnaryCall<cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse>;
   getTransferStatus: grpc.handleUnaryCall<cs3_tx_v1beta1_tx_api_pb.GetTransferStatusRequest, cs3_tx_v1beta1_tx_api_pb.GetTransferStatusResponse>;
   cancelTransfer: grpc.handleUnaryCall<cs3_tx_v1beta1_tx_api_pb.CancelTransferRequest, cs3_tx_v1beta1_tx_api_pb.CancelTransferResponse>;
@@ -1411,6 +1447,9 @@ export interface IGatewayAPIClient {
   findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
   findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
   findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
+  deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
+  deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
+  deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
   isProviderAllowed(request: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedResponse) => void): grpc.ClientUnaryCall;
   isProviderAllowed(request: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedResponse) => void): grpc.ClientUnaryCall;
   isProviderAllowed(request: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedResponse) => void): grpc.ClientUnaryCall;
@@ -1423,6 +1462,12 @@ export interface IGatewayAPIClient {
   createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  updateOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  updateOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  updateOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  deleteOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  deleteOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  deleteOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
   createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
   createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
@@ -1695,6 +1740,9 @@ export class GatewayAPIClient extends grpc.Client implements IGatewayAPIClient {
   public findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
   public findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
   public findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
+  public deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
+  public deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
+  public deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
   public isProviderAllowed(request: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedResponse) => void): grpc.ClientUnaryCall;
   public isProviderAllowed(request: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedResponse) => void): grpc.ClientUnaryCall;
   public isProviderAllowed(request: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_provider_v1beta1_provider_api_pb.IsProviderAllowedResponse) => void): grpc.ClientUnaryCall;
@@ -1707,6 +1755,12 @@ export class GatewayAPIClient extends grpc.Client implements IGatewayAPIClient {
   public createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   public createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   public createOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  public updateOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  public updateOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  public updateOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  public deleteOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  public deleteOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
+  public deleteOCMCoreShare(request: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse) => void): grpc.ClientUnaryCall;
   public createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
   public createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;
   public createTransfer(request: cs3_tx_v1beta1_tx_api_pb.CreateTransferRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_tx_v1beta1_tx_api_pb.CreateTransferResponse) => void): grpc.ClientUnaryCall;

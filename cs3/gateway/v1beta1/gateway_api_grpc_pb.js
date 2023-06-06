@@ -605,6 +605,50 @@ function deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse(buffer_arg)
   return cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareRequest(arg) {
+  if (!(arg instanceof cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest)) {
+    throw new Error('Expected argument of type cs3.ocm.core.v1beta1.DeleteOCMCoreShareRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareRequest(buffer_arg) {
+  return cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareResponse(arg) {
+  if (!(arg instanceof cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse)) {
+    throw new Error('Expected argument of type cs3.ocm.core.v1beta1.DeleteOCMCoreShareResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareResponse(buffer_arg) {
+  return cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareRequest(arg) {
+  if (!(arg instanceof cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest)) {
+    throw new Error('Expected argument of type cs3.ocm.core.v1beta1.UpdateOCMCoreShareRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareRequest(buffer_arg) {
+  return cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse(arg) {
+  if (!(arg instanceof cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse)) {
+    throw new Error('Expected argument of type cs3.ocm.core.v1beta1.UpdateOCMCoreShareResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse(buffer_arg) {
+  return cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_ocm_invite_v1beta1_AcceptInviteRequest(arg) {
   if (!(arg instanceof cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteRequest)) {
     throw new Error('Expected argument of type cs3.ocm.invite.v1beta1.AcceptInviteRequest');
@@ -625,6 +669,28 @@ function serialize_cs3_ocm_invite_v1beta1_AcceptInviteResponse(arg) {
 
 function deserialize_cs3_ocm_invite_v1beta1_AcceptInviteResponse(buffer_arg) {
   return cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserRequest(arg) {
+  if (!(arg instanceof cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest)) {
+    throw new Error('Expected argument of type cs3.ocm.invite.v1beta1.DeleteAcceptedUserRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserRequest(buffer_arg) {
+  return cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserResponse(arg) {
+  if (!(arg instanceof cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse)) {
+    throw new Error('Expected argument of type cs3.ocm.invite.v1beta1.DeleteAcceptedUserResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserResponse(buffer_arg) {
+  return cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_ocm_invite_v1beta1_FindAcceptedUsersRequest(arg) {
@@ -3270,6 +3336,18 @@ findAcceptedUsers: {
     responseSerialize: serialize_cs3_ocm_invite_v1beta1_FindAcceptedUsersResponse,
     responseDeserialize: deserialize_cs3_ocm_invite_v1beta1_FindAcceptedUsersResponse,
   },
+  // Delete a previously accepted remote user, that is unfriend that user.
+deleteAcceptedUser: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/DeleteAcceptedUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest,
+    responseType: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse,
+    requestSerialize: serialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserRequest,
+    requestDeserialize: deserialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserRequest,
+    responseSerialize: serialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserResponse,
+    responseDeserialize: deserialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserResponse,
+  },
   // *****************************************************************/
 // ******************** OCM PROVIDER AUTHORIZER ********************/
 // *****************************************************************/
@@ -3314,7 +3392,7 @@ listAllProviders: {
   // *****************************************************************/
 // **************************** OCM CORE ***************************/
 // *****************************************************************/
-// Creates a new ocm share.
+// Creates a new OCM share.
 createOCMCoreShare: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/CreateOCMCoreShare',
     requestStream: false,
@@ -3325,6 +3403,30 @@ createOCMCoreShare: {
     requestDeserialize: deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareRequest,
     responseSerialize: serialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse,
     responseDeserialize: deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse,
+  },
+  // Updates an OCM share.
+updateOCMCoreShare: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/UpdateOCMCoreShare',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest,
+    responseType: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse,
+    requestSerialize: serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareRequest,
+    requestDeserialize: deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareRequest,
+    responseSerialize: serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse,
+    responseDeserialize: deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse,
+  },
+  // Deletes an OCM share.
+deleteOCMCoreShare: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/DeleteOCMCoreShare',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest,
+    responseType: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse,
+    requestSerialize: serialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareRequest,
+    requestDeserialize: deserialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareRequest,
+    responseSerialize: serialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareResponse,
+    responseDeserialize: deserialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareResponse,
   },
   // *****************************************************************/
 // ************************** FILE TRANSFER ************************/

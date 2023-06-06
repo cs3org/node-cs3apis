@@ -105,7 +105,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.repeatedFields_, null);
 };
 goog.inherits(proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1171,6 +1171,13 @@ proto.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse.prototype.setRecipientDispl
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1204,7 +1211,8 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.toObject = function(includeI
   var f, obj = {
     opaque: (f = msg.getOpaque()) && cs3_types_v1beta1_types_pb.Opaque.toObject(includeInstance, f),
     ref: (f = msg.getRef()) && cs3_sharing_ocm_v1beta1_resources_pb.ShareReference.toObject(includeInstance, f),
-    field: (f = msg.getField()) && proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.toObject(includeInstance, f)
+    fieldList: jspb.Message.toObjectList(msg.getFieldList(),
+    proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -1254,7 +1262,7 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.deserializeBinaryFromReader 
     case 3:
       var value = new proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField;
       reader.readMessage(value,proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.deserializeBinaryFromReader);
-      msg.setField(value);
+      msg.addField(value);
       break;
     default:
       reader.skipField();
@@ -1301,9 +1309,9 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.serializeBinaryToWriter = fu
       cs3_sharing_ocm_v1beta1_resources_pb.ShareReference.serializeBinaryToWriter
     );
   }
-  f = message.getField();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getFieldList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       3,
       f,
       proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.serializeBinaryToWriter
@@ -1321,15 +1329,15 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.serializeBinaryToWriter = fu
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.oneofGroups_ = [[2,3]];
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.oneofGroups_ = [[1,2]];
 
 /**
  * @enum {number}
  */
 proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.FieldCase = {
   FIELD_NOT_SET: 0,
-  PERMISSIONS: 2,
-  DISPLAY_NAME: 3
+  EXPIRATION: 1,
+  ACCESS_METHODS: 2
 };
 
 /**
@@ -1370,8 +1378,8 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.toObje
  */
 proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.toObject = function(includeInstance, msg) {
   var f, obj = {
-    permissions: (f = msg.getPermissions()) && cs3_sharing_ocm_v1beta1_resources_pb.SharePermissions.toObject(includeInstance, f),
-    displayName: jspb.Message.getFieldWithDefault(msg, 3, "")
+    expiration: (f = msg.getExpiration()) && cs3_types_v1beta1_types_pb.Timestamp.toObject(includeInstance, f),
+    accessMethods: (f = msg.getAccessMethods()) && cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1408,14 +1416,15 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.deserializeBinar
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
-      var value = new cs3_sharing_ocm_v1beta1_resources_pb.SharePermissions;
-      reader.readMessage(value,cs3_sharing_ocm_v1beta1_resources_pb.SharePermissions.deserializeBinaryFromReader);
-      msg.setPermissions(value);
+    case 1:
+      var value = new cs3_types_v1beta1_types_pb.Timestamp;
+      reader.readMessage(value,cs3_types_v1beta1_types_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setExpiration(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDisplayName(value);
+    case 2:
+      var value = new cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod;
+      reader.readMessage(value,cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod.deserializeBinaryFromReader);
+      msg.setAccessMethods(value);
       break;
     default:
       reader.skipField();
@@ -1446,39 +1455,77 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.serial
  */
 proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPermissions();
+  f = message.getExpiration();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      cs3_types_v1beta1_types_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getAccessMethods();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      cs3_sharing_ocm_v1beta1_resources_pb.SharePermissions.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
+      cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional SharePermissions permissions = 2;
- * @return {?proto.cs3.sharing.ocm.v1beta1.SharePermissions}
+ * optional cs3.types.v1beta1.Timestamp expiration = 1;
+ * @return {?proto.cs3.types.v1beta1.Timestamp}
  */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.getPermissions = function() {
-  return /** @type{?proto.cs3.sharing.ocm.v1beta1.SharePermissions} */ (
-    jspb.Message.getWrapperField(this, cs3_sharing_ocm_v1beta1_resources_pb.SharePermissions, 2));
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.getExpiration = function() {
+  return /** @type{?proto.cs3.types.v1beta1.Timestamp} */ (
+    jspb.Message.getWrapperField(this, cs3_types_v1beta1_types_pb.Timestamp, 1));
 };
 
 
 /**
- * @param {?proto.cs3.sharing.ocm.v1beta1.SharePermissions|undefined} value
+ * @param {?proto.cs3.types.v1beta1.Timestamp|undefined} value
  * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField} returns this
 */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.setPermissions = function(value) {
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.setExpiration = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.clearExpiration = function() {
+  return this.setExpiration(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.hasExpiration = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional AccessMethod access_methods = 2;
+ * @return {?proto.cs3.sharing.ocm.v1beta1.AccessMethod}
+ */
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.getAccessMethods = function() {
+  return /** @type{?proto.cs3.sharing.ocm.v1beta1.AccessMethod} */ (
+    jspb.Message.getWrapperField(this, cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod, 2));
+};
+
+
+/**
+ * @param {?proto.cs3.sharing.ocm.v1beta1.AccessMethod|undefined} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField} returns this
+*/
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.setAccessMethods = function(value) {
   return jspb.Message.setOneofWrapperField(this, 2, proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.oneofGroups_[0], value);
 };
 
@@ -1487,8 +1534,8 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.setPer
  * Clears the message field making it undefined.
  * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField} returns this
  */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.clearPermissions = function() {
-  return this.setPermissions(undefined);
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.clearAccessMethods = function() {
+  return this.setAccessMethods(undefined);
 };
 
 
@@ -1496,44 +1543,8 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.clearP
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.hasPermissions = function() {
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.hasAccessMethods = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string display_name = 3;
- * @return {string}
- */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.getDisplayName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField} returns this
- */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.setDisplayName = function(value) {
-  return jspb.Message.setOneofField(this, 3, proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.oneofGroups_[0], value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField} returns this
- */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.clearDisplayName = function() {
-  return jspb.Message.setOneofField(this, 3, proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField.prototype.hasDisplayName = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -1612,39 +1623,40 @@ proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.hasRef = function(
 
 
 /**
- * optional UpdateField field = 3;
- * @return {?proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField}
+ * repeated UpdateField field = 3;
+ * @return {!Array<!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField>}
  */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.getField = function() {
-  return /** @type{?proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField} */ (
-    jspb.Message.getWrapperField(this, proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField, 3));
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.getFieldList = function() {
+  return /** @type{!Array<!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField, 3));
 };
 
 
 /**
- * @param {?proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField|undefined} value
+ * @param {!Array<!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField>} value
  * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest} returns this
 */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.setField = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.setFieldList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField}
+ */
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.addField = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest} returns this
  */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.clearField = function() {
-  return this.setField(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.hasField = function() {
-  return jspb.Message.getField(this, 3) != null;
+proto.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.prototype.clearFieldList = function() {
+  return this.setFieldList([]);
 };
 
 

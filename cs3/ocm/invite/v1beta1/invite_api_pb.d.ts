@@ -386,3 +386,59 @@ export namespace FindAcceptedUsersResponse {
   }
 }
 
+export class DeleteAcceptedUserRequest extends jspb.Message {
+  hasOpaque(): boolean;
+  clearOpaque(): void;
+  getOpaque(): cs3_types_v1beta1_types_pb.Opaque | undefined;
+  setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
+
+  hasRemoteUserId(): boolean;
+  clearRemoteUserId(): void;
+  getRemoteUserId(): cs3_identity_user_v1beta1_resources_pb.UserId | undefined;
+  setRemoteUserId(value?: cs3_identity_user_v1beta1_resources_pb.UserId): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAcceptedUserRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAcceptedUserRequest): DeleteAcceptedUserRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAcceptedUserRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAcceptedUserRequest;
+  static deserializeBinaryFromReader(message: DeleteAcceptedUserRequest, reader: jspb.BinaryReader): DeleteAcceptedUserRequest;
+}
+
+export namespace DeleteAcceptedUserRequest {
+  export type AsObject = {
+    opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
+    remoteUserId?: cs3_identity_user_v1beta1_resources_pb.UserId.AsObject,
+  }
+}
+
+export class DeleteAcceptedUserResponse extends jspb.Message {
+  hasStatus(): boolean;
+  clearStatus(): void;
+  getStatus(): cs3_rpc_v1beta1_status_pb.Status | undefined;
+  setStatus(value?: cs3_rpc_v1beta1_status_pb.Status): void;
+
+  hasOpaque(): boolean;
+  clearOpaque(): void;
+  getOpaque(): cs3_types_v1beta1_types_pb.Opaque | undefined;
+  setOpaque(value?: cs3_types_v1beta1_types_pb.Opaque): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAcceptedUserResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAcceptedUserResponse): DeleteAcceptedUserResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAcceptedUserResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAcceptedUserResponse;
+  static deserializeBinaryFromReader(message: DeleteAcceptedUserResponse, reader: jspb.BinaryReader): DeleteAcceptedUserResponse;
+}
+
+export namespace DeleteAcceptedUserResponse {
+  export type AsObject = {
+    status?: cs3_rpc_v1beta1_status_pb.Status.AsObject,
+    opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
+  }
+}
+

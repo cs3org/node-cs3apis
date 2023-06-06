@@ -4122,7 +4122,7 @@ proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod.deserializeBinaryFromReader = f
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = new cs3_storage_provider_v1beta1_resources_pb.ResourcePermissions;
       reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.ResourcePermissions.deserializeBinaryFromReader);
       msg.setPermissions(value);
@@ -4159,7 +4159,7 @@ proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod.serializeBinaryToWriter = funct
   f = message.getPermissions();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
       cs3_storage_provider_v1beta1_resources_pb.ResourcePermissions.serializeBinaryToWriter
     );
@@ -4168,12 +4168,12 @@ proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod.serializeBinaryToWriter = funct
 
 
 /**
- * optional cs3.storage.provider.v1beta1.ResourcePermissions permissions = 2;
+ * optional cs3.storage.provider.v1beta1.ResourcePermissions permissions = 1;
  * @return {?proto.cs3.storage.provider.v1beta1.ResourcePermissions}
  */
 proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod.prototype.getPermissions = function() {
   return /** @type{?proto.cs3.storage.provider.v1beta1.ResourcePermissions} */ (
-    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.ResourcePermissions, 2));
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.ResourcePermissions, 1));
 };
 
 
@@ -4182,7 +4182,7 @@ proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod.prototype.getPermissions = func
  * @return {!proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod} returns this
 */
 proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod.prototype.setPermissions = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -4200,7 +4200,7 @@ proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod.prototype.clearPermissions = fu
  * @return {boolean}
  */
 proto.cs3.sharing.ocm.v1beta1.WebDAVAccessMethod.prototype.hasPermissions = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -4236,7 +4236,7 @@ proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod.prototype.toObject = function(o
  */
 proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod.toObject = function(includeInstance, msg) {
   var f, obj = {
-    viewMode: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    viewMode: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -4273,7 +4273,7 @@ proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod.deserializeBinaryFromReader = f
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {!proto.cs3.app.provider.v1beta1.ViewMode} */ (reader.readEnum());
       msg.setViewMode(value);
       break;
@@ -4309,7 +4309,7 @@ proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod.serializeBinaryToWriter = funct
   f = message.getViewMode();
   if (f !== 0.0) {
     writer.writeEnum(
-      2,
+      1,
       f
     );
   }
@@ -4317,11 +4317,11 @@ proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod.serializeBinaryToWriter = funct
 
 
 /**
- * optional cs3.app.provider.v1beta1.ViewMode view_mode = 2;
+ * optional cs3.app.provider.v1beta1.ViewMode view_mode = 1;
  * @return {!proto.cs3.app.provider.v1beta1.ViewMode}
  */
 proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod.prototype.getViewMode = function() {
-  return /** @type {!proto.cs3.app.provider.v1beta1.ViewMode} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {!proto.cs3.app.provider.v1beta1.ViewMode} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
@@ -4330,7 +4330,7 @@ proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod.prototype.getViewMode = functio
  * @return {!proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod} returns this
  */
 proto.cs3.sharing.ocm.v1beta1.WebappAccessMethod.prototype.setViewMode = function(value) {
-  return jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -4366,7 +4366,7 @@ proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.prototype.toObject = function
  */
 proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    destination: (f = msg.getDestination()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4403,6 +4403,11 @@ proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.deserializeBinaryFromReader =
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = new cs3_storage_provider_v1beta1_resources_pb.Reference;
+      reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
+      msg.setDestination(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4432,6 +4437,51 @@ proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.prototype.serializeBinary = f
  */
 proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDestination();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional cs3.storage.provider.v1beta1.Reference destination = 1;
+ * @return {?proto.cs3.storage.provider.v1beta1.Reference}
+ */
+proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.prototype.getDestination = function() {
+  return /** @type{?proto.cs3.storage.provider.v1beta1.Reference} */ (
+    jspb.Message.getWrapperField(this, cs3_storage_provider_v1beta1_resources_pb.Reference, 1));
+};
+
+
+/**
+ * @param {?proto.cs3.storage.provider.v1beta1.Reference|undefined} value
+ * @return {!proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod} returns this
+*/
+proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.prototype.setDestination = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod} returns this
+ */
+proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.prototype.clearDestination = function() {
+  return this.setDestination(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.cs3.sharing.ocm.v1beta1.TransferAccessMethod.prototype.hasDestination = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

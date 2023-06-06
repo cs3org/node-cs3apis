@@ -50,10 +50,57 @@ function deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse(buffer_arg)
   return cs3_ocm_core_v1beta1_ocm_core_api_pb.CreateOCMCoreShareResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareRequest(arg) {
+  if (!(arg instanceof cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest)) {
+    throw new Error('Expected argument of type cs3.ocm.core.v1beta1.DeleteOCMCoreShareRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareRequest(buffer_arg) {
+  return cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareResponse(arg) {
+  if (!(arg instanceof cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse)) {
+    throw new Error('Expected argument of type cs3.ocm.core.v1beta1.DeleteOCMCoreShareResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareResponse(buffer_arg) {
+  return cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareRequest(arg) {
+  if (!(arg instanceof cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest)) {
+    throw new Error('Expected argument of type cs3.ocm.core.v1beta1.UpdateOCMCoreShareRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareRequest(buffer_arg) {
+  return cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse(arg) {
+  if (!(arg instanceof cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse)) {
+    throw new Error('Expected argument of type cs3.ocm.core.v1beta1.UpdateOCMCoreShareResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse(buffer_arg) {
+  return cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 
 // OCM Core API
 //
-// The OCM Core API is the mapping in GRPC of the OCM core protocol.
+// the OCM Core API is the mapping for the local system of the OCM protocol,
+// including multi-protocol shares. Implementations are expected to expose
+// the `/ocm` endpoints according to the OCM API, and in response to those
+// endpoints implement the following API.
 //
 // The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 // NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -67,7 +114,8 @@ function deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse(buffer_arg)
 // Any method MAY return UNKNOWN.
 // Any method MAY return UNAUTHENTICATED.
 var OcmCoreAPIService = exports.OcmCoreAPIService = {
-  // Creates a new ocm share.
+  // Creates a new OCM share, in response to a call from remote to:
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
 createOCMCoreShare: {
     path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/CreateOCMCoreShare',
     requestStream: false,
@@ -78,6 +126,32 @@ createOCMCoreShare: {
     requestDeserialize: deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareRequest,
     responseSerialize: serialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse,
     responseDeserialize: deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse,
+  },
+  // Updates an OCM share, in response to a notification from the remote system to:
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+updateOCMCoreShare: {
+    path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/UpdateOCMCoreShare',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareRequest,
+    responseType: cs3_ocm_core_v1beta1_ocm_core_api_pb.UpdateOCMCoreShareResponse,
+    requestSerialize: serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareRequest,
+    requestDeserialize: deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareRequest,
+    responseSerialize: serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse,
+    responseDeserialize: deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse,
+  },
+  // Deletes an OCM share, in response to a notification from the remote system to:
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+deleteOCMCoreShare: {
+    path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/DeleteOCMCoreShare',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareRequest,
+    responseType: cs3_ocm_core_v1beta1_ocm_core_api_pb.DeleteOCMCoreShareResponse,
+    requestSerialize: serialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareRequest,
+    requestDeserialize: deserialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareRequest,
+    responseSerialize: serialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareResponse,
+    responseDeserialize: deserialize_cs3_ocm_core_v1beta1_DeleteOCMCoreShareResponse,
   },
 };
 

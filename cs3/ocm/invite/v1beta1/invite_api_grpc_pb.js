@@ -50,6 +50,28 @@ function deserialize_cs3_ocm_invite_v1beta1_AcceptInviteResponse(buffer_arg) {
   return cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserRequest(arg) {
+  if (!(arg instanceof cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest)) {
+    throw new Error('Expected argument of type cs3.ocm.invite.v1beta1.DeleteAcceptedUserRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserRequest(buffer_arg) {
+  return cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserResponse(arg) {
+  if (!(arg instanceof cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse)) {
+    throw new Error('Expected argument of type cs3.ocm.invite.v1beta1.DeleteAcceptedUserResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserResponse(buffer_arg) {
+  return cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_ocm_invite_v1beta1_FindAcceptedUsersRequest(arg) {
   if (!(arg instanceof cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest)) {
     throw new Error('Expected argument of type cs3.ocm.invite.v1beta1.FindAcceptedUsersRequest');
@@ -166,6 +188,8 @@ function deserialize_cs3_ocm_invite_v1beta1_ListInviteTokensResponse(buffer_arg)
 // The Invite API is meant to invite users and groups belonging to other
 // sync'n'share systems, so that collaboration of resources can be enabled.
 //
+// The following APIs match the OCM v1.1 spec for the /invite-accepted endpoint.
+//
 // The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 // NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
 // "OPTIONAL" in this document are to be interpreted as described in
@@ -202,7 +226,9 @@ listInviteTokens: {
     responseSerialize: serialize_cs3_ocm_invite_v1beta1_ListInviteTokensResponse,
     responseDeserialize: deserialize_cs3_ocm_invite_v1beta1_ListInviteTokensResponse,
   },
-  // Forwards a received invite to the sync'n'share system provider.
+  // Forwards a received invite to the remote sync'n'share system provider. The remote
+// system SHALL get an `invite-accepted` call as follows:
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1invite-accepted/post
 // MUST return CODE_NOT_FOUND if the token does not exist.
 // MUST return CODE_INVALID_ARGUMENT if the token expired.
 // MUST return CODE_ALREADY_EXISTS if the user already accepted an invite.
@@ -257,6 +283,19 @@ findAcceptedUsers: {
     requestDeserialize: deserialize_cs3_ocm_invite_v1beta1_FindAcceptedUsersRequest,
     responseSerialize: serialize_cs3_ocm_invite_v1beta1_FindAcceptedUsersResponse,
     responseDeserialize: deserialize_cs3_ocm_invite_v1beta1_FindAcceptedUsersResponse,
+  },
+  // Delete a previously accepted remote user, that is unfriend that user.
+// MUST return CODE_NOT_FOUND if the user does not exist.
+deleteAcceptedUser: {
+    path: '/cs3.ocm.invite.v1beta1.InviteAPI/DeleteAcceptedUser',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest,
+    responseType: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse,
+    requestSerialize: serialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserRequest,
+    requestDeserialize: deserialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserRequest,
+    responseSerialize: serialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserResponse,
+    responseDeserialize: deserialize_cs3_ocm_invite_v1beta1_DeleteAcceptedUserResponse,
   },
 };
 

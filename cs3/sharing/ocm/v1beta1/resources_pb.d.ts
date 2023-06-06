@@ -558,6 +558,11 @@ export namespace WebappAccessMethod {
 }
 
 export class TransferAccessMethod extends jspb.Message {
+  hasDestination(): boolean;
+  clearDestination(): void;
+  getDestination(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
+  setDestination(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TransferAccessMethod.AsObject;
   static toObject(includeInstance: boolean, msg: TransferAccessMethod): TransferAccessMethod.AsObject;
@@ -570,6 +575,7 @@ export class TransferAccessMethod extends jspb.Message {
 
 export namespace TransferAccessMethod {
   export type AsObject = {
+    destination?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
   }
 }
 

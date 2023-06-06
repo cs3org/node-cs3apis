@@ -235,8 +235,7 @@ function deserialize_cs3_sharing_ocm_v1beta1_UpdateReceivedOCMShareResponse(buff
 // resources from the perspective of the creator or the share and
 // from the perspective of the receiver of the share.
 //
-// The following APIs match the OCM v1.1 spec, including the invitation
-// workflow and multi-protocol shares.
+// The following APIs match the OCM v1.1 spec including multi-protocol shares.
 //
 // The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 // NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -254,7 +253,9 @@ var OcmAPIService = exports.OcmAPIService = {
 // MUST return CODE_NOT_FOUND if the resource reference does not exist.
 // MUST return CODE_ALREADY_EXISTS if the share already exists for the 4-tuple consisting of
 // (owner, shared_resource, grantee).
-// New shares MUST be created in the state SHARE_STATE_PENDING.
+// New shares MUST be created in the state SHARE_STATE_PENDING, and MUST be sent
+// to the remote system using the OCM API at:
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
 createOCMShare: {
     path: '/cs3.sharing.ocm.v1beta1.OcmAPI/CreateOCMShare',
     requestStream: false,
@@ -268,6 +269,9 @@ createOCMShare: {
   },
   // Removes a share.
 // MUST return CODE_NOT_FOUND if the share reference does not exist.
+// This action SHALL be notified to the remote system
+// using the OCM API at:
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
 removeOCMShare: {
     path: '/cs3.sharing.ocm.v1beta1.OcmAPI/RemoveOCMShare',
     requestStream: false,
@@ -321,6 +325,9 @@ listOCMShares: {
   },
   // Updates a share.
 // MUST return CODE_NOT_FOUND if the share reference does not exist.
+// This action SHALL be notified to the remote system
+// using the OCM API at:
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
 updateOCMShare: {
     path: '/cs3.sharing.ocm.v1beta1.OcmAPI/UpdateOCMShare',
     requestStream: false,

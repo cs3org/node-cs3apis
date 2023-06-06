@@ -16,6 +16,7 @@ interface IInviteAPIService extends grpc.ServiceDefinition<grpc.UntypedServiceIm
   acceptInvite: IInviteAPIService_IAcceptInvite;
   getAcceptedUser: IInviteAPIService_IGetAcceptedUser;
   findAcceptedUsers: IInviteAPIService_IFindAcceptedUsers;
+  deleteAcceptedUser: IInviteAPIService_IDeleteAcceptedUser;
 }
 
 interface IInviteAPIService_IGenerateInviteToken extends grpc.MethodDefinition<cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse> {
@@ -78,6 +79,16 @@ interface IInviteAPIService_IFindAcceptedUsers extends grpc.MethodDefinition<cs3
   responseDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse>;
 }
 
+interface IInviteAPIService_IDeleteAcceptedUser extends grpc.MethodDefinition<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse> {
+  path: '/cs3.ocm.invite.v1beta1.InviteAPI/DeleteAcceptedUser'
+  requestStream: false
+  responseStream: false
+  requestSerialize: grpc.serialize<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest>;
+  requestDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest>;
+  responseSerialize: grpc.serialize<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse>;
+  responseDeserialize: grpc.deserialize<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse>;
+}
+
 export const InviteAPIService: IInviteAPIService;
 export interface IInviteAPIServer extends grpc.UntypedServiceImplementation {
   generateInviteToken: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenRequest, cs3_ocm_invite_v1beta1_invite_api_pb.GenerateInviteTokenResponse>;
@@ -86,6 +97,7 @@ export interface IInviteAPIServer extends grpc.UntypedServiceImplementation {
   acceptInvite: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteRequest, cs3_ocm_invite_v1beta1_invite_api_pb.AcceptInviteResponse>;
   getAcceptedUser: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.GetAcceptedUserRequest, cs3_ocm_invite_v1beta1_invite_api_pb.GetAcceptedUserResponse>;
   findAcceptedUsers: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse>;
+  deleteAcceptedUser: grpc.handleUnaryCall<cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse>;
 }
 
 export interface IInviteAPIClient {
@@ -107,6 +119,9 @@ export interface IInviteAPIClient {
   findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
   findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
   findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
+  deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
+  deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
+  deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
 }
 
 export class InviteAPIClient extends grpc.Client implements IInviteAPIClient {
@@ -129,5 +144,8 @@ export class InviteAPIClient extends grpc.Client implements IInviteAPIClient {
   public findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
   public findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
   public findAcceptedUsers(request: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.FindAcceptedUsersResponse) => void): grpc.ClientUnaryCall;
+  public deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
+  public deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
+  public deleteAcceptedUser(request: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_ocm_invite_v1beta1_invite_api_pb.DeleteAcceptedUserResponse) => void): grpc.ClientUnaryCall;
 }
 

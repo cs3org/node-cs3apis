@@ -111,10 +111,10 @@ export class UpdateOCMShareRequest extends jspb.Message {
   getRef(): cs3_sharing_ocm_v1beta1_resources_pb.ShareReference | undefined;
   setRef(value?: cs3_sharing_ocm_v1beta1_resources_pb.ShareReference): void;
 
-  hasField(): boolean;
-  clearField(): void;
-  getField(): UpdateOCMShareRequest.UpdateField | undefined;
-  setField(value?: UpdateOCMShareRequest.UpdateField): void;
+  clearFieldList(): void;
+  getFieldList(): Array<UpdateOCMShareRequest.UpdateField>;
+  setFieldList(value: Array<UpdateOCMShareRequest.UpdateField>): void;
+  addField(value?: UpdateOCMShareRequest.UpdateField, index?: number): UpdateOCMShareRequest.UpdateField;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateOCMShareRequest.AsObject;
@@ -130,19 +130,19 @@ export namespace UpdateOCMShareRequest {
   export type AsObject = {
     opaque?: cs3_types_v1beta1_types_pb.Opaque.AsObject,
     ref?: cs3_sharing_ocm_v1beta1_resources_pb.ShareReference.AsObject,
-    field?: UpdateOCMShareRequest.UpdateField.AsObject,
+    fieldList: Array<UpdateOCMShareRequest.UpdateField.AsObject>,
   }
 
   export class UpdateField extends jspb.Message {
-    hasPermissions(): boolean;
-    clearPermissions(): void;
-    getPermissions(): cs3_sharing_ocm_v1beta1_resources_pb.SharePermissions | undefined;
-    setPermissions(value?: cs3_sharing_ocm_v1beta1_resources_pb.SharePermissions): void;
+    hasExpiration(): boolean;
+    clearExpiration(): void;
+    getExpiration(): cs3_types_v1beta1_types_pb.Timestamp | undefined;
+    setExpiration(value?: cs3_types_v1beta1_types_pb.Timestamp): void;
 
-    hasDisplayName(): boolean;
-    clearDisplayName(): void;
-    getDisplayName(): string;
-    setDisplayName(value: string): void;
+    hasAccessMethods(): boolean;
+    clearAccessMethods(): void;
+    getAccessMethods(): cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod | undefined;
+    setAccessMethods(value?: cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod): void;
 
     getFieldCase(): UpdateField.FieldCase;
     serializeBinary(): Uint8Array;
@@ -157,14 +157,14 @@ export namespace UpdateOCMShareRequest {
 
   export namespace UpdateField {
     export type AsObject = {
-      permissions?: cs3_sharing_ocm_v1beta1_resources_pb.SharePermissions.AsObject,
-      displayName: string,
+      expiration?: cs3_types_v1beta1_types_pb.Timestamp.AsObject,
+      accessMethods?: cs3_sharing_ocm_v1beta1_resources_pb.AccessMethod.AsObject,
     }
 
     export enum FieldCase {
       FIELD_NOT_SET = 0,
-      PERMISSIONS = 2,
-      DISPLAY_NAME = 3,
+      EXPIRATION = 1,
+      ACCESS_METHODS = 2,
     }
   }
 }
