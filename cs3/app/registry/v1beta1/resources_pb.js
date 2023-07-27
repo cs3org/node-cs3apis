@@ -108,7 +108,8 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.toObject = function(includeInstance,
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     description: jspb.Message.getFieldWithDefault(msg, 6, ""),
     icon: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    desktopOnly: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+    desktopOnly: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    action: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -177,6 +178,10 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.deserializeBinaryFromReader = functi
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDesktopOnly(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAction(value);
       break;
     default:
       reader.skipField();
@@ -261,6 +266,13 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.serializeBinaryToWriter = function(m
   if (f) {
     writer.writeBool(
       8,
+      f
+    );
+  }
+  f = message.getAction();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -455,6 +467,24 @@ proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.getDesktopOnly = function(
  */
 proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.setDesktopOnly = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
+};
+
+
+/**
+ * optional string action = 9;
+ * @return {string}
+ */
+proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.getAction = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.cs3.app.registry.v1beta1.ProviderInfo} returns this
+ */
+proto.cs3.app.registry.v1beta1.ProviderInfo.prototype.setAction = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

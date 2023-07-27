@@ -33,6 +33,9 @@ export class ProviderInfo extends jspb.Message {
   getDesktopOnly(): boolean;
   setDesktopOnly(value: boolean): void;
 
+  getAction(): string;
+  setAction(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProviderInfo.AsObject;
   static toObject(includeInstance: boolean, msg: ProviderInfo): ProviderInfo.AsObject;
@@ -53,6 +56,7 @@ export namespace ProviderInfo {
     description: string,
     icon: string,
     desktopOnly: boolean,
+    action: string,
   }
 
   export enum Capability {

@@ -14,6 +14,9 @@ export class OpenInAppURL extends jspb.Message {
   clearFormParametersMap(): void;
   getHeadersMap(): jspb.Map<string, string>;
   clearHeadersMap(): void;
+  getTarget(): Target;
+  setTarget(value: Target): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OpenInAppURL.AsObject;
   static toObject(includeInstance: boolean, msg: OpenInAppURL): OpenInAppURL.AsObject;
@@ -30,6 +33,7 @@ export namespace OpenInAppURL {
     method: string,
     formParametersMap: Array<[string, string]>,
     headersMap: Array<[string, string]>,
+    target: Target,
   }
 }
 
@@ -39,5 +43,11 @@ export enum ViewMode {
   VIEW_MODE_READ_ONLY = 2,
   VIEW_MODE_READ_WRITE = 3,
   VIEW_MODE_PREVIEW = 4,
+}
+
+export enum Target {
+  TARGET_INVALID = 0,
+  TARGET_IFRAME = 1,
+  TARGET_BLANK = 2,
 }
 
