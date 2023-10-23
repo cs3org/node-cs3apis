@@ -112,6 +112,9 @@ export class ReceivedShare extends jspb.Message {
   getMountPoint(): cs3_storage_provider_v1beta1_resources_pb.Reference | undefined;
   setMountPoint(value?: cs3_storage_provider_v1beta1_resources_pb.Reference): void;
 
+  getHidden(): boolean;
+  setHidden(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReceivedShare.AsObject;
   static toObject(includeInstance: boolean, msg: ReceivedShare): ReceivedShare.AsObject;
@@ -127,6 +130,7 @@ export namespace ReceivedShare {
     share?: Share.AsObject,
     state: ShareState,
     mountPoint?: cs3_storage_provider_v1beta1_resources_pb.Reference.AsObject,
+    hidden: boolean,
   }
 }
 

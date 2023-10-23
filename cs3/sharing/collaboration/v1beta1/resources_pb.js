@@ -945,7 +945,8 @@ proto.cs3.sharing.collaboration.v1beta1.ReceivedShare.toObject = function(includ
   var f, obj = {
     share: (f = msg.getShare()) && proto.cs3.sharing.collaboration.v1beta1.Share.toObject(includeInstance, f),
     state: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    mountPoint: (f = msg.getMountPoint()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f)
+    mountPoint: (f = msg.getMountPoint()) && cs3_storage_provider_v1beta1_resources_pb.Reference.toObject(includeInstance, f),
+    hidden: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -995,6 +996,10 @@ proto.cs3.sharing.collaboration.v1beta1.ReceivedShare.deserializeBinaryFromReade
       var value = new cs3_storage_provider_v1beta1_resources_pb.Reference;
       reader.readMessage(value,cs3_storage_provider_v1beta1_resources_pb.Reference.deserializeBinaryFromReader);
       msg.setMountPoint(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHidden(value);
       break;
     default:
       reader.skipField();
@@ -1046,6 +1051,13 @@ proto.cs3.sharing.collaboration.v1beta1.ReceivedShare.serializeBinaryToWriter = 
       3,
       f,
       cs3_storage_provider_v1beta1_resources_pb.Reference.serializeBinaryToWriter
+    );
+  }
+  f = message.getHidden();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
     );
   }
 };
@@ -1140,6 +1152,24 @@ proto.cs3.sharing.collaboration.v1beta1.ReceivedShare.prototype.clearMountPoint 
  */
 proto.cs3.sharing.collaboration.v1beta1.ReceivedShare.prototype.hasMountPoint = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool hidden = 4;
+ * @return {boolean}
+ */
+proto.cs3.sharing.collaboration.v1beta1.ReceivedShare.prototype.getHidden = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.cs3.sharing.collaboration.v1beta1.ReceivedShare} returns this
+ */
+proto.cs3.sharing.collaboration.v1beta1.ReceivedShare.prototype.setHidden = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
