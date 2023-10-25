@@ -22,6 +22,7 @@ import * as cs3_sharing_link_v1beta1_link_api_pb from '../../../cs3/sharing/link
 import * as cs3_sharing_ocm_v1beta1_ocm_api_pb from '../../../cs3/sharing/ocm/v1beta1/ocm_api_pb';
 import * as cs3_storage_provider_v1beta1_provider_api_pb from '../../../cs3/storage/provider/v1beta1/provider_api_pb';
 import * as cs3_storage_provider_v1beta1_resources_pb from '../../../cs3/storage/provider/v1beta1/resources_pb';
+import * as cs3_storage_provider_v1beta1_spaces_api_pb from '../../../cs3/storage/provider/v1beta1/spaces_api_pb';
 import * as cs3_tx_v1beta1_tx_api_pb from '../../../cs3/tx/v1beta1/tx_api_pb';
 import * as cs3_types_v1beta1_types_pb from '../../../cs3/types/v1beta1/types_pb';
 
@@ -435,44 +436,44 @@ interface IGatewayAPIService_ICreateHome extends grpc.MethodDefinition<cs3_stora
   responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeResponse>;
 }
 
-interface IGatewayAPIService_ICreateStorageSpace extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest, cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse> {
+interface IGatewayAPIService_ICreateStorageSpace extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest, cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/CreateStorageSpace'
   requestStream: false
   responseStream: false
-  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest>;
-  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest>;
-  responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse>;
-  responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse>;
+  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest>;
+  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest>;
+  responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse>;
+  responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse>;
 }
 
-interface IGatewayAPIService_IListStorageSpaces extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse> {
+interface IGatewayAPIService_IListStorageSpaces extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest, cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/ListStorageSpaces'
   requestStream: false
   responseStream: false
-  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest>;
-  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest>;
-  responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse>;
-  responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse>;
+  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest>;
+  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest>;
+  responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse>;
+  responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse>;
 }
 
-interface IGatewayAPIService_IUpdateStorageSpace extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest, cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse> {
+interface IGatewayAPIService_IUpdateStorageSpace extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest, cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/UpdateStorageSpace'
   requestStream: false
   responseStream: false
-  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest>;
-  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest>;
-  responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse>;
-  responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse>;
+  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest>;
+  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest>;
+  responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse>;
+  responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse>;
 }
 
-interface IGatewayAPIService_IDeleteStorageSpace extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest, cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse> {
+interface IGatewayAPIService_IDeleteStorageSpace extends grpc.MethodDefinition<cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest, cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse> {
   path: '/cs3.gateway.v1beta1.GatewayAPI/DeleteStorageSpace'
   requestStream: false
   responseStream: false
-  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest>;
-  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest>;
-  responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse>;
-  responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse>;
+  requestSerialize: grpc.serialize<cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest>;
+  requestDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest>;
+  responseSerialize: grpc.serialize<cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse>;
+  responseDeserialize: grpc.deserialize<cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse>;
 }
 
 interface IGatewayAPIService_IOpenInApp extends grpc.MethodDefinition<cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest, cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse> {
@@ -1128,10 +1129,10 @@ export interface IGatewayAPIServer extends grpc.UntypedServiceImplementation {
   refreshLock: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockRequest, cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockResponse>;
   unlock: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.UnlockRequest, cs3_storage_provider_v1beta1_provider_api_pb.UnlockResponse>;
   createHome: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeRequest, cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeResponse>;
-  createStorageSpace: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest, cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse>;
-  listStorageSpaces: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest, cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse>;
-  updateStorageSpace: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest, cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse>;
-  deleteStorageSpace: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest, cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse>;
+  createStorageSpace: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest, cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse>;
+  listStorageSpaces: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest, cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse>;
+  updateStorageSpace: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest, cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse>;
+  deleteStorageSpace: grpc.handleUnaryCall<cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest, cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse>;
   openInApp: grpc.handleUnaryCall<cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest, cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse>;
   createShare: grpc.handleUnaryCall<cs3_sharing_collaboration_v1beta1_collaboration_api_pb.CreateShareRequest, cs3_sharing_collaboration_v1beta1_collaboration_api_pb.CreateShareResponse>;
   removeShare: grpc.handleUnaryCall<cs3_sharing_collaboration_v1beta1_collaboration_api_pb.RemoveShareRequest, cs3_sharing_collaboration_v1beta1_collaboration_api_pb.RemoveShareResponse>;
@@ -1288,18 +1289,18 @@ export interface IGatewayAPIClient {
   createHome(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeResponse) => void): grpc.ClientUnaryCall;
   createHome(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeResponse) => void): grpc.ClientUnaryCall;
   createHome(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeResponse) => void): grpc.ClientUnaryCall;
-  createStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  createStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  createStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  listStorageSpaces(request: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
-  listStorageSpaces(request: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
-  listStorageSpaces(request: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
-  updateStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  updateStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  updateStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  deleteStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  deleteStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  deleteStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  createStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  createStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  createStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  listStorageSpaces(request: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
+  listStorageSpaces(request: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
+  listStorageSpaces(request: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
+  updateStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  updateStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  updateStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  deleteStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  deleteStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  deleteStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
   openInApp(request: cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest, callback: (error: grpc.ServiceError | null, response: cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse) => void): grpc.ClientUnaryCall;
   openInApp(request: cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse) => void): grpc.ClientUnaryCall;
   openInApp(request: cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse) => void): grpc.ClientUnaryCall;
@@ -1581,18 +1582,18 @@ export class GatewayAPIClient extends grpc.Client implements IGatewayAPIClient {
   public createHome(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeResponse) => void): grpc.ClientUnaryCall;
   public createHome(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeResponse) => void): grpc.ClientUnaryCall;
   public createHome(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateHomeResponse) => void): grpc.ClientUnaryCall;
-  public createStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  public createStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  public createStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  public listStorageSpaces(request: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
-  public listStorageSpaces(request: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
-  public listStorageSpaces(request: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
-  public updateStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  public updateStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  public updateStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  public deleteStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  public deleteStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
-  public deleteStorageSpace(request: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public createStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public createStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public createStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public listStorageSpaces(request: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
+  public listStorageSpaces(request: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
+  public listStorageSpaces(request: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse) => void): grpc.ClientUnaryCall;
+  public updateStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public updateStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public updateStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public deleteStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public deleteStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
+  public deleteStorageSpace(request: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse) => void): grpc.ClientUnaryCall;
   public openInApp(request: cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest, callback: (error: grpc.ServiceError | null, response: cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse) => void): grpc.ClientUnaryCall;
   public openInApp(request: cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse) => void): grpc.ClientUnaryCall;
   public openInApp(request: cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: cs3_app_provider_v1beta1_provider_api_pb.OpenInAppResponse) => void): grpc.ClientUnaryCall;

@@ -21,6 +21,7 @@ import * as cs3_sharing_link_v1beta1_link_api_pb from '../../../cs3/sharing/link
 import * as cs3_sharing_ocm_v1beta1_ocm_api_pb from '../../../cs3/sharing/ocm/v1beta1/ocm_api_pb';
 import * as cs3_storage_provider_v1beta1_provider_api_pb from '../../../cs3/storage/provider/v1beta1/provider_api_pb';
 import * as cs3_storage_provider_v1beta1_resources_pb from '../../../cs3/storage/provider/v1beta1/resources_pb';
+import * as cs3_storage_provider_v1beta1_spaces_api_pb from '../../../cs3/storage/provider/v1beta1/spaces_api_pb';
 import * as cs3_tx_v1beta1_tx_api_pb from '../../../cs3/tx/v1beta1/tx_api_pb';
 import * as cs3_types_v1beta1_types_pb from '../../../cs3/types/v1beta1/types_pb';
 
