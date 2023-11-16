@@ -20,7 +20,7 @@
 // or submit itself to any jurisdiction.
 //
 'use strict';
-var grpc = require('@grpc/grpc-js');
+var grpc = require('grpc');
 var cs3_gateway_v1beta1_gateway_api_pb = require('../../../cs3/gateway/v1beta1/gateway_api_pb.js');
 var cs3_app_provider_v1beta1_provider_api_pb = require('../../../cs3/app/provider/v1beta1/provider_api_pb.js');
 var cs3_app_registry_v1beta1_registry_api_pb = require('../../../cs3/app/registry/v1beta1/registry_api_pb.js');
@@ -40,8 +40,8 @@ var cs3_sharing_collaboration_v1beta1_collaboration_api_pb = require('../../../c
 var cs3_sharing_link_v1beta1_link_api_pb = require('../../../cs3/sharing/link/v1beta1/link_api_pb.js');
 var cs3_sharing_ocm_v1beta1_ocm_api_pb = require('../../../cs3/sharing/ocm/v1beta1/ocm_api_pb.js');
 var cs3_storage_provider_v1beta1_provider_api_pb = require('../../../cs3/storage/provider/v1beta1/provider_api_pb.js');
-var cs3_storage_provider_v1beta1_resources_pb = require('../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_storage_provider_v1beta1_spaces_api_pb = require('../../../cs3/storage/provider/v1beta1/spaces_api_pb.js');
+var cs3_storage_provider_v1beta1_resources_pb = require('../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_tx_v1beta1_tx_api_pb = require('../../../cs3/tx/v1beta1/tx_api_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../cs3/types/v1beta1/types_pb.js');
 

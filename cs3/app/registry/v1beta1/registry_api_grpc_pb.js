@@ -20,7 +20,7 @@
 // or submit itself to any jurisdiction.
 //
 'use strict';
-var grpc = require('@grpc/grpc-js');
+var grpc = require('grpc');
 var cs3_app_registry_v1beta1_registry_api_pb = require('../../../../cs3/app/registry/v1beta1/registry_api_pb.js');
 var cs3_app_registry_v1beta1_resources_pb = require('../../../../cs3/app/registry/v1beta1/resources_pb.js');
 var cs3_rpc_v1beta1_status_pb = require('../../../../cs3/rpc/v1beta1/status_pb.js');
