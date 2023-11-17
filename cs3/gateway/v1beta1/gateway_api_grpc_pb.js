@@ -2182,7 +2182,7 @@ function deserialize_cs3_tx_v1beta1_RetryTransferResponse(buffer_arg) {
 
 // Gateway API
 //
-// The Gateway API is the only API exposed direclty to end-clients.
+// The Gateway API is the only API exposed directly to end-clients.
 // It is a facade API that all clients should connect to.
 // Other APIS like the StorageProviderAPI are internal APIS.
 //
