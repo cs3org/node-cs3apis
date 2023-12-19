@@ -40,6 +40,7 @@ var cs3_sharing_collaboration_v1beta1_collaboration_api_pb = require('../../../c
 var cs3_sharing_link_v1beta1_link_api_pb = require('../../../cs3/sharing/link/v1beta1/link_api_pb.js');
 var cs3_sharing_ocm_v1beta1_ocm_api_pb = require('../../../cs3/sharing/ocm/v1beta1/ocm_api_pb.js');
 var cs3_storage_provider_v1beta1_provider_api_pb = require('../../../cs3/storage/provider/v1beta1/provider_api_pb.js');
+var cs3_storage_provider_v1beta1_spaces_api_pb = require('../../../cs3/storage/provider/v1beta1/spaces_api_pb.js');
 var cs3_storage_provider_v1beta1_resources_pb = require('../../../cs3/storage/provider/v1beta1/resources_pb.js');
 var cs3_tx_v1beta1_tx_api_pb = require('../../../cs3/tx/v1beta1/tx_api_pb.js');
 var cs3_types_v1beta1_types_pb = require('../../../cs3/types/v1beta1/types_pb.js');
@@ -1486,25 +1487,25 @@ function deserialize_cs3_storage_provider_v1beta1_CreateHomeResponse(buffer_arg)
 }
 
 function serialize_cs3_storage_provider_v1beta1_CreateStorageSpaceRequest(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest)) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.CreateStorageSpaceRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_cs3_storage_provider_v1beta1_CreateStorageSpaceRequest(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_CreateStorageSpaceResponse(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse)) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.CreateStorageSpaceResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_cs3_storage_provider_v1beta1_CreateStorageSpaceResponse(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse.deserializeBinary(new Uint8Array(buffer_arg));
+  return cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_CreateSymlinkRequest(arg) {
@@ -1552,25 +1553,25 @@ function deserialize_cs3_storage_provider_v1beta1_DeleteResponse(buffer_arg) {
 }
 
 function serialize_cs3_storage_provider_v1beta1_DeleteStorageSpaceRequest(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest)) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.DeleteStorageSpaceRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_cs3_storage_provider_v1beta1_DeleteStorageSpaceRequest(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_DeleteStorageSpaceResponse(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse)) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.DeleteStorageSpaceResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_cs3_storage_provider_v1beta1_DeleteStorageSpaceResponse(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse.deserializeBinary(new Uint8Array(buffer_arg));
+  return cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_GetHomeRequest(arg) {
@@ -1783,25 +1784,25 @@ function deserialize_cs3_storage_provider_v1beta1_ListRecycleStreamResponse(buff
 }
 
 function serialize_cs3_storage_provider_v1beta1_ListStorageSpacesRequest(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest)) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.ListStorageSpacesRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_cs3_storage_provider_v1beta1_ListStorageSpacesRequest(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_ListStorageSpacesResponse(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse)) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.ListStorageSpacesResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_cs3_storage_provider_v1beta1_ListStorageSpacesResponse(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+  return cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_MoveRequest(arg) {
@@ -2047,25 +2048,25 @@ function deserialize_cs3_storage_provider_v1beta1_UnsetArbitraryMetadataResponse
 }
 
 function serialize_cs3_storage_provider_v1beta1_UpdateStorageSpaceRequest(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest)) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.UpdateStorageSpaceRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_cs3_storage_provider_v1beta1_UpdateStorageSpaceRequest(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_UpdateStorageSpaceResponse(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse)) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.UpdateStorageSpaceResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_cs3_storage_provider_v1beta1_UpdateStorageSpaceResponse(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse.deserializeBinary(new Uint8Array(buffer_arg));
+  return cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_tx_v1beta1_CancelTransferRequest(arg) {
@@ -2633,8 +2634,8 @@ createStorageSpace: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/CreateStorageSpace',
     requestStream: false,
     responseStream: false,
-    requestType: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceRequest,
-    responseType: cs3_storage_provider_v1beta1_provider_api_pb.CreateStorageSpaceResponse,
+    requestType: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceRequest,
+    responseType: cs3_storage_provider_v1beta1_spaces_api_pb.CreateStorageSpaceResponse,
     requestSerialize: serialize_cs3_storage_provider_v1beta1_CreateStorageSpaceRequest,
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_CreateStorageSpaceRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_CreateStorageSpaceResponse,
@@ -2645,8 +2646,8 @@ listStorageSpaces: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/ListStorageSpaces',
     requestStream: false,
     responseStream: false,
-    requestType: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesRequest,
-    responseType: cs3_storage_provider_v1beta1_provider_api_pb.ListStorageSpacesResponse,
+    requestType: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesRequest,
+    responseType: cs3_storage_provider_v1beta1_spaces_api_pb.ListStorageSpacesResponse,
     requestSerialize: serialize_cs3_storage_provider_v1beta1_ListStorageSpacesRequest,
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_ListStorageSpacesRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_ListStorageSpacesResponse,
@@ -2657,8 +2658,8 @@ updateStorageSpace: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/UpdateStorageSpace',
     requestStream: false,
     responseStream: false,
-    requestType: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceRequest,
-    responseType: cs3_storage_provider_v1beta1_provider_api_pb.UpdateStorageSpaceResponse,
+    requestType: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceRequest,
+    responseType: cs3_storage_provider_v1beta1_spaces_api_pb.UpdateStorageSpaceResponse,
     requestSerialize: serialize_cs3_storage_provider_v1beta1_UpdateStorageSpaceRequest,
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_UpdateStorageSpaceRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_UpdateStorageSpaceResponse,
@@ -2669,8 +2670,8 @@ deleteStorageSpace: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/DeleteStorageSpace',
     requestStream: false,
     responseStream: false,
-    requestType: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceRequest,
-    responseType: cs3_storage_provider_v1beta1_provider_api_pb.DeleteStorageSpaceResponse,
+    requestType: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceRequest,
+    responseType: cs3_storage_provider_v1beta1_spaces_api_pb.DeleteStorageSpaceResponse,
     requestSerialize: serialize_cs3_storage_provider_v1beta1_DeleteStorageSpaceRequest,
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_DeleteStorageSpaceRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_DeleteStorageSpaceResponse,
