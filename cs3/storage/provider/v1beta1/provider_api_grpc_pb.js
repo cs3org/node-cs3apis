@@ -862,8 +862,11 @@ initiateFileDownload: {
     responseSerialize: serialize_cs3_storage_provider_v1beta1_InitiateFileDownloadResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_InitiateFileDownloadResponse,
   },
-  // Initiates the upload of a file using an
-// out-of-band data transfer mechanism.
+  // Initiates the upload of a file using an out-of-band data
+// transfer mechanism. SHOULD return CODE_FAILED_PRECONDITION
+// if the reference is already locked with a mismatched lock.
+// Additionally, the lock check MUST be enforced by the data
+// transfer protocol returned in response.
 initiateFileUpload: {
     path: '/cs3.storage.provider.v1beta1.ProviderAPI/InitiateFileUpload',
     requestStream: false,
