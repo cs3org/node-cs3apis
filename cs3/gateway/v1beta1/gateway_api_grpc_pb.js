@@ -37,6 +37,7 @@ var cs3_permissions_v1beta1_permissions_api_pb = require('../../../cs3/permissio
 var cs3_preferences_v1beta1_preferences_api_pb = require('../../../cs3/preferences/v1beta1/preferences_api_pb.js');
 var cs3_rpc_v1beta1_status_pb = require('../../../cs3/rpc/v1beta1/status_pb.js');
 var cs3_sharing_collaboration_v1beta1_collaboration_api_pb = require('../../../cs3/sharing/collaboration/v1beta1/collaboration_api_pb.js');
+var cs3_sharing_collaboration_v1beta1_resources_pb = require('../../../cs3/sharing/collaboration/v1beta1/resources_pb.js');
 var cs3_sharing_link_v1beta1_link_api_pb = require('../../../cs3/sharing/link/v1beta1/link_api_pb.js');
 var cs3_sharing_ocm_v1beta1_ocm_api_pb = require('../../../cs3/sharing/ocm/v1beta1/ocm_api_pb.js');
 var cs3_storage_provider_v1beta1_provider_api_pb = require('../../../cs3/storage/provider/v1beta1/provider_api_pb.js');
@@ -351,6 +352,17 @@ function serialize_cs3_gateway_v1beta1_ListAuthProvidersResponse(arg) {
 
 function deserialize_cs3_gateway_v1beta1_ListAuthProvidersResponse(buffer_arg) {
   return cs3_gateway_v1beta1_gateway_api_pb.ListAuthProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_gateway_v1beta1_ListExistingReceivedSharesResponse(arg) {
+  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.ListExistingReceivedSharesResponse)) {
+    throw new Error('Expected argument of type cs3.gateway.v1beta1.ListExistingReceivedSharesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_gateway_v1beta1_ListExistingReceivedSharesResponse(buffer_arg) {
+  return cs3_gateway_v1beta1_gateway_api_pb.ListExistingReceivedSharesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_gateway_v1beta1_OpenInAppRequest(arg) {
@@ -2739,7 +2751,7 @@ getShare: {
     responseSerialize: serialize_cs3_sharing_collaboration_v1beta1_GetShareResponse,
     responseDeserialize: deserialize_cs3_sharing_collaboration_v1beta1_GetShareResponse,
   },
-  // List the shares the authproviderenticated principal has created,
+  // List the shares the authenticated principal has created,
 // both as owner and creator. If a filter is specified, only
 // shares satisfying the filter MUST be returned.
 listShares: {
@@ -2766,7 +2778,7 @@ updateShare: {
     responseSerialize: serialize_cs3_sharing_collaboration_v1beta1_UpdateShareResponse,
     responseDeserialize: deserialize_cs3_sharing_collaboration_v1beta1_UpdateShareResponse,
   },
-  // List all shares the authproviderenticated principal has received.
+  // List all shares the authenticated principal has received.
 listReceivedShares: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/ListReceivedShares',
     requestStream: false,
@@ -2777,6 +2789,19 @@ listReceivedShares: {
     requestDeserialize: deserialize_cs3_sharing_collaboration_v1beta1_ListReceivedSharesRequest,
     responseSerialize: serialize_cs3_sharing_collaboration_v1beta1_ListReceivedSharesResponse,
     responseDeserialize: deserialize_cs3_sharing_collaboration_v1beta1_ListReceivedSharesResponse,
+  },
+  // List all existing shares the authenticated principal has received,
+// including their storage resource information.
+listExistingReceivedShares: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/ListExistingReceivedShares',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_sharing_collaboration_v1beta1_collaboration_api_pb.ListReceivedSharesRequest,
+    responseType: cs3_gateway_v1beta1_gateway_api_pb.ListExistingReceivedSharesResponse,
+    requestSerialize: serialize_cs3_sharing_collaboration_v1beta1_ListReceivedSharesRequest,
+    requestDeserialize: deserialize_cs3_sharing_collaboration_v1beta1_ListReceivedSharesRequest,
+    responseSerialize: serialize_cs3_gateway_v1beta1_ListExistingReceivedSharesResponse,
+    responseDeserialize: deserialize_cs3_gateway_v1beta1_ListExistingReceivedSharesResponse,
   },
   // Update the received share to change the share state or the display name.
 // MUST return CODE_NOT_FOUND if the share reference does not exist.
@@ -2890,7 +2915,7 @@ getPublicShareByToken: {
     responseSerialize: serialize_cs3_sharing_link_v1beta1_GetPublicShareByTokenResponse,
     responseDeserialize: deserialize_cs3_sharing_link_v1beta1_GetPublicShareByTokenResponse,
   },
-  // List the shares the authproviderenticated principal has created,
+  // List the shares the authenticated principal has created,
 // both as owner and creator. If a filter is specified, only
 // shares satisfying the filter MUST be returned.
 listPublicShares: {
@@ -2975,7 +3000,7 @@ getOCMShareByToken: {
     responseSerialize: serialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenResponse,
     responseDeserialize: deserialize_cs3_sharing_ocm_v1beta1_GetOCMShareByTokenResponse,
   },
-  // List the shares the authproviderenticated principal has created,
+  // List the shares the authenticated principal has created,
 // both as owner and creator. If a filter is specified, only
 // shares satisfying the filter MUST be returned.
 listOCMShares: {
@@ -3002,7 +3027,7 @@ updateOCMShare: {
     responseSerialize: serialize_cs3_sharing_ocm_v1beta1_UpdateOCMShareResponse,
     responseDeserialize: deserialize_cs3_sharing_ocm_v1beta1_UpdateOCMShareResponse,
   },
-  // List all shares the authproviderenticated principal has received.
+  // List all shares the authenticated principal has received.
 listReceivedOCMShares: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/ListReceivedOCMShares',
     requestStream: false,
