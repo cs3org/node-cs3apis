@@ -2322,6 +2322,7 @@ touchFile: {
 // then the entire directory is deleted recursively.
 // If a resource specifies a reference or symlink type, only the reference is removed (not the target).
 // MUST return CODE_NOT_FOUND if the reference does not exist.
+// MUST return CODE_TOO_EARLY if some are not finished job over resource is still in process.
 delete: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/Delete',
     requestStream: false,
@@ -2459,7 +2460,8 @@ listRecycle: {
   },
   // Moves a resource from one reference to another.
 // MUST return CODE_NOT_FOUND if any of the references do not exist.
-// MUST return CODE_FAILED_PRECONDITION if the source reference
+// MUST return CODE_FAILED_PRECONDITION if the source reference.
+// MUST return CODE_TOO_EARLY if some are not finished job over resource is still in process.
 // cannot be moved to the destination reference.
 move: {
     path: '/cs3.gateway.v1beta1.GatewayAPI/Move',
