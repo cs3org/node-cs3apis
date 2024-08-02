@@ -354,6 +354,17 @@ function deserialize_cs3_gateway_v1beta1_ListAuthProvidersResponse(buffer_arg) {
   return cs3_gateway_v1beta1_gateway_api_pb.ListAuthProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_gateway_v1beta1_ListExistingPublicSharesResponse(arg) {
+  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.ListExistingPublicSharesResponse)) {
+    throw new Error('Expected argument of type cs3.gateway.v1beta1.ListExistingPublicSharesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_gateway_v1beta1_ListExistingPublicSharesResponse(buffer_arg) {
+  return cs3_gateway_v1beta1_gateway_api_pb.ListExistingPublicSharesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_gateway_v1beta1_ListExistingReceivedSharesResponse(arg) {
   if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.ListExistingReceivedSharesResponse)) {
     throw new Error('Expected argument of type cs3.gateway.v1beta1.ListExistingReceivedSharesResponse');
@@ -363,6 +374,17 @@ function serialize_cs3_gateway_v1beta1_ListExistingReceivedSharesResponse(arg) {
 
 function deserialize_cs3_gateway_v1beta1_ListExistingReceivedSharesResponse(buffer_arg) {
   return cs3_gateway_v1beta1_gateway_api_pb.ListExistingReceivedSharesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_gateway_v1beta1_ListExistingSharesResponse(arg) {
+  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.ListExistingSharesResponse)) {
+    throw new Error('Expected argument of type cs3.gateway.v1beta1.ListExistingSharesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_gateway_v1beta1_ListExistingSharesResponse(buffer_arg) {
+  return cs3_gateway_v1beta1_gateway_api_pb.ListExistingSharesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_gateway_v1beta1_OpenInAppRequest(arg) {
@@ -2767,6 +2789,19 @@ listShares: {
     responseSerialize: serialize_cs3_sharing_collaboration_v1beta1_ListSharesResponse,
     responseDeserialize: deserialize_cs3_sharing_collaboration_v1beta1_ListSharesResponse,
   },
+  // List all existing shares the authenticated principal has created,
+// including their storage resource information.
+listExistingShares: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/ListExistingShares',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_sharing_collaboration_v1beta1_collaboration_api_pb.ListSharesRequest,
+    responseType: cs3_gateway_v1beta1_gateway_api_pb.ListExistingSharesResponse,
+    requestSerialize: serialize_cs3_sharing_collaboration_v1beta1_ListSharesRequest,
+    requestDeserialize: deserialize_cs3_sharing_collaboration_v1beta1_ListSharesRequest,
+    responseSerialize: serialize_cs3_gateway_v1beta1_ListExistingSharesResponse,
+    responseDeserialize: deserialize_cs3_gateway_v1beta1_ListExistingSharesResponse,
+  },
   // Updates a share.
 // MUST return CODE_NOT_FOUND if the share reference does not exist.
 updateShare: {
@@ -2930,6 +2965,20 @@ listPublicShares: {
     requestDeserialize: deserialize_cs3_sharing_link_v1beta1_ListPublicSharesRequest,
     responseSerialize: serialize_cs3_sharing_link_v1beta1_ListPublicSharesResponse,
     responseDeserialize: deserialize_cs3_sharing_link_v1beta1_ListPublicSharesResponse,
+  },
+  // List all existing shares the authenticated principal has created,
+// both as owner and creator, including their storage resource information.
+// If a filter is specified, only shares satisfying the filter MUST be returned.
+listExistingPublicShares: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/ListExistingPublicShares',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_sharing_link_v1beta1_link_api_pb.ListPublicSharesRequest,
+    responseType: cs3_gateway_v1beta1_gateway_api_pb.ListExistingPublicSharesResponse,
+    requestSerialize: serialize_cs3_sharing_link_v1beta1_ListPublicSharesRequest,
+    requestDeserialize: deserialize_cs3_sharing_link_v1beta1_ListPublicSharesRequest,
+    responseSerialize: serialize_cs3_gateway_v1beta1_ListExistingPublicSharesResponse,
+    responseDeserialize: deserialize_cs3_gateway_v1beta1_ListExistingPublicSharesResponse,
   },
   // Updates a share.
 // MUST return CODE_NOT_FOUND if the share reference does not exist.
