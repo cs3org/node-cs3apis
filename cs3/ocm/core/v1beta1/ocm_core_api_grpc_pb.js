@@ -115,7 +115,7 @@ function deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse(buffer_arg)
 // Any method MAY return UNAUTHENTICATED.
 var OcmCoreAPIService = exports.OcmCoreAPIService = {
   // Creates a new OCM share, in response to a call from remote to:
-// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
 createOCMCoreShare: {
     path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/CreateOCMCoreShare',
     requestStream: false,
@@ -128,7 +128,7 @@ createOCMCoreShare: {
     responseDeserialize: deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse,
   },
   // Updates an OCM share, in response to a notification from the remote system to:
-// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
 updateOCMCoreShare: {
     path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/UpdateOCMCoreShare',
     requestStream: false,
@@ -141,7 +141,7 @@ updateOCMCoreShare: {
     responseDeserialize: deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse,
   },
   // Deletes an OCM share, in response to a notification from the remote system to:
-// https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+// https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
 deleteOCMCoreShare: {
     path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/DeleteOCMCoreShare',
     requestStream: false,
