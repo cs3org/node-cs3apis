@@ -170,8 +170,8 @@ getUserGroups: {
     responseSerialize: serialize_cs3_identity_user_v1beta1_GetUserGroupsResponse,
     responseDeserialize: deserialize_cs3_identity_user_v1beta1_GetUserGroupsResponse,
   },
-  // Finds users by any attribute of the user.
-// TODO(labkode): to define the filters that make more sense.
+  // Finds users that match the specified filters.
+// MAY return CODE_RESOURCE_EXHAUSTED if the filters return too many responses.
 findUsers: {
     path: '/cs3.identity.user.v1beta1.UserAPI/FindUsers',
     requestStream: false,

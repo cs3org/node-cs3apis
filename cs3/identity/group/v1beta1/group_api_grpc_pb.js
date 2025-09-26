@@ -205,7 +205,8 @@ hasMember: {
     responseSerialize: serialize_cs3_identity_group_v1beta1_HasMemberResponse,
     responseDeserialize: deserialize_cs3_identity_group_v1beta1_HasMemberResponse,
   },
-  // Finds groups whose names match the specified filter.
+  // Finds groups whose names match the specified filters.
+// MAY return CODE_RESOURCE_EXHAUSTED if the filters return too many responses.
 findGroups: {
     path: '/cs3.identity.group.v1beta1.GroupAPI/FindGroups',
     requestStream: false,
