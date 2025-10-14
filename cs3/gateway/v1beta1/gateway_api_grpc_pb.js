@@ -354,6 +354,17 @@ function deserialize_cs3_gateway_v1beta1_ListAuthProvidersResponse(buffer_arg) {
   return cs3_gateway_v1beta1_gateway_api_pb.ListAuthProvidersResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_gateway_v1beta1_ListExistingOCMSharesResponse(arg) {
+  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.ListExistingOCMSharesResponse)) {
+    throw new Error('Expected argument of type cs3.gateway.v1beta1.ListExistingOCMSharesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_gateway_v1beta1_ListExistingOCMSharesResponse(buffer_arg) {
+  return cs3_gateway_v1beta1_gateway_api_pb.ListExistingOCMSharesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_gateway_v1beta1_ListExistingPublicSharesResponse(arg) {
   if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.ListExistingPublicSharesResponse)) {
     throw new Error('Expected argument of type cs3.gateway.v1beta1.ListExistingPublicSharesResponse');
@@ -3064,6 +3075,19 @@ listOCMShares: {
     requestDeserialize: deserialize_cs3_sharing_ocm_v1beta1_ListOCMSharesRequest,
     responseSerialize: serialize_cs3_sharing_ocm_v1beta1_ListOCMSharesResponse,
     responseDeserialize: deserialize_cs3_sharing_ocm_v1beta1_ListOCMSharesResponse,
+  },
+  // List all existing shares the authenticated principal has created,
+// including their storage resource information.
+listExistingOCMShares: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/ListExistingOCMShares',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_sharing_ocm_v1beta1_ocm_api_pb.ListOCMSharesRequest,
+    responseType: cs3_gateway_v1beta1_gateway_api_pb.ListExistingOCMSharesResponse,
+    requestSerialize: serialize_cs3_sharing_ocm_v1beta1_ListOCMSharesRequest,
+    requestDeserialize: deserialize_cs3_sharing_ocm_v1beta1_ListOCMSharesRequest,
+    responseSerialize: serialize_cs3_gateway_v1beta1_ListExistingOCMSharesResponse,
+    responseDeserialize: deserialize_cs3_gateway_v1beta1_ListExistingOCMSharesResponse,
   },
   // Updates a share.
 // MUST return CODE_NOT_FOUND if the share reference does not exist.
