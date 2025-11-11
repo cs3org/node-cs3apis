@@ -95,12 +95,13 @@ function deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse(buffer_arg)
 }
 
 
-// OCM Core API
+// OCM Core API (deprecated and to be removed, use cs3/ocm/incoming/v1beta1/incoming_api.proto instead)
 //
-// the OCM Core API is the mapping for the local system of the OCM protocol,
-// including multi-protocol shares. Implementations are expected to expose
-// the `/ocm` endpoints according to the OCM API, and in response to those
-// endpoints implement the following API.
+// This API is the mapping for the local system of the Open Cloud Mesh
+// (OCM) sharing protocol. Implementations are expected to expose the `/ocm`
+// endpoints according to the OCM API, and in response to those endpoints call the
+// following API. Support for multi-protocol shares is included, if the remote
+// sender supplies a multi-protocol share.
 //
 // The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 // NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -114,8 +115,7 @@ function deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse(buffer_arg)
 // Any method MAY return UNKNOWN.
 // Any method MAY return UNAUTHENTICATED.
 var OcmCoreAPIService = exports.OcmCoreAPIService = {
-  // Creates a new OCM share, in response to a call from remote to:
-// https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
+  // Deprecated. Creates a new OCM share, in response to a call from the remote system
 createOCMCoreShare: {
     path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/CreateOCMCoreShare',
     requestStream: false,
@@ -127,8 +127,7 @@ createOCMCoreShare: {
     responseSerialize: serialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse,
     responseDeserialize: deserialize_cs3_ocm_core_v1beta1_CreateOCMCoreShareResponse,
   },
-  // Updates an OCM share, in response to a notification from the remote system to:
-// https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+  // Deprecated. Updates an OCM share, in response to a notification from the remote system
 updateOCMCoreShare: {
     path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/UpdateOCMCoreShare',
     requestStream: false,
@@ -140,8 +139,7 @@ updateOCMCoreShare: {
     responseSerialize: serialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse,
     responseDeserialize: deserialize_cs3_ocm_core_v1beta1_UpdateOCMCoreShareResponse,
   },
-  // Deletes an OCM share, in response to a notification from the remote system to:
-// https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+  // Deprecated. Deletes an OCM share, in response to a notification from the remote system
 deleteOCMCoreShare: {
     path: '/cs3.ocm.core.v1beta1.OcmCoreAPI/DeleteOCMCoreShare',
     requestStream: false,
