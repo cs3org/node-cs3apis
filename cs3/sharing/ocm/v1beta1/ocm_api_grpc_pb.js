@@ -237,7 +237,7 @@ function deserialize_cs3_sharing_ocm_v1beta1_UpdateReceivedOCMShareResponse(buff
 // Implementations are expected to call remote `/ocm` endpoints
 // in response to the payloads received via this API.
 //
-// The APIs match the OCM v1.2 spec including multi-protocol shares.
+// The APIs match the OCM v1.2+ spec including multi-protocol shares.
 //
 // The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 // NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
