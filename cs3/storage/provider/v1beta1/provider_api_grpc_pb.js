@@ -28,6 +28,28 @@ var cs3_storage_provider_v1beta1_resources_pb = require('../../../../cs3/storage
 var cs3_types_v1beta1_types_pb = require('../../../../cs3/types/v1beta1/types_pb.js');
 var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
 
+function serialize_cs3_storage_provider_v1beta1_AddFavoriteRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.AddFavoriteRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.AddFavoriteRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_AddFavoriteRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.AddFavoriteRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_AddFavoriteResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.AddFavoriteResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.AddFavoriteResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_AddFavoriteResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.AddFavoriteResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_storage_provider_v1beta1_AddGrantRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.AddGrantRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.AddGrantRequest');
@@ -510,6 +532,28 @@ function serialize_cs3_storage_provider_v1beta1_RefreshLockResponse(arg) {
 
 function deserialize_cs3_storage_provider_v1beta1_RefreshLockResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.RefreshLockResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_RemoveFavoriteRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.RemoveFavoriteRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.RemoveFavoriteRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_RemoveFavoriteRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.RemoveFavoriteRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_RemoveFavoriteResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.RemoveFavoriteResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.RemoveFavoriteResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_RemoveFavoriteResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.RemoveFavoriteResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_RemoveGrantRequest(arg) {
@@ -1198,6 +1242,30 @@ getHome: {
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_GetHomeRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_GetHomeResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_GetHomeResponse,
+  },
+  // Marks a resource as favorite for a user.
+addFavorite: {
+    path: '/cs3.storage.provider.v1beta1.ProviderAPI/AddFavorite',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.AddFavoriteRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.AddFavoriteResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_AddFavoriteRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_AddFavoriteRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_AddFavoriteResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_AddFavoriteResponse,
+  },
+  // Unmarks a resource as favorite for a user.
+removeFavorite: {
+    path: '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveFavorite',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.RemoveFavoriteRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.RemoveFavoriteResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_RemoveFavoriteRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_RemoveFavoriteRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_RemoveFavoriteResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_RemoveFavoriteResponse,
   },
 };
 
