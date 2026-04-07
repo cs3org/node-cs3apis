@@ -30,6 +30,7 @@ var cs3_gateway_v1beta1_resources_pb = require('../../../cs3/gateway/v1beta1/res
 var cs3_identity_group_v1beta1_group_api_pb = require('../../../cs3/identity/group/v1beta1/group_api_pb.js');
 var cs3_identity_user_v1beta1_resources_pb = require('../../../cs3/identity/user/v1beta1/resources_pb.js');
 var cs3_identity_user_v1beta1_user_api_pb = require('../../../cs3/identity/user/v1beta1/user_api_pb.js');
+var cs3_identity_tenant_v1beta1_tenant_api_pb = require('../../../cs3/identity/tenant/v1beta1/tenant_api_pb.js');
 var cs3_ocm_core_v1beta1_ocm_core_api_pb = require('../../../cs3/ocm/core/v1beta1/ocm_core_api_pb.js');
 var cs3_ocm_incoming_v1beta1_ocm_incoming_api_pb = require('../../../cs3/ocm/incoming/v1beta1/ocm_incoming_api_pb.js');
 var cs3_ocm_invite_v1beta1_invite_api_pb = require('../../../cs3/ocm/invite/v1beta1/invite_api_pb.js');
@@ -540,6 +541,50 @@ function serialize_cs3_identity_group_v1beta1_HasMemberResponse(arg) {
 
 function deserialize_cs3_identity_group_v1beta1_HasMemberResponse(buffer_arg) {
   return cs3_identity_group_v1beta1_group_api_pb.HasMemberResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_identity_tenant_v1beta1_GetTenantByClaimRequest(arg) {
+  if (!(arg instanceof cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantByClaimRequest)) {
+    throw new Error('Expected argument of type cs3.identity.tenant.v1beta1.GetTenantByClaimRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_identity_tenant_v1beta1_GetTenantByClaimRequest(buffer_arg) {
+  return cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantByClaimRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_identity_tenant_v1beta1_GetTenantByClaimResponse(arg) {
+  if (!(arg instanceof cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantByClaimResponse)) {
+    throw new Error('Expected argument of type cs3.identity.tenant.v1beta1.GetTenantByClaimResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_identity_tenant_v1beta1_GetTenantByClaimResponse(buffer_arg) {
+  return cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantByClaimResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_identity_tenant_v1beta1_GetTenantRequest(arg) {
+  if (!(arg instanceof cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantRequest)) {
+    throw new Error('Expected argument of type cs3.identity.tenant.v1beta1.GetTenantRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_identity_tenant_v1beta1_GetTenantRequest(buffer_arg) {
+  return cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_identity_tenant_v1beta1_GetTenantResponse(arg) {
+  if (!(arg instanceof cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantResponse)) {
+    throw new Error('Expected argument of type cs3.identity.tenant.v1beta1.GetTenantResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_identity_tenant_v1beta1_GetTenantResponse(buffer_arg) {
+  return cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_identity_user_v1beta1_FindUsersRequest(arg) {
@@ -3404,6 +3449,35 @@ findUsers: {
     responseDeserialize: deserialize_cs3_identity_user_v1beta1_FindUsersResponse,
   },
   // *****************************************************************/
+// ************************ TENANT PROVIDER **************************/
+// *****************************************************************/
+//
+// Gets the information about a tenant by the tenant id.
+getTenant: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/GetTenant',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantRequest,
+    responseType: cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantResponse,
+    requestSerialize: serialize_cs3_identity_tenant_v1beta1_GetTenantRequest,
+    requestDeserialize: deserialize_cs3_identity_tenant_v1beta1_GetTenantRequest,
+    responseSerialize: serialize_cs3_identity_tenant_v1beta1_GetTenantResponse,
+    responseDeserialize: deserialize_cs3_identity_tenant_v1beta1_GetTenantResponse,
+  },
+  // Gets the information about a tenant based on a specified claim.
+getTenantByClaim: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/GetTenantByClaim',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantByClaimRequest,
+    responseType: cs3_identity_tenant_v1beta1_tenant_api_pb.GetTenantByClaimResponse,
+    requestSerialize: serialize_cs3_identity_tenant_v1beta1_GetTenantByClaimRequest,
+    requestDeserialize: deserialize_cs3_identity_tenant_v1beta1_GetTenantByClaimRequest,
+    responseSerialize: serialize_cs3_identity_tenant_v1beta1_GetTenantByClaimResponse,
+    responseDeserialize: deserialize_cs3_identity_tenant_v1beta1_GetTenantByClaimResponse,
+  },
+  // Gets the groups of a user.
+// *****************************************************************/
 // ************************ GROUP PROVIDER **************************/
 // *****************************************************************/
 // Gets the information about a group by the group id.
