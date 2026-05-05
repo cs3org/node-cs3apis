@@ -50,28 +50,6 @@ function deserialize_cs3_storage_provider_v1beta1_AddGrantResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.AddGrantResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_cs3_storage_provider_v1beta1_AddLabelRequest(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.AddLabelRequest)) {
-    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.AddLabelRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_storage_provider_v1beta1_AddLabelRequest(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.AddLabelRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_cs3_storage_provider_v1beta1_AddLabelResponse(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.AddLabelResponse)) {
-    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.AddLabelResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_storage_provider_v1beta1_AddLabelResponse(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.AddLabelResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_cs3_storage_provider_v1beta1_CreateContainerRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.CreateContainerRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.CreateContainerRequest');
@@ -554,28 +532,6 @@ function serialize_cs3_storage_provider_v1beta1_RemoveGrantResponse(arg) {
 
 function deserialize_cs3_storage_provider_v1beta1_RemoveGrantResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.RemoveGrantResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_cs3_storage_provider_v1beta1_RemoveLabelRequest(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.RemoveLabelRequest)) {
-    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.RemoveLabelRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_storage_provider_v1beta1_RemoveLabelRequest(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.RemoveLabelRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_cs3_storage_provider_v1beta1_RemoveLabelResponse(arg) {
-  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.RemoveLabelResponse)) {
-    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.RemoveLabelResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_cs3_storage_provider_v1beta1_RemoveLabelResponse(buffer_arg) {
-  return cs3_storage_provider_v1beta1_provider_api_pb.RemoveLabelResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_RestoreFileVersionRequest(arg) {
@@ -1242,30 +1198,6 @@ getHome: {
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_GetHomeRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_GetHomeResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_GetHomeResponse,
-  },
-  // Attach a label to a resource for a user.
-addLabel: {
-    path: '/cs3.storage.provider.v1beta1.ProviderAPI/AddLabel',
-    requestStream: false,
-    responseStream: false,
-    requestType: cs3_storage_provider_v1beta1_provider_api_pb.AddLabelRequest,
-    responseType: cs3_storage_provider_v1beta1_provider_api_pb.AddLabelResponse,
-    requestSerialize: serialize_cs3_storage_provider_v1beta1_AddLabelRequest,
-    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_AddLabelRequest,
-    responseSerialize: serialize_cs3_storage_provider_v1beta1_AddLabelResponse,
-    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_AddLabelResponse,
-  },
-  // Removes a label from a resource for a user.
-removeLabel: {
-    path: '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveLabel',
-    requestStream: false,
-    responseStream: false,
-    requestType: cs3_storage_provider_v1beta1_provider_api_pb.RemoveLabelRequest,
-    responseType: cs3_storage_provider_v1beta1_provider_api_pb.RemoveLabelResponse,
-    requestSerialize: serialize_cs3_storage_provider_v1beta1_RemoveLabelRequest,
-    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_RemoveLabelRequest,
-    responseSerialize: serialize_cs3_storage_provider_v1beta1_RemoveLabelResponse,
-    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_RemoveLabelResponse,
   },
 };
 
