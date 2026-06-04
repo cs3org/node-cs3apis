@@ -600,6 +600,28 @@ function deserialize_cs3_storage_provider_v1beta1_SetArbitraryMetadataResponse(b
   return cs3_storage_provider_v1beta1_provider_api_pb.SetArbitraryMetadataResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_storage_provider_v1beta1_SetImmutableRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.SetImmutableRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.SetImmutableRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_SetImmutableRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.SetImmutableRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_SetImmutableResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.SetImmutableResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.SetImmutableResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_SetImmutableResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.SetImmutableResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_storage_provider_v1beta1_SetLockRequest(arg) {
   if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.SetLockRequest)) {
     throw new Error('Expected argument of type cs3.storage.provider.v1beta1.SetLockRequest');
@@ -708,6 +730,28 @@ function serialize_cs3_storage_provider_v1beta1_UnsetArbitraryMetadataResponse(a
 
 function deserialize_cs3_storage_provider_v1beta1_UnsetArbitraryMetadataResponse(buffer_arg) {
   return cs3_storage_provider_v1beta1_provider_api_pb.UnsetArbitraryMetadataResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_UnsetImmutableRequest(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.UnsetImmutableRequest)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.UnsetImmutableRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_UnsetImmutableRequest(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.UnsetImmutableRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_storage_provider_v1beta1_UnsetImmutableResponse(arg) {
+  if (!(arg instanceof cs3_storage_provider_v1beta1_provider_api_pb.UnsetImmutableResponse)) {
+    throw new Error('Expected argument of type cs3.storage.provider.v1beta1.UnsetImmutableResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_storage_provider_v1beta1_UnsetImmutableResponse(buffer_arg) {
+  return cs3_storage_provider_v1beta1_provider_api_pb.UnsetImmutableResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_cs3_storage_provider_v1beta1_UpdateGrantRequest(arg) {
@@ -1174,6 +1218,36 @@ unlock: {
     requestDeserialize: deserialize_cs3_storage_provider_v1beta1_UnlockRequest,
     responseSerialize: serialize_cs3_storage_provider_v1beta1_UnlockResponse,
     responseDeserialize: deserialize_cs3_storage_provider_v1beta1_UnlockResponse,
+  },
+  // Sets the immutable (frozen) attribute on a resource.
+// MUST return CODE_NOT_FOUND if the reference does not exist.
+// The caller MUST have management permissions on the resource
+// (space owner, space manager, or administrator).
+setImmutable: {
+    path: '/cs3.storage.provider.v1beta1.ProviderAPI/SetImmutable',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.SetImmutableRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.SetImmutableResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_SetImmutableRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_SetImmutableRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_SetImmutableResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_SetImmutableResponse,
+  },
+  // Removes the immutable (frozen) attribute from a resource.
+// MUST return CODE_NOT_FOUND if the reference does not exist.
+// MUST return CODE_FAILED_PRECONDITION if the resource is not immutable.
+// The caller MUST have management permissions on the resource.
+unsetImmutable: {
+    path: '/cs3.storage.provider.v1beta1.ProviderAPI/UnsetImmutable',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_storage_provider_v1beta1_provider_api_pb.UnsetImmutableRequest,
+    responseType: cs3_storage_provider_v1beta1_provider_api_pb.UnsetImmutableResponse,
+    requestSerialize: serialize_cs3_storage_provider_v1beta1_UnsetImmutableRequest,
+    requestDeserialize: deserialize_cs3_storage_provider_v1beta1_UnsetImmutableRequest,
+    responseSerialize: serialize_cs3_storage_provider_v1beta1_UnsetImmutableResponse,
+    responseDeserialize: deserialize_cs3_storage_provider_v1beta1_UnsetImmutableResponse,
   },
   // Creates the home directory for a user.
 createHome: {
