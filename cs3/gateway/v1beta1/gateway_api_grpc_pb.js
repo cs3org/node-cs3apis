@@ -412,6 +412,28 @@ function deserialize_cs3_gateway_v1beta1_OpenInAppRequest(buffer_arg) {
   return cs3_gateway_v1beta1_gateway_api_pb.OpenInAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_cs3_gateway_v1beta1_PublishEventRequest(arg) {
+  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.PublishEventRequest)) {
+    throw new Error('Expected argument of type cs3.gateway.v1beta1.PublishEventRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_gateway_v1beta1_PublishEventRequest(buffer_arg) {
+  return cs3_gateway_v1beta1_gateway_api_pb.PublishEventRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_cs3_gateway_v1beta1_PublishEventResponse(arg) {
+  if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.PublishEventResponse)) {
+    throw new Error('Expected argument of type cs3.gateway.v1beta1.PublishEventResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_cs3_gateway_v1beta1_PublishEventResponse(buffer_arg) {
+  return cs3_gateway_v1beta1_gateway_api_pb.PublishEventResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_cs3_gateway_v1beta1_WhoAmIRequest(arg) {
   if (!(arg instanceof cs3_gateway_v1beta1_gateway_api_pb.WhoAmIRequest)) {
     throw new Error('Expected argument of type cs3.gateway.v1beta1.WhoAmIRequest');
@@ -2511,6 +2533,24 @@ whoAmI: {
     requestDeserialize: deserialize_cs3_gateway_v1beta1_WhoAmIRequest,
     responseSerialize: serialize_cs3_gateway_v1beta1_WhoAmIResponse,
     responseDeserialize: deserialize_cs3_gateway_v1beta1_WhoAmIResponse,
+  },
+  // *****************************************************************/
+// **************************** EVENTS *****************************/
+// *****************************************************************/
+// Sends an event for asynchronous processing.
+// The gateway MUST derive the sender and submitting user from the
+// authenticated request context and SHOULD rate-limit this call per submitting
+// user.
+publishEvent: {
+    path: '/cs3.gateway.v1beta1.GatewayAPI/PublishEvent',
+    requestStream: false,
+    responseStream: false,
+    requestType: cs3_gateway_v1beta1_gateway_api_pb.PublishEventRequest,
+    responseType: cs3_gateway_v1beta1_gateway_api_pb.PublishEventResponse,
+    requestSerialize: serialize_cs3_gateway_v1beta1_PublishEventRequest,
+    requestDeserialize: deserialize_cs3_gateway_v1beta1_PublishEventRequest,
+    responseSerialize: serialize_cs3_gateway_v1beta1_PublishEventResponse,
+    responseDeserialize: deserialize_cs3_gateway_v1beta1_PublishEventResponse,
   },
   // *****************************************************************/
 // ********************** APPLICATIONS AUTH ************************/
